@@ -1,9 +1,4 @@
 <!-- Etat Civil Id Field -->
-<div class="col-sm-12">
-    {!! Form::label('etat_civil_id', __('models/employes.fields.etat_civil_id').':') !!}
-    <p>{{ $employe->etat_civil_id }}</p>
-</div>
-
 <!-- Nom Field -->
 <div class="col-sm-12">
     {!! Form::label('nom', __('models/employes.fields.nom').':') !!}
