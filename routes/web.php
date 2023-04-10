@@ -28,3 +28,4 @@ Route::resource('couvertureMedicals', App\Http\Controllers\CouvertureMedicalCont
 Route::resource('typeHandicaps', App\Http\Controllers\TypeHandicapController::class);
 Route::resource('type-handicaps', App\Http\Controllers\TypeHandicapController::class);
 Route::resource('services', App\Http\Controllers\ServiceController::class);
+Route::resource('niveau-scolaires', App\Http\Controllers\NiveauScolaireController::class);
