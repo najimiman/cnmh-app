@@ -27,3 +27,4 @@ Route::resource('members', App\Http\Controllers\MemberController::class);
 Route::resource('couvertureMedicals', App\Http\Controllers\CouvertureMedicalController::class);
 Route::resource('typeHandicaps', App\Http\Controllers\TypeHandicapController::class);
 Route::resource('type-handicaps', App\Http\Controllers\TypeHandicapController::class);
+Route::resource('services', App\Http\Controllers\ServiceController::class);

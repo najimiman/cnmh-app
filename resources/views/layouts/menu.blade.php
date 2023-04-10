@@ -40,3 +40,10 @@
         <p>@lang('models/typeHandicaps.plural')</p>
     </a>
 </li>
+
+<li class="nav-item">
+    <a href="{{ route('services.index') }}" class="nav-link {{ Request::is('services*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-home"></i>
+        <p>@lang('models/services.plural')</p>
+    </a>
+</li>
