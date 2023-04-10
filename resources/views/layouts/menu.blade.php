@@ -54,3 +54,10 @@
         <p>@lang('models/niveauScolaires.plural')</p>
     </a>
 </li>
+
+<li class="nav-item">
+    <a href="{{ route('etatCivils.index') }}" class="nav-link {{ Request::is('etatCivils*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-home"></i>
+        <p>@lang('models/etatCivils.plural')</p>
+    </a>
+</li>
