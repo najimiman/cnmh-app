@@ -1,6 +1,18 @@
-<x-laravel-ui-adminlte::adminlte-layout>
-
-    <body class="hold-transition sidebar-mini layout-fixed">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CNMH - {{ config('app.name') }}</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+          integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+          crossorigin="anonymous"/>
+    @vite('resources/sass/app.scss')
+    @stack('third_party_stylesheets')
+    @stack('page_css')
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
         <div class="wrapper">
             <!-- Main Header -->
             <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -63,4 +75,12 @@
             </footer>
         </div>
     </body>
-</x-laravel-ui-adminlte::adminlte-layout>
+@vite('resources/js/app.js')
+@stack('third_party_scripts')
+@stack('page_scripts')
+</html>
+
+
+
+
+ 
