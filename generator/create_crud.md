@@ -6,4 +6,8 @@ php artisan infyom:scaffold Service --fromTable --table=service
 php artisan infyom:scaffold NiveauScolaire --fromTable --table=niveau_scolaire
 php artisan infyom:scaffold EtatCivil --fromTable --table=etat_civil
 
+php artisan infyom:scaffold Employe --fromTable --table=employe
+
+
+
 ````

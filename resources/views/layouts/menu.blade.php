@@ -61,3 +61,10 @@
         <p>@lang('models/etatCivils.plural')</p>
     </a>
 </li>
+
+<li class="nav-item">
+    <a href="{{ route('employes.index') }}" class="nav-link {{ Request::is('employes*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-home"></i>
+        <p>@lang('models/employes.plural')</p>
+    </a>
+</li>
