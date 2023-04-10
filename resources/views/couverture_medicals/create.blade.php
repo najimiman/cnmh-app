@@ -30,7 +30,7 @@
             </div>
 
             <div class="card-footer">
-                {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
+                <button type="submit" class="btn btn-primary"> @lang('crud.save') </button>
                 <a href="{{ route('couvertureMedicals.index') }}" class="btn btn-default"> @lang('crud.cancel') </a>
             </div>
 
