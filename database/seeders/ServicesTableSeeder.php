@@ -13,6 +13,7 @@ class ServicesTableSeeder extends Seeder
      */
     public function run()
     {
+        \App\Models\Service::factory(50)->create();
 
     }
 }

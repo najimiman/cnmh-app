@@ -3,7 +3,10 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\NiveauScolaire;
 use Illuminate\Database\Seeder;
+use Symfony\Component\Uid\NilUuid;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,21 +16,13 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
-            // ProjectsTableSeeder::class,
             CouvertureMedicalTableSeeder::class,
             TypeHandicapsTableSeeder::class,
+            EtatCivilsTableSeeder::class,
+            EmployesTableSeeder::class,
+            NiveauScolairesTableSeeder::class,
             
         ]);
-
-        \App\Models\Project::factory(10)->create();
-        
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
-       
 
     }
 }

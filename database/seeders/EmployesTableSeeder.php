@@ -13,6 +13,6 @@ class EmployesTableSeeder extends Seeder
      */
     public function run()
     {
-
+        \App\Models\Employe::factory(50)->create();
     }
 }
