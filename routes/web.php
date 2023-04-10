@@ -24,3 +24,5 @@ Auth::routes();
 Route::resource('projects', App\Http\Controllers\ProjectController::class);
 Route::resource('tasks', App\Http\Controllers\TaskController::class);
 Route::resource('members', App\Http\Controllers\MemberController::class);
+Route::resource('couvertureMedicals', App\Http\Controllers\CouvertureMedicalController::class);
+Route::resource('typeHandicaps', App\Http\Controllers\TypeHandicapController::class);

@@ -4,29 +4,26 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
  use Illuminate\Database\Eloquent\Factories\HasFactory;
-class Project extends Model
+class TypeHandicap extends Model
 {
-    use HasFactory;    public $table = 'projects';
+    use HasFactory;    public $table = 'type_handicap';
 
     public $fillable = [
-        'name',
+        'nom',
         'description'
     ];
 
     protected $casts = [
-        'name' => 'string',
+        'nom' => 'string',
         'description' => 'string'
     ];
 
     public static array $rules = [
-        'name' => 'required|string|max:255',
+        'nom' => 'required|string|max:255',
         'description' => 'required|string|max:255',
         'created_at' => 'nullable',
         'updated_at' => 'nullable'
     ];
 
-    public function tasks(): \Illuminate\Database\Eloquent\Relations\HasMany
-    {
-        return $this->hasMany(\App\Models\Task::class, 'project_id');
-    }
+    
 }
