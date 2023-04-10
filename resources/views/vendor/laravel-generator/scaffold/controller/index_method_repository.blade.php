@@ -9,6 +9,6 @@
                 ->with('{{ $config->modelNames->camelPlural }}', ${{ $config->modelNames->camelPlural }});
         }
 
-        return view('couverture_medicals.index')
-            ->with('couvertureMedicals', $couvertureMedicals);
+        return view('{{ $config->modelNames->snakePlural }}.index')
+            ->with('{{ $config->modelNames->camelPlural }}', ${{ $config->modelNames->camelPlural }});
     }

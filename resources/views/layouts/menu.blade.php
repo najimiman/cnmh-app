@@ -39,3 +39,10 @@
         <p>@lang('models/employes.plural')</p>
     </a>
 </li>
+
+<li class="nav-item">
+    <a href="{{ route('members.index') }}" class="nav-link {{ Request::is('members*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-home"></i>
+        <p>@lang('models/members.plural')</p>
+    </a>
+</li>
