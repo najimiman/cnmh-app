@@ -12,9 +12,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // $this->call([
-        //     ProjectsTableSeeder::class,
-        // ]);
+        $this->call([
+            // ProjectsTableSeeder::class,
+            CouvertureMedicalTableSeeder::class,
+            TypeHandicapsTableSeeder::class,
+            
+        ]);
 
         \App\Models\Project::factory(10)->create();
         
