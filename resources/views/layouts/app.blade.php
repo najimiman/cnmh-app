@@ -75,6 +75,7 @@
             </footer>
         </div>
     </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 @vite('resources/js/app.js')
 @stack('third_party_scripts')
 @stack('page_scripts')
