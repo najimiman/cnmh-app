@@ -142,7 +142,7 @@ return [
 
         'factory' => true,
 
-        'seeder' => false,
+        'seeder' => true,
 
         'swagger' => false, // generate swagger for your APIs
 
