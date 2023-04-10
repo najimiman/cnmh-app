@@ -13,6 +13,6 @@ class TypeHandicapsTableSeeder extends Seeder
      */
     public function run()
     {
-
+        \App\Models\TypeHandicap::factory(8)->create();
     }
 }
