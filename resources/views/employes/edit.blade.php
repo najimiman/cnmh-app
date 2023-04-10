@@ -6,7 +6,7 @@
             <div class="row mb-2">
                 <div class="col-sm-12">
                     <h1>
-                    @lang('crud.create') @lang('models/couvertureMedicals.singular')
+                        @lang('crud.edit') @lang('models/employes.singular')
                     </h1>
                 </div>
             </div>
@@ -19,19 +19,17 @@
 
         <div class="card">
 
-            {!! Form::open(['route' => 'couvertureMedicals.store']) !!}
+            {!! Form::model($employe, ['route' => ['employes.update', $employe->id], 'method' => 'patch']) !!}
 
             <div class="card-body">
-
                 <div class="row">
-                    @include('couverture_medicals.fields')
+                    @include('employes.fields')
                 </div>
-
             </div>
 
             <div class="card-footer">
-                <button type="submit" class="btn btn-primary"> @lang('crud.save') </button>
-                <a href="{{ route('couvertureMedicals.index') }}" class="btn btn-default"> @lang('crud.cancel') </a>
+                {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
+                <a href="{{ route('employes.index') }}" class="btn btn-default"> @lang('crud.cancel') </a>
             </div>
 
             {!! Form::close() !!}

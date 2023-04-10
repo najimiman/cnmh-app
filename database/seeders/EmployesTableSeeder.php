@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class TypeHandicapsTableSeeder extends Seeder
+class EmployesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,6 +13,6 @@ class TypeHandicapsTableSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\TypeHandicap::factory(8)->create();
+
     }
 }
