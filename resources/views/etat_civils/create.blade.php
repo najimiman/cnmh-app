@@ -23,9 +23,7 @@
 
             <div class="card-body">
 
-                <div class="row">
                     @include('etat_civils.fields')
-                </div>
 
             </div>
 

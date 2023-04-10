@@ -12,7 +12,7 @@
                 <div class="col-sm-6">
                     <a class="btn btn-primary float-right"
                        href="{{ route('etatCivils.create') }}">
-                         @lang('crud.add_new') Etat Civil
+                         @lang('crud.add_new') @lang('models/etatCivils.singular')
                     </a>
                 </div>
             </div>
