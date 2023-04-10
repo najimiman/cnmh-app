@@ -2,10 +2,11 @@
     <div class="col-sm-12 d-flex justify-content-between p-0">
         <div class="d-flex justify-content-between">
             <select   class="form-select  btn-default dropdown-toggle ml-2 filter" aria-label="Default select example">
-                <option selected>Parents</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option selected>filtre</option>
+                @foreach ($EtatCivil as $value )
+
+                <option value="{{$value->id}}">{{$value->nom}}</option>
+                @endforeach
             </select>
         </div>
         <!-- SEARCH FORM -->
