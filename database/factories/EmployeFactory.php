@@ -29,7 +29,7 @@ class EmployeFactory extends Factory
         }
 
         return [
-            'etat_civil_id' => $this->faker->word,
+            'etat_civil_id' => $this->faker->randomElement(EtatCivil::pluck('id')),
             'nom' => $this->faker->text($this->faker->numberBetween(5, 255)),
             'prenom' => $this->faker->text($this->faker->numberBetween(5, 255)),
             'email' => $this->faker->email,

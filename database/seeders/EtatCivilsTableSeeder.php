@@ -13,6 +13,7 @@ class EtatCivilsTableSeeder extends Seeder
      */
     public function run()
     {
+        \App\Models\EtatCivil::factory(50)->create();
 
     }
 }
