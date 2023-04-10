@@ -25,7 +25,7 @@
 
 <div class="card-body p-0">
     <div class="table-responsive">
-        <table class="table table-striped Projects" id="projects-table">
+        <table class="table table-striped" id="projects-table">
             <thead>
             <tr>
                 <th>Name</th>
@@ -36,13 +36,11 @@
             <tbody>
             @foreach($projects as $project)
                 <tr>
-                    
                     <td>{{ $project->name }}</td>
                     <td>{{ $project->description }}</td>
                     <td  style="width: 120px">
                         {!! Form::open(['route' => ['projects.destroy', $project->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>
-                            @include('projects.actions') 
                             <a href="{{ route('projects.show', [$project->id]) }}"
                                class='btn btn-default btn-sm'>
                                 <i class="far fa-eye"></i>

@@ -14,16 +14,15 @@ class Project extends Model
     ];
 
     protected $casts = [
-        'id' => 'integer',
         'name' => 'string',
         'description' => 'string'
     ];
 
     public static array $rules = [
-        'name' => 'required|string|max:255|string|max:255',
-        'description' => 'required|string|max:255|string|max:255',
-        'created_at' => 'nullable|nullable',
-        'updated_at' => 'nullable|nullable'
+        'name' => 'required|string|max:255',
+        'description' => 'required|string|max:255',
+        'created_at' => 'nullable',
+        'updated_at' => 'nullable'
     ];
 
     public function tasks(): \Illuminate\Database\Eloquent\Relations\HasMany
