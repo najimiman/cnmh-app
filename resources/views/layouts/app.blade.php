@@ -1,4 +1,5 @@
 <x-laravel-ui-adminlte::adminlte-layout>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 
     <body class="hold-transition sidebar-mini layout-fixed">
         <div class="wrapper">
