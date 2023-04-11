@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-
-<x-laravel-ui-adminlte::adminlte-layout>
-    <body class="hold-transition sidebar-mini layout-fixed">
-=======
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,7 +13,6 @@
     @stack('page_css')
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
->>>>>>> 9b8e95505e0a74d140632c092f86e3e2d3bb9d53
         <div class="wrapper">
             <!-- Main Header -->
             <nav class="main-header navbar navbar-expand navbar-white navbar-light">
