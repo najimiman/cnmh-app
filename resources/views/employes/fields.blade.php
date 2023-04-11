@@ -1,7 +1,14 @@
 <!-- Etat Civil Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('etat_civil_id', __('models/employes.fields.etat_civil_id').':') !!}
-    {!! Form::number('etat_civil_id', null, ['class' => 'form-control']) !!}
+    {!! Form::label('etat_civil_id', __('models/etat_civils.singular').':') !!}
+    {{-- {!! Form::number('etat_civil_id', null, ['class' => 'form-control']) !!} --}}
+    <select class="form-control" name="etat_civil_id" id="etat_civil_id">
+        @foreach ($EtatCivil as $value)
+        <option value="{{$value->id}}">{{$value->nom}} </option>
+        @endforeach
+    </select>
+    {{-- {!! Form::select('etat_civil_id', [$value->id => $value->nom]  , null, ['class' => 'form-control']) !!} --}}
+
 </div>
 
 <!-- Nom Field -->

@@ -36,7 +36,8 @@ class EmployeController extends AppBaseController
      */
     public function create()
     {
-        return view('employes.create');
+        $EtatCivil =EtatCivil::all();
+        return view('employes.create',compact('EtatCivil'));
     }
 
     /**
