@@ -24,7 +24,13 @@ class CouvertureMedicalController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $couvertureMedicals = $this->couvertureMedicalRepository->paginate(10);
+        $query = $request->input('query');
+        $couvertureMedicals = $this->couvertureMedicalRepository->paginate($query);
+
+        if ($request->ajax()) {
+            return view('couverture_medicals.table')
+                ->with('couvertureMedicals', $couvertureMedicals);
+        }
 
         return view('couverture_medicals.index')
             ->with('couvertureMedicals', $couvertureMedicals);
