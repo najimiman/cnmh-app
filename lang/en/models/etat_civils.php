@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'singular' => 'Etat civil',
-    'plural' => 'Etat civils',
+    'singular' => 'EtatCivil',
+    'plural' => 'EtatCivils',
     'fields' => [
         'id' => 'Id',
         'nom' => 'Nom',
