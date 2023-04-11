@@ -3,11 +3,19 @@
 {{ $config->modelNames->camelPlural }}
 @@extends('layouts.app') -> @extends('layouts.app')
 
-## Variable config
-$config->modelNames->humanPlural
-$config->modelNames->camelPlural
-$config->prefixes->getRoutePrefixWith('.')
+## Model name 
 
+- couvertureMedical
+  - {{ $config->modelNames->camel }}
+- couvertureMedicals
+  - {{ $config->modelNames->camelPlural }}
+- 
+  - {{ $config->modelNames->humanPlural }} 
+- couverture_medicals
+  - {{ $config->modelNames->snakePlural }} 
+
+
+## Route
 
 @{{ route('{!! $config->prefixes->getRoutePrefixWith('.') !!}{!! $config->modelNames->camelPlural !!}.create') }}
 

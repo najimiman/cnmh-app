@@ -11,10 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('couvertureMedical', function (Blueprint $table) {
+        Schema::create('rendez_vous', function (Blueprint $table) {
+
             $table->id();
-            $table->string('nom');
-            $table->string('description')->nullable();
+            $table->dateTime("date_rendez_vous");
+            $table->string('service');
+            $table->string('etat');
+            $table->string('remarque');
+
+            $table->foreign('id_consultation')
+                ->references('id')->on('consultations');
+
             $table->timestamps();
         });
     }
@@ -24,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('couvertureMedical');
+        Schema::dropIfExists('rendez_vous');
     }
 };

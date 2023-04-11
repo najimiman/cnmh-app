@@ -37,7 +37,7 @@
             @foreach($typeHandicaps as $typeHandicap)
                 <tr>
                     <td>{{ $typeHandicap->nom }}</td>
-                    <td>{{ $typeHandicap->description }}</td>
+                    <td>{!! $typeHandicap->description !!}</td>
                     <td  style="width: 120px">
                         {!! Form::open(['route' => ['typeHandicaps.destroy', $typeHandicap->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>
