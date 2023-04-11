@@ -2,10 +2,10 @@
 
 return [
     'singular' => 'School level',
-    'plural' => 'School Levels',
+    'plural' => 'School levels',
     'fields' => [
         'id' => 'Id',
-        'nom' => 'Niveau Scolaire',
+        'nom' => 'Niveau scolaire',
         'description' => 'Description',
         'created_at' => 'Created At',
         'updated_at' => 'Updated At',
