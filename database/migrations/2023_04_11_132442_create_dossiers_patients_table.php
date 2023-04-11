@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->integer('numero_dossier');
             $table->string('etat');
-            $table->string('date_enregsitrement');
+            $table->date('date_enregsitrement');
             $table->foreign('couverture_medical_id')->references('id')->on('couverture_medicals');
             $table->foreign('patient_id')->references('id')->on('patients');
             $table->timestamps();
