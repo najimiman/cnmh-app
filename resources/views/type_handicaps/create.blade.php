@@ -22,7 +22,7 @@
                 <!-- general form elements -->
                 <div class="card card-primary card-create">
                     <div class="card-header">
-                        <h3 class="card-title">Ajouter un nouveau type d'handicap</h3>
+                        <h3 class="card-title"> {{__('crud.addtypehandicap')}}</h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
