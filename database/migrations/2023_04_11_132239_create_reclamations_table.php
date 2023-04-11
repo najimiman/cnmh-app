@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('Objet');
             $table->string('Description');
             $table->string('Remarques');
+            $table->dateTime('dateReclamation');
             $table->timestamps();
         });
     }
