@@ -1,11 +1,12 @@
+<!-- EtatCivil = Situation Familière(Marié/..) -->
 <?php
 
 return [
-    'singular' => 'NiveauScolaire',
-    'plural' => 'NiveauScolaires',
+    'singular' => 'familiar situation',
+    'plural' => 'familiar situations',
     'fields' => [
         'id' => 'Id',
-        'nom' => 'Nom',
+        'nom' => 'Name',
         'description' => 'Description',
         'created_at' => 'Created At',
         'updated_at' => 'Updated At',

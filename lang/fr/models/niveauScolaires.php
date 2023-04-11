@@ -1,11 +1,11 @@
 <?php
 
 return [
-    'singular' => 'EtatCivil',
-    'plural' => 'EtatCivils',
+    'singular' => 'niveau scolaire',
+    'plural' => 'Niveau scolaires',
     'fields' => [
         'id' => 'Id',
-        'nom' => 'Nom',
+        'nom' => 'Niveau scolaire',
         'description' => 'Description',
         'created_at' => 'Created At',
         'updated_at' => 'Updated At',

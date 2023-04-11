@@ -25,8 +25,5 @@ class Member extends Model
         'updated_at' => 'nullable'
     ];
 
-    public function memberTasks(): \Illuminate\Database\Eloquent\Relations\HasMany
-    {
-        return $this->hasMany(\App\Models\MemberTask::class, 'member_id');
-    }
+    
 }

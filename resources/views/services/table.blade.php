@@ -37,7 +37,7 @@
             @foreach($services as $service)
                 <tr>
                     <td>{{ $service->nom }}</td>
-                    <td>{{ $service->description }}</td>
+                    <td>{!! $service->description !!}</td>
                     <td  style="width: 120px">
                         {!! Form::open(['route' => ['services.destroy', $service->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>
