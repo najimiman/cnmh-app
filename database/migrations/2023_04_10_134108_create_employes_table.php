@@ -27,7 +27,7 @@ return new class extends Migration
             $table->date('date_embauche');
             $table->date('date_depart')->nullable();
             $table->boolean('statut');
-            $table->foreign('etat_civil_id')->references('id')->on('etat_civil')->onDelete('set null');        
+            $table->foreign('etat_civil_id')->references('id')->on('etat_civil')->onDelete('set null');
             $table->timestamps();
         });
     }

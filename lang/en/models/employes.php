@@ -16,7 +16,7 @@ return [
         'sexe' => 'Sexe',
         'cin' => 'Cin',
         'fonction' => 'Fonction',
-        'date_embauche' => 'Date Embauche',
+        'date_embauche' => 'Date embauche',
         'date_depart' => 'Date Depart',
         'statut' => 'Statut',
         'created_at' => 'Created At',
