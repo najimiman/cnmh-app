@@ -1,28 +1,3 @@
-<div class="card-header">
-    <div class="col-sm-12 d-flex justify-content-between p-0">
-        <div class="d-flex justify-content-between">
-            <select   class="form-select  btn-default dropdown-toggle ml-2 filter" aria-label="Default select example">
-                <option selected>Parents</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-            </select>
-        </div>
-        <!-- SEARCH FORM -->
-        <form class="form-inline ml-3">
-            <div class="input-group input-group-sm">
-                <input type="search" class="form-control form-control-lg"
-                    placeholder="Recherche">
-                <div class="input-group-append">
-                    <button type="submit" class="btn btn-lg btn-default">
-                        <i class="fa fa-search"></i>
-                    </button>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
-
 <div class="card-body p-0">
     <div class="table-responsive">
         <table class="table table-striped" id="{{ $config->modelNames->dashedPlural }}-table">

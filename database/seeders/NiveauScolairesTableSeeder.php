@@ -13,6 +13,7 @@ class NiveauScolairesTableSeeder extends Seeder
      */
     public function run()
     {
+        \App\Models\NiveauScolaire::factory(50)->create();
 
     }
 }

@@ -24,7 +24,14 @@ class MemberController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $members = $this->memberRepository->paginate(10);
+        
+        $query = $request->input('query');
+        $members = $this->memberRepository->paginate($query);
+       
+        if ($request->ajax()) {
+            return view('members.table')
+                ->with('members', $members);
+        }
 
         return view('members.index')
             ->with('members', $members);
