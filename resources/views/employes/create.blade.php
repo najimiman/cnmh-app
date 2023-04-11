@@ -31,10 +31,17 @@
             </div>
 
             <div class="card-footer">
-                {!! Form::submit(__('crud.save'), ['class' => 'btn btn-primary']) !!}
-                <a href="{{ route('employes.index') }}" class="btn btn-default"> @lang('crud.cancel') </a>
-            </div>
+                <div class="d-flex bd-highlight mb-3">
+                    <div class="p-2 bd-highlight">
+                        {!! Form::submit(__('crud.save'), ['class' => 'btn btn-primary']) !!}
 
+                    </div>
+                    <div class="ml-auto p-2 bd-highlight">
+                        <a href="{{ route('employes.index') }}" class="btn btn-default"> @lang('crud.cancel') </a>
+                    </div>
+
+                </div>
+            </div>
             {!! Form::close() !!}
 
         </div>

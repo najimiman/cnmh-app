@@ -44,7 +44,7 @@
 <!-- Date Naissance Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('date_naissance', __('models/employes.fields.date_naissance').':') !!}
-    {!! Form::text('date_naissance', null, ['class' => 'form-control','id'=>'date_naissance']) !!}
+    {!! Form::date('date_naissance', null, ['class' => 'form-control','id'=>'date_naissance']) !!}
 </div>
 
 @push('page_scripts')
@@ -80,7 +80,7 @@
 <!-- Date Embauche Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('date_embauche', __('models/employes.fields.date_embauche').':') !!}
-    {!! Form::text('date_embauche', null, ['class' => 'form-control','id'=>'date_embauche']) !!}
+    {!! Form::date('date_embauche', null, ['class' => 'form-control','id'=>'date_embauche']) !!}
 </div>
 
 @push('page_scripts')
@@ -92,7 +92,7 @@
 <!-- Date Depart Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('date_depart', __('models/employes.fields.date_depart').':') !!}
-    {!! Form::text('date_depart', null, ['class' => 'form-control','id'=>'date_depart']) !!}
+    {!! Form::date('date_depart', null, ['class' => 'form-control','id'=>'date_depart']) !!}
 </div>
 
 @push('page_scripts')

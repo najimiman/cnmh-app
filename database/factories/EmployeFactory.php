@@ -37,7 +37,7 @@ class EmployeFactory extends Factory
             'adresse' => $this->faker->text($this->faker->numberBetween(5, 255)),
             'date_naissance' => $this->faker->date('Y-m-d'),
             'lieu_naissance' => $this->faker->text($this->faker->numberBetween(5, 255)),
-            'sexe' => $this->faker->text($this->faker->numberBetween(5, 255)),
+            'sexe' => $this->faker->randomElement(["masculin","feminin"]),
             'cin' => $this->faker->text($this->faker->numberBetween(5, 255)),
             'fonction' => $this->faker->text($this->faker->numberBetween(5, 255)),
             'date_embauche' => $this->faker->date('Y-m-d'),
