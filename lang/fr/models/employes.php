@@ -4,6 +4,7 @@ return [
 
     'singular' => 'Employé',
     'plural' => 'Employés',
+    'isMale' => true ,
     'fields' => [
     'id' => 'Identifiant',
     'etat_civil_id' => 'Identifiant état civil',
