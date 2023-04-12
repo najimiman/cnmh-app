@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'singular' => 'type Handicaps',
-    'plural' => 'type Handicaps',
+    'singular' => "Type d'handicap",
+    'plural' => "Types d'handicap",
     'fields' => [
     'id' => 'Id',
     'nom' => 'Nom',

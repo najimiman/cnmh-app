@@ -12,7 +12,7 @@
                 <div class="col-sm-6">
                     <a class="btn btn-primary float-right"
                        href="{{ route('typeHandicaps.create') }}">
-                         @lang('crud.add_new') {{strtolower(__('models/typeHandicaps.singular'))}}
+                         @lang('crud.create') {{strtolower(__('models/typeHandicaps.singular'))}}
                     </a>
                 </div>
             </div>

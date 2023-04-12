@@ -23,7 +23,7 @@
                 <div class="card card-primary card-create">
                     <div class="card-header">
                         {{-- <h3 class="card-title"> {{__('crud.addtypehandicap')}}</h3> --}}
-                        @lang('crud.add_new') {{strtolower(__('models/typeHandicaps.singular'))}}
+                        @lang('crud.create') un nouveau  {{strtolower(__('models/typeHandicaps.singular'))}}
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
