@@ -26,8 +26,8 @@ class EmployeController extends AppBaseController
     public function index(Request $request)
     {
         $employes = $this->employeRepository->paginate(10);
-        $EtatCivil = $this->employeRepository->getModel("EtatCivil");
-        return view('employes.index',compact("employes","EtatCivil"));
+        $EtatCivil = EtatCivil::all();
+        return view('employes.index', compact("employes", "EtatCivil"));
     }
 
     /**
@@ -35,8 +35,8 @@ class EmployeController extends AppBaseController
      */
     public function create()
     {
-        $EtatCivil = $this->employeRepository->getModel("EtatCivil");
-        return view('employes.create',compact('EtatCivil'));
+        $EtatCivil = EtatCivil::all();
+        return view('employes.create', compact('EtatCivil'));
     }
 
     /**
@@ -61,7 +61,7 @@ class EmployeController extends AppBaseController
         $employe = $this->employeRepository->find($id);
 
         if (empty($employe)) {
-            Flash::error(__('models/employes.singular').' '.__('messages.not_found'));
+            Flash::error(__('models/employes.singular') . ' ' . __('messages.not_found'));
 
             return redirect(route('employes.index'));
         }
@@ -77,7 +77,7 @@ class EmployeController extends AppBaseController
         $employe = $this->employeRepository->find($id);
 
         if (empty($employe)) {
-            Flash::error(__('models/employes.singular').' '.__('messages.not_found'));
+            Flash::error(__('models/employes.singular') . ' ' . __('messages.not_found'));
 
             return redirect(route('employes.index'));
         }
@@ -93,7 +93,7 @@ class EmployeController extends AppBaseController
         $employe = $this->employeRepository->find($id);
 
         if (empty($employe)) {
-            Flash::error(__('models/employes.singular').' '.__('messages.not_found'));
+            Flash::error(__('models/employes.singular') . ' ' . __('messages.not_found'));
 
             return redirect(route('employes.index'));
         }
@@ -115,7 +115,7 @@ class EmployeController extends AppBaseController
         $employe = $this->employeRepository->find($id);
 
         if (empty($employe)) {
-            Flash::error(__('models/employes.singular').' '.__('messages.not_found'));
+            Flash::error(__('models/employes.singular') . ' ' . __('messages.not_found'));
 
             return redirect(route('employes.index'));
         }

@@ -53,11 +53,6 @@ abstract class BaseRepository
         return $this->model = $model;
     }
 
-    public function getModel($model){
-        $model = app("App\\Models\\{$model}");
-        return $model->all();
-    }
-
     /**
      * Paginate records for scaffold.
      */
