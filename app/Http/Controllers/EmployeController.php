@@ -26,8 +26,7 @@ class EmployeController extends AppBaseController
     public function index(Request $request)
     {
         $employes = $this->employeRepository->paginate(10);
-        // $EtatCivil = $this->employeRepository->getModel("EtatCivil");
-        $EtatCivil =EtatCivil::all();
+        $EtatCivil = $this->employeRepository->getModel("EtatCivil");
         return view('employes.index',compact("employes","EtatCivil"));
     }
 
@@ -36,7 +35,7 @@ class EmployeController extends AppBaseController
      */
     public function create()
     {
-        $EtatCivil =EtatCivil::all();
+        $EtatCivil = $this->employeRepository->getModel("EtatCivil");
         return view('employes.create',compact('EtatCivil'));
     }
 
