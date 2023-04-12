@@ -2,7 +2,7 @@
 
 @section('content')
 
-    
+
     <section class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
@@ -12,7 +12,7 @@
                 <div class="col-sm-6">
                     <a class="btn btn-primary float-right"
                        href="{{ route('employes.create') }}">
-                         @lang('crud.add_new') Employe
+                         @lang('crud.add_new') employe
                     </a>
                 </div>
             </div>

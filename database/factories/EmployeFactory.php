@@ -30,14 +30,14 @@ class EmployeFactory extends Factory
 
         return [
             'etat_civil_id' => $this->faker->randomElement(EtatCivil::pluck('id')),
-            'nom' => $this->faker->text($this->faker->numberBetween(5, 255)),
-            'prenom' => $this->faker->text($this->faker->numberBetween(5, 255)),
+            'nom' => $this->faker->name,
+            'prenom' => $this->faker->name,
             'email' => $this->faker->email,
             'telephone' => $this->faker->numerify('0##########'),
             'adresse' => $this->faker->text($this->faker->numberBetween(5, 255)),
             'date_naissance' => $this->faker->date('Y-m-d'),
             'lieu_naissance' => $this->faker->text($this->faker->numberBetween(5, 255)),
-            'sexe' => $this->faker->text($this->faker->numberBetween(5, 255)),
+            'sexe' => $this->faker->randomElement(["masculin","feminin"]),
             'cin' => $this->faker->text($this->faker->numberBetween(5, 255)),
             'fonction' => $this->faker->text($this->faker->numberBetween(5, 255)),
             'date_embauche' => $this->faker->date('Y-m-d'),

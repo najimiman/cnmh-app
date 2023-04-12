@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 
-class EtatCivilsTableSeeder extends Seeder
+class ProjectsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,7 +13,6 @@ class EtatCivilsTableSeeder extends Seeder
      */
     public function run()
     {
-        \App\Models\EtatCivil::factory(8)->create();
 
     }
 }

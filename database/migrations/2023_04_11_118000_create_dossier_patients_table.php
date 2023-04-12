@@ -11,10 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('service_medcin_generals', function (Blueprint $table) {
+        Schema::create('dossier_patients', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_service')->constrained('services');
-            $table->foreignId('id_medcin_generals')->constrained('medcin_generals');
+            $table->foreignId('patient_id')->constrained('patients');
+            $table->foreignId('couverture_medical_id')->constrained('couverture_medical');
+            $table->integer('numero_dossier');
+            $table->string('etat');
+            $table->date('date_enregsitrement');
             $table->timestamps();
         });
     }
@@ -24,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('service_medcin_generals');
+        Schema::dropIfExists('dossier_patients');
     }
 };

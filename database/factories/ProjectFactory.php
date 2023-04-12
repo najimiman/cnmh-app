@@ -2,18 +2,18 @@
 
 namespace Database\Factories;
 
-use App\Models\EtatCivil;
+use App\Models\Project;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 
-class EtatCivilFactory extends Factory
+class ProjectFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = EtatCivil::class;
+    protected $model = Project::class;
 
     /**
      * Define the model's default state.
@@ -22,9 +22,9 @@ class EtatCivilFactory extends Factory
      */
     public function definition()
     {
-
+        
         return [
-            'nom' => $this->faker->name,
+            'name' => $this->faker->text($this->faker->numberBetween(5, 255)),
             'description' => $this->faker->text($this->faker->numberBetween(5, 255)),
             'created_at' => $this->faker->date('Y-m-d H:i:s'),
             'updated_at' => $this->faker->date('Y-m-d H:i:s')

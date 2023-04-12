@@ -1,7 +1,14 @@
 <!-- Etat Civil Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('etat_civil_id', __('models/employes.fields.etat_civil_id').':') !!}
-    {!! Form::number('etat_civil_id', null, ['class' => 'form-control']) !!}
+    {!! Form::label('etat_civil_id', __('models/etat_civils.singular').':') !!}
+    {{-- {!! Form::number('etat_civil_id', null, ['class' => 'form-control']) !!} --}}
+    <select class="form-control" name="etat_civil_id" id="etat_civil_id">
+        @foreach ($EtatCivil as $value)
+        <option value="{{$value->id}}">{{$value->nom}} </option>
+        @endforeach
+    </select>
+    {{-- {!! Form::select('etat_civil_id', [$value->id => $value->nom]  , null, ['class' => 'form-control']) !!} --}}
+
 </div>
 
 <!-- Nom Field -->
@@ -37,7 +44,7 @@
 <!-- Date Naissance Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('date_naissance', __('models/employes.fields.date_naissance').':') !!}
-    {!! Form::text('date_naissance', null, ['class' => 'form-control','id'=>'date_naissance']) !!}
+    {!! Form::date('date_naissance', null, ['class' => 'form-control','id'=>'date_naissance']) !!}
 </div>
 
 @push('page_scripts')
@@ -73,7 +80,7 @@
 <!-- Date Embauche Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('date_embauche', __('models/employes.fields.date_embauche').':') !!}
-    {!! Form::text('date_embauche', null, ['class' => 'form-control','id'=>'date_embauche']) !!}
+    {!! Form::date('date_embauche', null, ['class' => 'form-control','id'=>'date_embauche']) !!}
 </div>
 
 @push('page_scripts')
@@ -85,7 +92,7 @@
 <!-- Date Depart Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('date_depart', __('models/employes.fields.date_depart').':') !!}
-    {!! Form::text('date_depart', null, ['class' => 'form-control','id'=>'date_depart']) !!}
+    {!! Form::date('date_depart', null, ['class' => 'form-control','id'=>'date_depart']) !!}
 </div>
 
 @push('page_scripts')

@@ -11,20 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('orientation_externes', function (Blueprint $table) {
-
+        Schema::create('tasks', function (Blueprint $table) {
             $table->id();
-            $table->string('objet');
+            $table->foreignId('project_id')->constrained();
+            $table->string('name');
             $table->string('description');
-            $table->string('remarque');
-            $table->date("date_orientation");
-
-            $table->foreign('id_accompagnateur')
-                ->references('id')->on('employes');
-
-            $table->foreign('id_dossier')
-                ->references('id')->on('dossier_patients');
-
             $table->timestamps();
         });
     }
@@ -34,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('orientation_externes');
+        Schema::dropIfExists('tasks');
     }
 };
