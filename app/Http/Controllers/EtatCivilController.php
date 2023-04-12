@@ -24,7 +24,7 @@ class EtatCivilController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $etatCivils = $this->etatCivilRepository->paginate(10);
+        $etatCivils = $this->etatCivilRepository->paginate();
 
         return view('etat_civils.index')
             ->with('etatCivils', $etatCivils);

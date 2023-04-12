@@ -37,7 +37,7 @@
                 @foreach ($etatCivils as $etatCivil)
                     <tr>
                         <td>{{ $etatCivil->nom }}</td>
-                        <td>{{ $etatCivil->description }}</td>
+                        <td>{!!$etatCivil->description !!}</td>
                         <td style="width: 120px">
                             {!! Form::open(['route' => ['etatCivils.destroy', $etatCivil->id], 'method' => 'delete']) !!}
                             <div class='btn-group'>
