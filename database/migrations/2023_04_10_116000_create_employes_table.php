@@ -11,21 +11,21 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('patients', function (Blueprint $table) {
+        Schema::create('employes', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('parent_id')->nullable();
-            $table->unsignedBigInteger('niveau_scolaire_id')->nullable();
             $table->string('nom');
             $table->string('prenom');
-            $table->string('telephone');
-            $table->string('cin');
             $table->string('email');
-            $table->string('image');
+            $table->string('telephone');
             $table->string('adresse');
-            $table->text('remarque');
-            $table->foreign('parent_id')->references('id')->on('parents');
-            $table->foreign('niveau_scolaire_id')->references('id')->on('niveau_scolaires');
-
+            $table->date('date_naissance');
+            $table->string('lieu_naissance');
+            $table->string('sexe');
+            $table->string('cin');
+            $table->string('fonction');
+            $table->date('date_embauche');
+            $table->date('date_depart')->nullable();
+            $table->boolean('statut');
             $table->timestamps();
         });
     }
@@ -35,6 +35,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('patients');
+        Schema::dropIfExists('employes');
     }
 };

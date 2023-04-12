@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('dossier_patient_service', function (Blueprint $table) {
             $table->id();
-            $table->foreign('dossier_patient_id')->references('id')->on('dossier_patients');
-            $table->foreign('service_id')->references('id')->on('service');
+            $table->foreignId('dossier_patient_id')->constrained('dossier_patients');
+            $table->foreignId('service_id')->constrained('service');
             $table->timestamps();
         });
     }
