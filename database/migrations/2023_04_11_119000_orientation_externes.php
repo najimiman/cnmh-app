@@ -11,16 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('rendez_vous', function (Blueprint $table) {
+        Schema::create('orientation_externes', function (Blueprint $table) {
 
             $table->id();
-            $table->dateTime("date_rendez_vous");
-            $table->string('service');
-            $table->string('etat');
+            // foregin key with constrained keywords
+            $table->foreignId('dossier_patient_id')->constrained('dossier_patients');
+            $table->foreignId('service_id')->constrained('service');
+            $table->string('objet');
+            $table->string('description');
             $table->string('remarque');
-
-            $table->foreign('id_consultation')
-                ->references('id')->on('consultations');
+            $table->date("date_orientation");
 
             $table->timestamps();
         });
@@ -31,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('rendez_vous');
+        Schema::dropIfExists('orientation_externes');
     }
 };

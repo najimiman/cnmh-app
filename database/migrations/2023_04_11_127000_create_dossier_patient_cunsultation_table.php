@@ -19,7 +19,7 @@ return new class extends Migration
             $table->date('date_consultation');
             $table->string('observation');
             $table->string('diagnostic');
-            $table->string('bilan ');
+            $table->string('bilan');
             $table->string('remarque');  
 
 
