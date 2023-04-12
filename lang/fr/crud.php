@@ -3,7 +3,7 @@
 return [
     'add_new' => 'Ajouter nouveau',
     'cancel' => 'Annuler',
-    'create' => 'Créer',
+    'create' => 'Ajouter',
     'edit' => 'Modifier',
     'save' => 'Enregistrer',
     'detail' => 'Détail',
