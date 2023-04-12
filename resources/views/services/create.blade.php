@@ -74,7 +74,6 @@
         $(document).ready(function() {
             $('#description').summernote({
                 placeholder: 'Saisir une description du service.',
-
                 height: 100,
             });
             $('.dropdown-toggle').dropdown();
