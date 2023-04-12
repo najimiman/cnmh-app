@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Laracasts\Flash\Flash;
+use Illuminate\Http\Request;
+use App\Repositories\ServiceRepository;
+use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\CreateServiceRequest;
 use App\Http\Requests\UpdateServiceRequest;
-use App\Http\Controllers\AppBaseController;
-use App\Repositories\ServiceRepository;
-use Illuminate\Http\Request;
-use Flash;
+// use Flash;
 
 class ServiceController extends AppBaseController
 {
@@ -24,7 +25,7 @@ class ServiceController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $services = $this->serviceRepository->paginate(10);
+        $services = $this->serviceRepository->paginate();
 
         return view('services.index')
             ->with('services', $services);
