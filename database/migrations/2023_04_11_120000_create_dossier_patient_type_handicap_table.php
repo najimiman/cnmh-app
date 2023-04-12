@@ -11,16 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('parents', function (Blueprint $table) {
+        Schema::create('dossier_patient_type_handicap', function (Blueprint $table) {
             $table->id();
-            $table->string('nom');
-            $table->string('prenom');
-            $table->string('sexe');
-            $table->string('telephone');
-            $table->string('email');
-            $table->string('adresse');
-            $table->string('cin');
-            $table->string('remarque');
+            $table->foreignId('dossier_patient_id')->constrained("dossier_patients");
+            $table->foreignId('type_handicap_id')->constrained("type_handicap");
             $table->timestamps();
         });
     }
@@ -30,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('parents');
+        Schema::dropIfExists('dossier_patient_type_handicap');
     }
 };
