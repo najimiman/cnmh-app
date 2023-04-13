@@ -74,3 +74,10 @@
         <p>@lang('models/dossierPatients.plural')</p>
     </a>
 </li>
+
+<li class="nav-item">
+    <a href="{{ route('orientationExternes.index') }}" class="nav-link {{ Request::is('orientationExternes*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-home"></i>
+        <p>@lang('models/orientationExternes.plural')</p>
+    </a>
+</li>
