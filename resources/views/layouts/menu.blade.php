@@ -46,3 +46,10 @@
         <p>@lang('models/members.plural')</p>
     </a>
 </li>
+
+<li class="nav-item">
+    <a href="{{ route('reclamations.index') }}" class="nav-link {{ Request::is('reclamations*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-home"></i>
+        <p>@lang('models/reclamations.plural')</p>
+    </a>
+</li>
