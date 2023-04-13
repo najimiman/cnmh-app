@@ -11,7 +11,7 @@
                 </div>
                 <div class="col-sm-6">
                     <a class="btn btn-default float-right"
-                       href="{{ route('orientationExternes.index') }}">
+                       href="{{ route('orientation-externes.index') }}">
                                                     @lang('crud.back')
                                             </a>
                 </div>

@@ -56,7 +56,7 @@ class RendezVousController extends AppBaseController
 
         Flash::success(__('messages.saved', ['model' => __('models/rendezVouses.singular')]));
 
-        return redirect(route('rendezVouses.index'));
+        return redirect(route('rendez-vouses.index'));
     }
 
     /**
@@ -69,7 +69,7 @@ class RendezVousController extends AppBaseController
         if (empty($rendezVous)) {
             Flash::error(__('models/rendezVouses.singular').' '.__('messages.not_found'));
 
-            return redirect(route('rendezVouses.index'));
+            return redirect(route('rendez-vouses.index'));
         }
 
         return view('rendez_vouses.show')->with('rendezVous', $rendezVous);
@@ -85,7 +85,7 @@ class RendezVousController extends AppBaseController
         if (empty($rendezVous)) {
             Flash::error(__('models/rendezVouses.singular').' '.__('messages.not_found'));
 
-            return redirect(route('rendezVouses.index'));
+            return redirect(route('rendez-vouses.index'));
         }
 
         return view('rendez_vouses.edit')->with('rendezVous', $rendezVous);
@@ -101,14 +101,14 @@ class RendezVousController extends AppBaseController
         if (empty($rendezVous)) {
             Flash::error(__('models/rendezVouses.singular').' '.__('messages.not_found'));
 
-            return redirect(route('rendezVouses.index'));
+            return redirect(route('rendez-vouses.index'));
         }
 
         $rendezVous = $this->rendezVousRepository->update($request->all(), $id);
 
         Flash::success(__('messages.updated', ['model' => __('models/rendezVouses.singular')]));
 
-        return redirect(route('rendezVouses.index'));
+        return redirect(route('rendez-vouses.index'));
     }
 
     /**
@@ -123,13 +123,13 @@ class RendezVousController extends AppBaseController
         if (empty($rendezVous)) {
             Flash::error(__('models/rendezVouses.singular').' '.__('messages.not_found'));
 
-            return redirect(route('rendezVouses.index'));
+            return redirect(route('rendez-vouses.index'));
         }
 
         $this->rendezVousRepository->delete($id);
 
         Flash::success(__('messages.deleted', ['model' => __('models/rendezVouses.singular')]));
 
-        return redirect(route('rendezVouses.index'));
+        return redirect(route('rendez-vouses.index'));
     }
 }

@@ -10,7 +10,7 @@
                 </div>
                 <div class="col-sm-6">
                     <a class="btn btn-primary float-right"
-                       href="{{ route('dossierPatients.create') }}">
+                       href="{{ route('dossier-patients.create') }}">
                          @lang('crud.add_new') Dossier Patient
                     </a>
                 </div>
@@ -55,7 +55,7 @@
         var searchQuery = ''
 
         const search = (query = '', page = 1) => {
-            $.ajax('{{ route('dossierPatients.index') }}', {
+            $.ajax('{{ route('dossier-patients.index') }}', {
                 data: {
                     query: query,
                     page: page

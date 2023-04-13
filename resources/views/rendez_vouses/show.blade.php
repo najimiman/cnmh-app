@@ -11,7 +11,7 @@
                 </div>
                 <div class="col-sm-6">
                     <a class="btn btn-default float-right"
-                       href="{{ route('rendezVouses.index') }}">
+                       href="{{ route('rendez-vouses.index') }}">
                                                     @lang('crud.back')
                                             </a>
                 </div>

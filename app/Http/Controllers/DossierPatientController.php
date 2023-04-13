@@ -56,7 +56,7 @@ class DossierPatientController extends AppBaseController
 
         Flash::success(__('messages.saved', ['model' => __('models/dossierPatients.singular')]));
 
-        return redirect(route('dossierPatients.index'));
+        return redirect(route('dossier-patients.index'));
     }
 
     /**
@@ -69,7 +69,7 @@ class DossierPatientController extends AppBaseController
         if (empty($dossierPatient)) {
             Flash::error(__('models/dossierPatients.singular').' '.__('messages.not_found'));
 
-            return redirect(route('dossierPatients.index'));
+            return redirect(route('dossier-patients.index'));
         }
 
         return view('dossier_patients.show')->with('dossierPatient', $dossierPatient);
@@ -85,7 +85,7 @@ class DossierPatientController extends AppBaseController
         if (empty($dossierPatient)) {
             Flash::error(__('models/dossierPatients.singular').' '.__('messages.not_found'));
 
-            return redirect(route('dossierPatients.index'));
+            return redirect(route('dossier-patients.index'));
         }
 
         return view('dossier_patients.edit')->with('dossierPatient', $dossierPatient);
@@ -101,14 +101,14 @@ class DossierPatientController extends AppBaseController
         if (empty($dossierPatient)) {
             Flash::error(__('models/dossierPatients.singular').' '.__('messages.not_found'));
 
-            return redirect(route('dossierPatients.index'));
+            return redirect(route('dossier-patients.index'));
         }
 
         $dossierPatient = $this->dossierPatientRepository->update($request->all(), $id);
 
         Flash::success(__('messages.updated', ['model' => __('models/dossierPatients.singular')]));
 
-        return redirect(route('dossierPatients.index'));
+        return redirect(route('dossier-patients.index'));
     }
 
     /**
@@ -123,13 +123,13 @@ class DossierPatientController extends AppBaseController
         if (empty($dossierPatient)) {
             Flash::error(__('models/dossierPatients.singular').' '.__('messages.not_found'));
 
-            return redirect(route('dossierPatients.index'));
+            return redirect(route('dossier-patients.index'));
         }
 
         $this->dossierPatientRepository->delete($id);
 
         Flash::success(__('messages.deleted', ['model' => __('models/dossierPatients.singular')]));
 
-        return redirect(route('dossierPatients.index'));
+        return redirect(route('dossier-patients.index'));
     }
 }

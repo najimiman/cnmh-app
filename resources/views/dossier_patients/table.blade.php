@@ -22,11 +22,11 @@
                     <td  style="width: 120px">
                         {!! Form::open(['route' => ['dossierPatients.destroy', $dossierPatient->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>
-                            <a href="{{ route('dossierPatients.show', [$dossierPatient->id]) }}"
+                            <a href="{{ route('dossier-patients.show', [$dossierPatient->id]) }}"
                                class='btn btn-default btn-sm'>
                                 <i class="far fa-eye"></i>
                             </a>
-                            <a href="{{ route('dossierPatients.edit', [$dossierPatient->id]) }}"
+                            <a href="{{ route('dossier-patients.edit', [$dossierPatient->id]) }}"
                                class='btn btn-default btn-sm'>
                                 <i class="far fa-edit"></i>
                             </a>

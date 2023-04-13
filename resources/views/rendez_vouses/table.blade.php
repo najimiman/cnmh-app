@@ -20,11 +20,11 @@
                     <td  style="width: 120px">
                         {!! Form::open(['route' => ['rendezVouses.destroy', $rendezVous->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>
-                            <a href="{{ route('rendezVouses.show', [$rendezVous->id]) }}"
+                            <a href="{{ route('rendez-vouses.show', [$rendezVous->id]) }}"
                                class='btn btn-default btn-sm'>
                                 <i class="far fa-eye"></i>
                             </a>
-                            <a href="{{ route('rendezVouses.edit', [$rendezVous->id]) }}"
+                            <a href="{{ route('rendez-vouses.edit', [$rendezVous->id]) }}"
                                class='btn btn-default btn-sm'>
                                 <i class="far fa-edit"></i>
                             </a>

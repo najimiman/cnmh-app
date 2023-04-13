@@ -29,7 +29,7 @@
 
             <div class="card-footer">
                 {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-                <a href="{{ route('orientationExternes.index') }}" class="btn btn-default"> @lang('crud.cancel') </a>
+                <a href="{{ route('orientation-externes.index') }}" class="btn btn-default"> @lang('crud.cancel') </a>
             </div>
 
             {!! Form::close() !!}

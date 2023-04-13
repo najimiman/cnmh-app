@@ -10,7 +10,7 @@
                 </div>
                 <div class="col-sm-6">
                     <a class="btn btn-primary float-right"
-                       href="{{ route('orientationExternes.create') }}">
+                       href="{{ route('orientation-externes.create') }}">
                          @lang('crud.add_new') Orientation Externe
                     </a>
                 </div>
@@ -55,7 +55,7 @@
         var searchQuery = ''
 
         const search = (query = '', page = 1) => {
-            $.ajax('{{ route('orientationExternes.index') }}', {
+            $.ajax('{{ route('orientation-externes.index') }}', {
                 data: {
                     query: query,
                     page: page

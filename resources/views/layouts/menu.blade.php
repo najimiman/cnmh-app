@@ -69,14 +69,14 @@
 </li>
 
 <li class="nav-item">
-    <a href="{{ route('dossierPatients.index') }}" class="nav-link {{ Request::is('dossierPatients*') ? 'active' : '' }}">
+    <a href="{{ route('dossier-patients.index') }}" class="nav-link {{ Request::is('dossierPatients*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-home"></i>
         <p>@lang('models/dossierPatients.plural')</p>
     </a>
 </li>
 
 <li class="nav-item">
-    <a href="{{ route('orientationExternes.index') }}" class="nav-link {{ Request::is('orientationExternes*') ? 'active' : '' }}">
+    <a href="{{ route('orientation-externes.index') }}" class="nav-link {{ Request::is('orientationExternes*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-home"></i>
         <p>@lang('models/orientationExternes.plural')</p>
     </a>
@@ -90,7 +90,7 @@
 </li>
 
 <li class="nav-item">
-    <a href="{{ route('rendezVouses.index') }}" class="nav-link {{ Request::is('rendezVouses*') ? 'active' : '' }}">
+    <a href="{{ route('rendez-vouses.index') }}" class="nav-link {{ Request::is('rendezVouses*') ? 'active' : '' }}">
         <i class="nav-icon fas fa-home"></i>
         <p>@lang('models/rendezVouses.plural')</p>
     </a>

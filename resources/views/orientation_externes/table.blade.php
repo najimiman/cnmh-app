@@ -22,11 +22,11 @@
                     <td  style="width: 120px">
                         {!! Form::open(['route' => ['orientationExternes.destroy', $orientationExterne->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>
-                            <a href="{{ route('orientationExternes.show', [$orientationExterne->id]) }}"
+                            <a href="{{ route('orientation-externes.show', [$orientationExterne->id]) }}"
                                class='btn btn-default btn-sm'>
                                 <i class="far fa-eye"></i>
                             </a>
-                            <a href="{{ route('orientationExternes.edit', [$orientationExterne->id]) }}"
+                            <a href="{{ route('orientation-externes.edit', [$orientationExterne->id]) }}"
                                class='btn btn-default btn-sm'>
                                 <i class="far fa-edit"></i>
                             </a>

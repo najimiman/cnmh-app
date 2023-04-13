@@ -56,7 +56,7 @@ class OrientationExterneController extends AppBaseController
 
         Flash::success(__('messages.saved', ['model' => __('models/orientationExternes.singular')]));
 
-        return redirect(route('orientationExternes.index'));
+        return redirect(route('orientation-externes.index'));
     }
 
     /**
@@ -69,7 +69,7 @@ class OrientationExterneController extends AppBaseController
         if (empty($orientationExterne)) {
             Flash::error(__('models/orientationExternes.singular').' '.__('messages.not_found'));
 
-            return redirect(route('orientationExternes.index'));
+            return redirect(route('orientation-externes.index'));
         }
 
         return view('orientation_externes.show')->with('orientationExterne', $orientationExterne);
@@ -85,7 +85,7 @@ class OrientationExterneController extends AppBaseController
         if (empty($orientationExterne)) {
             Flash::error(__('models/orientationExternes.singular').' '.__('messages.not_found'));
 
-            return redirect(route('orientationExternes.index'));
+            return redirect(route('orientation-externes.index'));
         }
 
         return view('orientation_externes.edit')->with('orientationExterne', $orientationExterne);
@@ -101,14 +101,14 @@ class OrientationExterneController extends AppBaseController
         if (empty($orientationExterne)) {
             Flash::error(__('models/orientationExternes.singular').' '.__('messages.not_found'));
 
-            return redirect(route('orientationExternes.index'));
+            return redirect(route('orientation-externes.index'));
         }
 
         $orientationExterne = $this->orientationExterneRepository->update($request->all(), $id);
 
         Flash::success(__('messages.updated', ['model' => __('models/orientationExternes.singular')]));
 
-        return redirect(route('orientationExternes.index'));
+        return redirect(route('orientation-externes.index'));
     }
 
     /**
@@ -123,13 +123,13 @@ class OrientationExterneController extends AppBaseController
         if (empty($orientationExterne)) {
             Flash::error(__('models/orientationExternes.singular').' '.__('messages.not_found'));
 
-            return redirect(route('orientationExternes.index'));
+            return redirect(route('orientation-externes.index'));
         }
 
         $this->orientationExterneRepository->delete($id);
 
         Flash::success(__('messages.deleted', ['model' => __('models/orientationExternes.singular')]));
 
-        return redirect(route('orientationExternes.index'));
+        return redirect(route('orientation-externes.index'));
     }
 }
