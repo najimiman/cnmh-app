@@ -1,3 +1,9 @@
+<!-- Summernote CSS - CDN Link -->
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+<!-- //Summernote CSS - CDN Link -->
+{{-- link add --}}
+<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
+
 @extends('layouts.app')
 
 @section('content')
@@ -20,9 +26,7 @@
                     <div class="col-md-12  ">
                         <div class="card card-primary card-create ">
                             <div class="card-header">
-                                <h3 class="card-title"> @lang('crud.create') un nouveau
-                                    {{ strtolower(__('models/employes.singular')) }}
-                                </h3>
+                                <h3 class="card-title">@lang('crud.create') @lang('models/services.singular')</h3>
                             </div>
                             <div class="card-body ">
                                 {!! Form::open(['route' => 'services.store']) !!}
@@ -41,8 +45,7 @@
 
                                     </div>
                                     <div class="ml-auto p-2 bd-highlight">
-                                        <a href="{{ route('services.index') }}" class="btn btn-secondary"> @lang('crud.cancel')
-                                        </a>
+                                        <a href="{{ route('services.index') }}" class="btn btn-secondary"> @lang('crud.cancel') </a>
                                     </div>
 
                                 </div>
@@ -57,16 +60,24 @@
         </div>
         <!-- /.container-fluid -->
     </section>
-@endsection
 
-@push('page_scripts')
+    {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Summernote JS - CDN Link -->
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+    {{-- link add --}}
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js" defer></script>
     <script>
         $(document).ready(function() {
             $('#description').summernote({
-                placeholder: '{{ __("models/service.summerNote-placeholder") }}',
+                placeholder: 'Saisir une description du service.',
+
                 height: 100,
             });
             $('.dropdown-toggle').dropdown();
         });
     </script>
-@endpush
+@endsection
