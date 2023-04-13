@@ -1,14 +1,5 @@
 <div class="card-header">
     <div class="col-sm-12 d-flex justify-content-between p-0">
-        <div class="d-flex justify-content-between">
-            <select   class="form-select  btn-default dropdown-toggle ml-2 filter" aria-label="Default select example">
-                <option selected>filtre</option>
-                @foreach ($EtatCivil as $value )
-
-                <option value="{{$value->id}}">{{$value->nom}}</option>
-                @endforeach
-            </select>
-        </div>
         <!-- SEARCH FORM -->
         <form class="form-inline ml-3">
             <div class="input-group input-group-sm">

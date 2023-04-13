@@ -23,11 +23,6 @@ class EmployeFactory extends Factory
      */
     public function definition()
     {
-        $etatCivil = EtatCivil::first();
-        if (!$etatCivil) {
-            $etatCivil = EtatCivil::factory()->create();
-        }
-
         return [
             'nom' => $this->faker->name,
             'prenom' => $this->faker->name,
