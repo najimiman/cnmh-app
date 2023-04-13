@@ -13,19 +13,18 @@ return new class extends Migration
     {
         Schema::create('employes', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('fonction_id')->nullable();
             $table->string('nom');
             $table->string('prenom');
-            $table->string('email');
-            $table->string('telephone');
-            $table->string('adresse');
-            $table->date('date_naissance');
-            $table->string('lieu_naissance');
-            $table->string('sexe');
-            $table->string('cin');
-            $table->string('fonction');
-            $table->date('date_embauche');
+            $table->string('email')->nullable();
+            $table->string('telephone')->nullable();
+            $table->string('adresse')->nullable();
+            $table->date('date_naissance')->nullable();
+            $table->string('sexe')->nullable();
+            $table->string('cin')->nullable();
+            $table->date('date_embauche')->nullable();
             $table->date('date_depart')->nullable();
-            $table->boolean('statut');
+            $table->foreign('fonction_id')->references('id')->on('fonctions');
             $table->timestamps();
         });
     }
