@@ -60,3 +60,10 @@
         <p>@lang('models/fonctions.plural')</p>
     </a>
 </li>
+
+<li class="nav-item">
+    <a href="{{ route('patients.index') }}" class="nav-link {{ Request::is('patients*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-home"></i>
+        <p>@lang('models/patients.plural')</p>
+    </a>
+</li>

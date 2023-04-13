@@ -9,9 +9,13 @@ php artisan infyom:scaffold EtatCivil --fromTable --table=etat_civil
 php artisan infyom:scaffold Employe --fromTable --table=employe
 
 php artisan infyom:scaffold Reclamation --fromTable --table=reclamations
-
 php artisan infyom:scaffold Fonction --fromTable --table=fonctions
+php artisan infyom:scaffold Patient --fromTable --table=patients
+php artisan infyom:scaffold DossierPatient --fromTable --table=dossier_patients
+php artisan infyom:scaffold OrientationExterne --fromTable --table=orientation_externes
+php artisan infyom:scaffold Consultation --fromTable --table=consultations
+php artisan infyom:scaffold RendezVous --fromTable --table=rendez_vous
 
-
+php artisan infyom:scaffold Parent --fromTable --table=parents // Parent is a reserved word.
 
 ````
