@@ -1,15 +1,4 @@
-<!-- Etat Civil Id Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('etat_civil_id', __('models/etat_civils.singular').':') !!}
-    {{-- {!! Form::number('etat_civil_id', null, ['class' => 'form-control']) !!} --}}
-    <select class="form-control" name="etat_civil_id" id="etat_civil_id">
-        @foreach ($EtatCivil as $value)
-        <option value="{{$value->id}}">{{$value->nom}} </option>
-        @endforeach
-    </select>
-    {{-- {!! Form::select('etat_civil_id', [$value->id => $value->nom]  , null, ['class' => 'form-control']) !!} --}}
 
-</div>
 
 <!-- Nom Field -->
 <div class="form-group col-sm-6">
@@ -53,18 +42,6 @@
     </script>
 @endpush
 
-<!-- Lieu Naissance Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('lieu_naissance', __('models/employes.fields.lieu_naissance').':') !!}
-    {!! Form::text('lieu_naissance', null, ['class' => 'form-control', 'required', 'maxlength' => 255, 'maxlength' => 255]) !!}
-</div>
-
-<!-- Sexe Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('sexe', __('models/employes.fields.sexe').':') !!}
-    {!! Form::text('sexe', null, ['class' => 'form-control', 'required', 'maxlength' => 255, 'maxlength' => 255]) !!}
-</div>
-
 <!-- Cin Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('cin', __('models/employes.fields.cin').':') !!}
@@ -89,11 +66,6 @@
     </script>
 @endpush
 
-<!-- Date Depart Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('date_depart', __('models/employes.fields.date_depart').':') !!}
-    {!! Form::date('date_depart', null, ['class' => 'form-control','id'=>'date_depart']) !!}
-</div>
 
 @push('page_scripts')
     <script type="text/javascript">
@@ -101,11 +73,4 @@
     </script>
 @endpush
 
-<!-- Statut Field -->
-<div class="form-group col-sm-6">
-    <div class="form-check">
-        {!! Form::hidden('statut', 0, ['class' => 'form-check-input']) !!}
-        {!! Form::checkbox('statut', '1', null, ['class' => 'form-check-input']) !!}
-        {!! Form::label('statut', 'Statut', ['class' => 'form-check-label']) !!}
-    </div>
-</div>
+

@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('service_medcin_generals', function (Blueprint $table) {
+        Schema::create('couverture_medical', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_service')->constrained('services');
-            $table->foreignId('id_consultation')->constrained('consultation');
+            $table->string('nom');
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('service_medcin_generals');
+        Schema::dropIfExists('couverture_medical');
     }
 };

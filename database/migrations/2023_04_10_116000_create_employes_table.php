@@ -13,21 +13,15 @@ return new class extends Migration
     {
         Schema::create('employes', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('etat_civil_id')->nullable();
             $table->string('nom');
             $table->string('prenom');
             $table->string('email');
             $table->string('telephone');
             $table->string('adresse');
             $table->date('date_naissance');
-            $table->string('lieu_naissance');
-            $table->string('sexe');
             $table->string('cin');
             $table->string('fonction');
             $table->date('date_embauche');
-            $table->date('date_depart')->nullable();
-            $table->boolean('statut');
-            $table->foreign('etat_civil_id')->references('id')->on('etat_civil')->onDelete('set null');
             $table->timestamps();
         });
     }

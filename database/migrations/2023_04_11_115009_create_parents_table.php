@@ -11,21 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('patients', function (Blueprint $table) {
+        Schema::create('parents', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('parent_id')->nullable();
-            $table->unsignedBigInteger('niveau_scolaire_id')->nullable();
+            $table->unsignedBigInteger('etat_civil_id')->nullable();
             $table->string('nom');
             $table->string('prenom');
+            $table->string('sexe');
             $table->string('telephone');
-            $table->string('cin');
             $table->string('email');
-            $table->string('image');
             $table->string('adresse');
-            $table->text('remarque');
-            $table->foreign('parent_id')->references('id')->on('parents');
-            $table->foreign('niveau_scolaire_id')->references('id')->on('niveau_scolaires');
-
+            $table->string('cin');
+            $table->string('remarque');
+            $table->foreign('etat_civil_id')->references('id')->on('etat_civil')->onDelete('set null');
             $table->timestamps();
         });
     }
@@ -35,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('patients');
+        Schema::dropIfExists('parents');
     }
 };
