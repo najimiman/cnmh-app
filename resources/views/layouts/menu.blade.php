@@ -88,3 +88,10 @@
         <p>@lang('models/consultations.plural')</p>
     </a>
 </li>
+
+<li class="nav-item">
+    <a href="{{ route('rendezVouses.index') }}" class="nav-link {{ Request::is('rendezVouses*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-home"></i>
+        <p>@lang('models/rendezVouses.plural')</p>
+    </a>
+</li>
