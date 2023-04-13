@@ -1,6 +1,4 @@
- <!-- Summernote CSS - CDN Link -->
- <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
- <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+
 @extends('layouts.app')
 
 @section('content')
@@ -80,19 +78,19 @@
 
         </div>
     </div> --}}
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> --}}
     {{-- <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script> --}}
-<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js" defer></script>
-        <script>
-            $(document).ready(function() {
-          $('#description').summernote({
-        placeholder: 'Saisir une description du service.',
+{{-- <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js" defer></script> --}}
        
-        height: 100
-      });
-            $('.dropdown-toggle').dropdown();
-        }); 
-        </script>
 @endsection
- 
+ @push('page_scripts')
+ <script>
+    $(document).ready(function() {
+  $('#description').summernote({
+placeholder: '{{__("models/typeHandicaps.summerNote-placeholder")}}',
+});
+    $('.dropdown-toggle').dropdown();
+}); 
+</script>
+ @endpush
