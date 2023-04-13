@@ -1,8 +1,5 @@
 @extends('layouts.app')
-@push('third_party_scripts')
-    <!-- Summernote CSS - CDN Link -->
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
-@endpush
+
 @section('content')
     <section class="content-header">
         <div class="container-fluid">
@@ -58,23 +55,15 @@
             </div>
             <!-- /.row -->
         </div>
-        <input type="hidden" class="desc" value="@lang('models/service.summerNote-placeholder')">
         <!-- /.container-fluid -->
     </section>
 @endsection
-@push('third_party_scripts')
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
-        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js" defer></script>
-@endpush
+
 @push('page_scripts')
     <script>
         $(document).ready(function() {
-           desc =  $(".desc").val();
             $('#description').summernote({
-                placeholder: desc,
-
+                placeholder: '{{ __("models/service.summerNote-placeholder") }}',
                 height: 100,
             });
             $('.dropdown-toggle').dropdown();
