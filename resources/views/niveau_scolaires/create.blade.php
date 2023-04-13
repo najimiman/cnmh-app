@@ -1,8 +1,4 @@
 
-<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
- <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
-
-
 @extends('layouts.app')
 
 @section('content')
@@ -36,7 +32,6 @@
                                     @include('niveau_scolaires.fields')
                                 </div>
 
-
                             </div>
 
                             <div class="card-footer">
@@ -52,7 +47,6 @@
                                 </div>
                             </div>
                           
-
                             {!! Form::close() !!}
                         </div>
                     </div>
@@ -63,26 +57,20 @@
         </div>
         <!-- /.container-fluid -->
     </section>
-
 @endsection
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    {{-- <!-- Summernote JS - CDN Link -->
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script> --}}
-    {{-- link add --}}
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js" defer></script>
-    <script>
-        $(document).ready(function() {
-            $('#description').summernote({
-                placeholder: 'Saisir une description du service.',
-
-                height: 100,
-            });
-            $('.dropdown-toggle').dropdown();
+@push('page_scripts')
+<script>
+    $(document).ready(function() {
+        $('#description').summernote({
+            placeholder: 'Saisir une description du service.',
+            height: 100,
         });
-    </script>
+        $('.dropdown-toggle').dropdown();
+    });
+</script>
+@endpush
+  
 
 
 
