@@ -24,7 +24,7 @@ class TypeHandicapController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $typeHandicaps = $this->typeHandicapRepository->paginate(10);
+        $typeHandicaps = $this->typeHandicapRepository->paginate();
 
         return view('type_handicaps.index')
             ->with('typeHandicaps', $typeHandicaps);

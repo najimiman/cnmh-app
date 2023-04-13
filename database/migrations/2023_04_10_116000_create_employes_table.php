@@ -16,15 +16,13 @@ return new class extends Migration
             $table->unsignedBigInteger('fonction_id')->nullable();
             $table->string('nom');
             $table->string('prenom');
-            $table->string('email')->nullable();
-            $table->string('telephone')->nullable();
-            $table->string('adresse')->nullable();
-            $table->date('date_naissance')->nullable();
-            $table->string('sexe')->nullable();
-            $table->string('cin')->nullable();
-            $table->date('date_embauche')->nullable();
-            $table->date('date_depart')->nullable();
-            $table->foreign('fonction_id')->references('id')->on('fonctions');
+            $table->string('email');
+            $table->string('telephone');
+            $table->string('adresse');
+            $table->date('date_naissance');
+            $table->string('cin');
+            $table->string('fonction');
+            $table->date('date_embauche');
             $table->timestamps();
         });
     }
