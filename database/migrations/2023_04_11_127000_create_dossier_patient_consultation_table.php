@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('couverture_medical', function (Blueprint $table) {
+        Schema::create('dossier_patient_consultation', function (Blueprint $table) {
             $table->id();
-            $table->string('nom');
-            $table->string('description')->nullable();
+            $table->foreignId('dossier_patient_id')->constrained('dossier_patients');
+            $table->foreignId('consultation_id')->constrained('consultations');;
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('couverture_medical');
+        Schema::dropIfExists('dossier_patient_cunsultation');
     }
 };

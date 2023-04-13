@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // type handicap provisoire par le père
         Schema::create('dossier_patient_type_handicap', function (Blueprint $table) {
             $table->id();
             $table->foreignId('dossier_patient_id')->constrained("dossier_patients");
-            $table->foreignId('type_handicap_id')->constrained("type_handicap");
+            $table->foreignId('type_handicap_id')->constrained("type_handicaps");
             $table->timestamps();
         });
     }

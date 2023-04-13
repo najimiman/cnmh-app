@@ -11,13 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('rendez_vous', function (Blueprint $table) {
-
+        Schema::create('couverture_medicals', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_consultation')->constrained('consultations');
-            $table->dateTime("date_rendez_vous");
-            $table->string('etat');
-            $table->text('remarques')->nullable();
+            $table->string('nom');
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('rendez_vous');
+        Schema::dropIfExists('couverture_medicals');
     }
 };

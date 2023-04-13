@@ -14,14 +14,11 @@ return new class extends Migration
         Schema::create('orientation_externes', function (Blueprint $table) {
 
             $table->id();
-            // foregin key with constrained keywords
             $table->foreignId('dossier_patient_id')->constrained('dossier_patients');
-            $table->foreignId('service_id')->constrained('service');
+            $table->foreignId('service_id')->constrained('services');
             $table->string('objet');
-            $table->string('description');
-            $table->string('remarque');
+            $table->text('description');
             $table->date("date_orientation");
-
             $table->timestamps();
         });
     }

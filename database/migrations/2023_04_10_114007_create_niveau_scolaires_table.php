@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('type_handicap', function (Blueprint $table) {
+        Schema::create('niveau_scolaires', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
-            $table->string('description')->nullable();
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('type_handicap');
+        Schema::dropIfExists('niveau_scolaires');
     }
 };

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('dossier_patients', function (Blueprint $table) {
             $table->id();
             $table->foreignId('patient_id')->constrained('patients');
-            $table->foreignId('couverture_medical_id')->constrained('couverture_medical');
+            $table->foreignId('couverture_medical_id')->constrained('couverture_medicals');
             $table->integer('numero_dossier');
             $table->string('etat');
             $table->date('date_enregsitrement');

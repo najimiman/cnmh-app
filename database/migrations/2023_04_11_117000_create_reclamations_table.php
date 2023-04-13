@@ -15,8 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('patients_id')->constrained('patients');
             $table->string('objet');
-            $table->string('description');
-            $table->string('remarques');
+            $table->text('reclamation');
             $table->dateTime('date_reclamation');
             $table->timestamps();
         });
