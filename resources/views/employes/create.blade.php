@@ -44,7 +44,7 @@
 
                         </div>
                         <div class="ml-auto p-2 bd-highlight">
-                            <a href="{{ route('employes.index') }}" class="btn btn-default"> @lang('crud.cancel') </a>
+                            <a href="{{ route('employes.index') }}" class="btn btn-secondary"> @lang('crud.cancel') </a>
                         </div>
 
                     </div>
