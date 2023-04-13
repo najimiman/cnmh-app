@@ -53,3 +53,10 @@
         <p>@lang('models/reclamations.plural')</p>
     </a>
 </li>
+
+<li class="nav-item">
+    <a href="{{ route('fonctions.index') }}" class="nav-link {{ Request::is('fonctions*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-home"></i>
+        <p>@lang('models/fonctions.plural')</p>
+    </a>
+</li>

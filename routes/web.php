@@ -32,3 +32,4 @@ Route::resource('niveauScolaires', App\Http\Controllers\NiveauScolaireController
 Route::resource('etatCivils', App\Http\Controllers\EtatCivilController::class);
 Route::resource('employes', App\Http\Controllers\EmployeController::class);
 Route::resource('reclamations', App\Http\Controllers\ReclamationController::class);
+Route::resource('fonctions', App\Http\Controllers\FonctionController::class);
