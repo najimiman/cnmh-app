@@ -14,8 +14,8 @@ return new class extends Migration
         // Orientation médicale
         Schema::create('consultation_service', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_service')->constrained('services');
-            $table->foreignId('id_consultation')->constrained('consultations');
+            $table->foreignId('service_id')->constrained('services');
+            $table->foreignId('consultation_id')->constrained('consultations');
             $table->timestamps();
         });
     }

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('reclamations', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('patients_id')->constrained('patients');
+            $table->foreignId('patient_id')->constrained('patients');
             $table->string('objet');
             $table->text('reclamation');
             $table->dateTime('date_reclamation');
