@@ -67,3 +67,10 @@
         <p>@lang('models/patients.plural')</p>
     </a>
 </li>
+
+<li class="nav-item">
+    <a href="{{ route('dossierPatients.index') }}" class="nav-link {{ Request::is('dossierPatients*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-home"></i>
+        <p>@lang('models/dossierPatients.plural')</p>
+    </a>
+</li>

@@ -34,3 +34,4 @@ Route::resource('employes', App\Http\Controllers\EmployeController::class);
 Route::resource('reclamations', App\Http\Controllers\ReclamationController::class);
 Route::resource('fonctions', App\Http\Controllers\FonctionController::class);
 Route::resource('patients', App\Http\Controllers\PatientController::class);
+Route::resource('dossier-patients', App\Http\Controllers\DossierPatientController::class);
