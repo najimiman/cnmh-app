@@ -81,3 +81,10 @@
         <p>@lang('models/orientationExternes.plural')</p>
     </a>
 </li>
+
+<li class="nav-item">
+    <a href="{{ route('consultations.index') }}" class="nav-link {{ Request::is('consultations*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-home"></i>
+        <p>@lang('models/consultations.plural')</p>
+    </a>
+</li>
