@@ -24,7 +24,7 @@ class NiveauScolaireController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $niveauScolaires = $this->niveauScolaireRepository->paginate(10);
+        $niveauScolaires = $this->niveauScolaireRepository->paginate();
 
         return view('niveau_scolaires.index')
             ->with('niveauScolaires', $niveauScolaires);

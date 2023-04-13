@@ -14,6 +14,7 @@ class CouvertureMedicalTableSeeder extends Seeder
     public function run()
     {
         \App\Models\CouvertureMedical::factory(50)->create();
+       
 
     }
 }
