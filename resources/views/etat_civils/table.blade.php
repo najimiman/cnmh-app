@@ -1,18 +1,33 @@
 <div class="card-header">
-    <div class="col-sm-12 d-flex justify-content-between p-0">
-        <div class="d-flex justify-content-between">
+    <div class="col-sm-12 d-flex justify-content-sart p-3">
+        {{-- <div class="d-flex justify-content-between">
             <select   class="form-select  btn-default dropdown-toggle ml-2 filter" aria-label="Default select example">
                 <option selected>Parents</option>
                 <option value="1">One</option>
                 <option value="2">Two</option>
                 <option value="3">Three</option>
             </select>
+        </div> --}}
+        {{-- <div class="col-sm-6">
+            <a class="btn btn-primary float-right" href="{{ route('etatCivils.create') }}">
+                @lang('crud.add_new') @lang('models/etatCivils.singular')
+            </a>
+        </div> --}}
+        <a href="{{ route('etatCivils.create') }}" class="btn btn-primary">
+            <i class="fa fa-plus"></i>
+        </a>
+    </div>
+</div>
+{{-- 
+<div class="card-header">
+    <div class="col-sm-12 d-flex justify-content-between p-3">
+        <div class="d-flex justify-content-between">
+            <a href="./TypeServiceForm.php" class="btn btn-primary"><i class="fa fa-plus"></i> </a>
         </div>
         <!-- SEARCH FORM -->
         <form class="form-inline ml-3">
             <div class="input-group input-group-sm">
-                <input type="search" class="form-control form-control-lg"
-                    placeholder="Recherche">
+                <input type="search" class="form-control form-control-lg" placeholder="Type your keywords here">
                 <div class="input-group-append">
                     <button type="submit" class="btn btn-lg btn-default">
                         <i class="fa fa-search"></i>
@@ -21,7 +36,7 @@
             </div>
         </form>
     </div>
-</div>
+</div> --}}
 
 <div class="card-body p-0">
     <div class="table-responsive">
@@ -36,12 +51,13 @@
             <tbody>
                 @foreach ($etatCivils as $etatCivil)
                     <tr>
-                        <td>{{ $etatCivil->nom }}</td>
-                        <td>{!!$etatCivil->description !!}</td>
+                        <td>{!! $etatCivil->nom !!}</td>
+                        <td>{!! $etatCivil->description !!}</td>
                         <td style="width: 120px">
                             {!! Form::open(['route' => ['etatCivils.destroy', $etatCivil->id], 'method' => 'delete']) !!}
                             <div class='btn-group'>
-                                <a href="{{ route('etatCivils.show', [$etatCivil->id]) }}" class='btn btn-default btn-sm'>
+                                <a href="{{ route('etatCivils.show', [$etatCivil->id]) }}"
+                                    class='btn btn-default btn-sm'>
                                     <i class="far fa-eye"></i>
                                 </a>
                                 <a href="{{ route('etatCivils.edit', [$etatCivil->id]) }}"
@@ -75,5 +91,5 @@
             </button>
         </div>
     </div>
-
 </div>
+

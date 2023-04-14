@@ -24,10 +24,21 @@ class EtatCivilController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $etatCivils = $this->etatCivilRepository->paginate();
+        // $etatCivils = $this->etatCivilRepository->paginate();
+
+        // return view('etat_civils.index')
+        //     ->with('etatCivils', $etatCivils);
+
+        $query = $request->input('query');
+        $fonctions = $this->etatCivilRepository->paginate($query);
+
+        if ($request->ajax()) {
+            return view('etatCivils.table')
+                ->with('etatCivils', $fonctions);
+        }
 
         return view('etat_civils.index')
-            ->with('etatCivils', $etatCivils);
+            ->with('etatCivils', $fonctions);
     }
 
     /**
@@ -60,7 +71,7 @@ class EtatCivilController extends AppBaseController
         $etatCivil = $this->etatCivilRepository->find($id);
 
         if (empty($etatCivil)) {
-            Flash::error(__('models/etatCivils.singular').' '.__('messages.not_found'));
+            Flash::error(__('models/etatCivils.singular') . ' ' . __('messages.not_found'));
 
             return redirect(route('etatCivils.index'));
         }
@@ -76,7 +87,7 @@ class EtatCivilController extends AppBaseController
         $etatCivil = $this->etatCivilRepository->find($id);
 
         if (empty($etatCivil)) {
-            Flash::error(__('models/etatCivils.singular').' '.__('messages.not_found'));
+            Flash::error(__('models/etatCivils.singular') . ' ' . __('messages.not_found'));
 
             return redirect(route('etatCivils.index'));
         }
@@ -92,7 +103,7 @@ class EtatCivilController extends AppBaseController
         $etatCivil = $this->etatCivilRepository->find($id);
 
         if (empty($etatCivil)) {
-            Flash::error(__('models/etatCivils.singular').' '.__('messages.not_found'));
+            Flash::error(__('models/etatCivils.singular') . ' ' . __('messages.not_found'));
 
             return redirect(route('etatCivils.index'));
         }
@@ -114,7 +125,7 @@ class EtatCivilController extends AppBaseController
         $etatCivil = $this->etatCivilRepository->find($id);
 
         if (empty($etatCivil)) {
-            Flash::error(__('models/etatCivils.singular').' '.__('messages.not_found'));
+            Flash::error(__('models/etatCivils.singular') . ' ' . __('messages.not_found'));
 
             return redirect(route('etatCivils.index'));
         }
