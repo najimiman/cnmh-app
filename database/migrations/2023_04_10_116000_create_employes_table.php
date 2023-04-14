@@ -21,7 +21,6 @@ return new class extends Migration
             $table->string('adresse');
             $table->date('date_naissance');
             $table->string('cin');
-            $table->string('fonction');
             $table->date('date_embauche');
             $table->timestamps();
         });

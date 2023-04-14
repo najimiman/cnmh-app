@@ -15,7 +15,7 @@ class EmployeRepository extends BaseRepository
         'adresse',
         'date_naissance',
         'cin',
-        'fonction',
+        'fonction_id',
         'date_embauche',
     ];
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateEmployeRequest;
 use App\Http\Requests\UpdateEmployeRequest;
 use App\Http\Controllers\AppBaseController;
+use App\Models\Fonction;
 use App\Repositories\EmployeRepository;
 use Illuminate\Http\Request;
 use Flash;
@@ -25,15 +26,18 @@ class EmployeController extends AppBaseController
     public function index(Request $request)
     {
         $employes = $this->employeRepository->paginate(10);
-        return view('employes.index', compact("employes"));
-    }
+         $function = Fonction::all();
+         return view('employes.index', compact("employes","function"));
+        }
 
-    /**
-     * Show the form for creating a new Employe.
-     */
-    public function create()
-    {
-        return view('employes.create');
+        /**
+         * Show the form for creating a new Employe.
+         */
+        public function create()
+        {
+
+            $function = Fonction::all();
+            return view('employes.create',compact("function"));
     }
 
     /**
