@@ -25,20 +25,19 @@ class EtatCivilController extends AppBaseController
     public function index(Request $request)
     {
         // $etatCivils = $this->etatCivilRepository->paginate();
-
         // return view('etat_civils.index')
         //     ->with('etatCivils', $etatCivils);
 
         $query = $request->input('query');
-        $fonctions = $this->etatCivilRepository->paginate($query);
+        $etatCivils = $this->etatCivilRepository->paginate($query);
 
         if ($request->ajax()) {
-            return view('etatCivils.table')
-                ->with('etatCivils', $fonctions);
+            return view('etat_civils.table')
+                ->with('etatCivils', $etatCivils);
         }
 
         return view('etat_civils.index')
-            ->with('etatCivils', $fonctions);
+            ->with('etatCivils', $etatCivils);
     }
 
     /**

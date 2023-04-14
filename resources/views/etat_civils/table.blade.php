@@ -18,25 +18,6 @@
         </a>
     </div>
 </div>
-{{-- 
-<div class="card-header">
-    <div class="col-sm-12 d-flex justify-content-between p-3">
-        <div class="d-flex justify-content-between">
-            <a href="./TypeServiceForm.php" class="btn btn-primary"><i class="fa fa-plus"></i> </a>
-        </div>
-        <!-- SEARCH FORM -->
-        <form class="form-inline ml-3">
-            <div class="input-group input-group-sm">
-                <input type="search" class="form-control form-control-lg" placeholder="Type your keywords here">
-                <div class="input-group-append">
-                    <button type="submit" class="btn btn-lg btn-default">
-                        <i class="fa fa-search"></i>
-                    </button>
-                </div>
-            </div>
-        </form>
-    </div>
-</div> --}}
 
 <div class="card-body p-0">
     <div class="table-responsive">

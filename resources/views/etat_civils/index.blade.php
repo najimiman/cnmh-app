@@ -46,9 +46,8 @@
     <script>
         const tableContainer = $('#table-container')
         var searchQuery = ''
-
         const search = (query = '', page = 1) => {
-            $.ajax('{{ route('fonctions.index') }}', {
+            $.ajax('{{ route('etatCivils.index') }}', {
                 data: {
                     query: query,
                     page: page
@@ -57,12 +56,10 @@
             })
             history.pushState(null, null, '?query=' + query + '&page=' + page)
         }
-
         const updateTable = (html) => {
             tableContainer.html(html)
             updatePaginationLinks()
         }
-
         const updatePaginationLinks = () => {
             $('button[page-number]').each(function() {
                 $(this).on('click', function() {
@@ -71,7 +68,6 @@
                 })
             })
         }
-
         $(document).ready(() => {
             $('[type="search"]').on('input', function() {
                 searchQuery = $(this).val()
