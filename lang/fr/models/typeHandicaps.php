@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'singular' => 'typeHandicaps',
-    'plural' => 'typeHandicaps',
+    'singular' => "Type d'handicap",
+    'plural' => "Types d'handicap",
     'fields' => [
     'id' => 'Id',
     'nom' => 'Nom',
@@ -10,4 +10,5 @@ return [
     'created_at' => 'Créé le',
     'updated_at' => 'Mis à jour le',
     ],
+    'summerNote-placeholder'=>'Saisir une description du service.',
 ];

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('parents', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('etat_civil_id')->nullable();
+            $table->unsignedBigInteger('etat_civil_id');
             $table->string('nom');
             $table->string('prenom');
             $table->string('sexe');
@@ -21,8 +21,8 @@ return new class extends Migration
             $table->string('email');
             $table->string('adresse');
             $table->string('cin');
-            $table->string('remarque');
-            $table->foreign('etat_civil_id')->references('id')->on('etat_civil')->onDelete('set null');
+            $table->text('remarques')->nullable();
+            $table->foreign('etat_civil_id')->references('id')->on('etat_civils');
             $table->timestamps();
         });
     }

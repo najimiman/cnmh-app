@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('consultations', function (Blueprint $table) {
             $table->id();
+            // etat
+            $table->dateTime('date_enregistrement');
+            $table->dateTime('date_consultation');
+            $table->text('observation')->nullable();
+            $table->text('diagnostic')->nullable();
+            $table->text('bilan')->nullable();        
             $table->timestamps();
         });
     }

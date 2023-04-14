@@ -1,8 +1,3 @@
-<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
-<!-- //Summernote CSS - CDN Link -->
-{{-- link add --}}
-<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
-
 
 @extends('layouts.app')
 
@@ -28,7 +23,7 @@
                     <div class="col-md-12  ">
                         <div class="card card-primary card-create ">
                             <div class="card-header">
-                                <h3 class="card-title"> @lang('crud.create') @lang('models/niveauScolaires.singular')</h3>
+                                <h3 class="card-title"> @lang('crud.create') un  @lang('models/niveauScolaires.singular')</h3>
                             </div>
                             <div class="card-body">
                                 {!! Form::open(['route' => 'niveauScolaires.store']) !!}
@@ -36,7 +31,6 @@
                                 <div class="row">
                                     @include('niveau_scolaires.fields')
                                 </div>
-
 
                             </div>
 
@@ -53,7 +47,6 @@
                                 </div>
                             </div>
                           
-
                             {!! Form::close() !!}
                         </div>
                     </div>
@@ -64,24 +57,22 @@
         </div>
         <!-- /.container-fluid -->
     </section>
-
 @endsection
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Summernote JS - CDN Link -->
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
-    {{-- link add --}}
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
-        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote.js" defer></script>
-    <script>
-        $(document).ready(function() {
-            $('#description').summernote({
-                placeholder: 'Saisir une description du service.',
-
-                height: 100,
-            });
-            $('.dropdown-toggle').dropdown();
+@push('page_scripts')
+<script>
+    $(document).ready(function() {
+        $('#description').summernote({
+            placeholder: 'Saisir une description du service.',
+            height: 100,
         });
-    </script>
+        $('.dropdown-toggle').dropdown();
+    });
+</script>
+@endpush
+  
+
+
+
+
+ 

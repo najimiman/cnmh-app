@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateEmployeRequest;
 use App\Http\Requests\UpdateEmployeRequest;
 use App\Http\Controllers\AppBaseController;
-use App\Models\EtatCivil;
 use App\Repositories\EmployeRepository;
 use Illuminate\Http\Request;
 use Flash;
@@ -26,8 +25,7 @@ class EmployeController extends AppBaseController
     public function index(Request $request)
     {
         $employes = $this->employeRepository->paginate(10);
-        $EtatCivil = EtatCivil::all();
-        return view('employes.index', compact("employes", "EtatCivil"));
+        return view('employes.index', compact("employes"));
     }
 
     /**
@@ -35,8 +33,7 @@ class EmployeController extends AppBaseController
      */
     public function create()
     {
-        $EtatCivil = EtatCivil::all();
-        return view('employes.create', compact('EtatCivil'));
+        return view('employes.create');
     }
 
     /**

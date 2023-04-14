@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
+        // Service demandé
         Schema::create('dossier_patient_service', function (Blueprint $table) {
             $table->id();
             $table->foreignId('dossier_patient_id')->constrained('dossier_patients');
-            $table->foreignId('service_id')->constrained('service');
+            $table->foreignId('service_id')->constrained('services');
             $table->timestamps();
         });
     }
