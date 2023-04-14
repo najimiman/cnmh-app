@@ -16,7 +16,9 @@
                     <div class="col-md-12  ">
                         <div class="card card-primary card-create ">
                             <div class="card-header">
-                                <h3 class="card-title">@lang('crud.create') @lang('models/services.singular')</h3>
+                                <h3 class="card-title"> @lang('crud.create')
+                                    {{ strtolower(__('models/service.singular')) }}
+                                </h3>
                             </div>
                             <div class="card-body ">
                                 {!! Form::open(['route' => 'services.store']) !!}
@@ -53,7 +55,6 @@
     <script>
         $(document).ready(function() {
             $('#description').summernote({
-                placeholder: '{{__("models/services.summerNote-placeholder")}}',
                 height: 100,
             });
             $('.dropdown-toggle').dropdown();

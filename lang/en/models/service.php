@@ -1,8 +1,9 @@
 <?php
 
 return [
-    'singular' => 'Service',
-    'plural' => 'Services',
+    'management'=>'Management',
+    'singular' => 'Benefit ',
+    'plural' => 'Benefits',
     'fields' => [
         'id' => 'Id',
         'nom' => 'Name',
@@ -10,6 +11,6 @@ return [
         'created_at' => 'Created At',
         'updated_at' => 'Updated At',
     ],
-    'summerNote-placeholder'=>'Enter a description of the service',
+
 
 ];

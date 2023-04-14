@@ -1,13 +1,15 @@
 <?php
 return [
-    'singular' => 'Service',
-    'plural' => 'Services',
+    'management'=>'Gestion',
+    'singular' => 'Préstation',
+    'plural' => 'Préstations',
     'fields' => [
         'id' => 'Id',
-        'nom' => 'Nom',
+        'name' => 'Nom',
         'description' => 'Description',
         'created_at' => 'Created At',
         'updated_at' => 'Updated At',
     ],
-    'summerNote-placeholder'=>'Saisir une description du service.',
+
+
 ];
