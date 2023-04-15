@@ -51,7 +51,13 @@
 <!-- Fonction Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('fonction', __('models/employes.fields.fonction').':') !!}
-    {!! Form::text('fonction', null, ['class' => 'form-control', 'required', 'maxlength' => 255, 'maxlength' => 255]) !!}
+    <select name="fonction_id"  required class="form-control">
+        <option disabled selected value>-- select  function --</option>
+        @foreach ($function as $value )
+        <option value="{{$value->id}}">{{$value->nom}} </option>
+        @endforeach
+    </select>
+    {{-- {!! Form::text('fonction', null, ['class' => 'form-control', 'required', 'maxlength' => 255, 'maxlength' => 255]) !!} --}}
 </div>
 
 <!-- Date Embauche Field -->
