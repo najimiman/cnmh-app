@@ -45,7 +45,6 @@
                                 <button  class="btn btn-default swalDefaultQuestion" data-toggle="modal" data-target="#importModel">
                                     <i class="fas fa-file-import"></i> Importer
                                 </button>
-                                </form>
         </div>
     </div>
 </div>

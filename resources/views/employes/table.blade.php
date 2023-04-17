@@ -62,12 +62,38 @@
             @include('adminlte-templates::common.paginate', ['records' => $employes])
         </div>
         <div class="float-left">
-                                <button type="button" class="btn btn-default swalDefaultQuestion">
-                                    <i class="fas fa-download"></i> Exporter
-                                </button>
-                                <button type="button" class="btn btn-default swalDefaultQuestion">
-                                    <i class="fas fa-file-import"></i> Importer
-                                </button>
+            <a href="{{ route('employes.export') }}" class="btn btn-default swalDefaultQuestion">
+                <i class="fas fa-download"></i> Exporter
+            </a>
+            <button  class="btn btn-default swalDefaultQuestion" data-toggle="modal" data-target="#importModel">
+                <i class="fas fa-file-import"></i> Importer
+            </button>
         </div>
     </div>
 </div>
+<!-- Modal Import -->
+<div class="modal fade" id="importModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Importer </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{{ route('employes.import') }}" method="post" enctype="multipart/form-data">
+                    @csrf
+                    <input type="file" name="file" class="form-control">
+                    <br>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button class="btn btn-success">Importer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{{-- end Model --}}
