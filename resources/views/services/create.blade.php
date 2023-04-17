@@ -53,7 +53,6 @@
     <script>
         $(document).ready(function() {
             $('#description').summernote({
-                placeholder: 'Saisir une description du service.',
                 placeholder: '{{__("models/services.summerNote-placeholder")}}',
                 height: 100,
             });
