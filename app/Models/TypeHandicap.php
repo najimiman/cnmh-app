@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
  use Illuminate\Database\Eloquent\Factories\HasFactory;
 class TypeHandicap extends Model
 {
-    use HasFactory;    public $table = 'type_handicap';
+    use HasFactory;    public $table = 'type_handicaps';
 
     public $fillable = [
         'nom',

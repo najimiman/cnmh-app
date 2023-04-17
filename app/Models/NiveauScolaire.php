@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
  use Illuminate\Database\Eloquent\Factories\HasFactory;
 class NiveauScolaire extends Model
 {
-    use HasFactory;    public $table = 'niveau_scolaire';
+    use HasFactory;    public $table = 'niveau_scolaires';
 
     public $fillable = [
         'nom',
