@@ -3,6 +3,7 @@
 return [
     'singular' => 'Couverture Médicale',
     'plural' => 'Couvertures Médicales',
+    'isMale' => false,
     'fields' => [
     'id' => 'Id',
     'nom' => 'Nom',
