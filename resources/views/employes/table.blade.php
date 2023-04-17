@@ -65,14 +65,14 @@
             <a href="{{ route('employes.export') }}" class="btn btn-default swalDefaultQuestion">
                 <i class="fas fa-download"></i> Exporter
             </a>
-            <button  class="btn btn-default swalDefaultQuestion" data-toggle="modal" data-target="#importModel">
+            <button  class="btn btn-default swalDefaultQuestion" data-toggle="modal" data-target="#importModelEmploye">
                 <i class="fas fa-file-import"></i> Importer
             </button>
         </div>
     </div>
 </div>
 <!-- Modal Import -->
-<div class="modal fade" id="importModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+<div class="modal fade" id="importModelEmploye" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
