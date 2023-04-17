@@ -25,5 +25,5 @@ class Service extends Model
         'updated_at' => 'nullable'
     ];
 
-    
+
 }
