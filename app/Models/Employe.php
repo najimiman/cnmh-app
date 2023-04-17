@@ -16,7 +16,7 @@ class Employe extends Model
         'adresse',
         'date_naissance',
         'cin',
-        'fonction',
+        'fonction_id',
         'date_embauche',
     ];
 
@@ -28,7 +28,7 @@ class Employe extends Model
         'adresse' => 'string',
         'date_naissance' => 'date',
         'cin' => 'string',
-        'fonction' => 'string',
+        'fonction_id'=>"int",
         'date_embauche' => 'date',
     ];
 
@@ -40,7 +40,7 @@ class Employe extends Model
         'adresse' => 'required|string|max:255',
         'date_naissance' => 'required',
         'cin' => 'required|string|max:255',
-        'fonction' => 'required|string|max:255',
+        'fonction_id' => 'required',
         'date_embauche' => 'required',
         'created_at' => 'nullable',
         'updated_at' => 'nullable'

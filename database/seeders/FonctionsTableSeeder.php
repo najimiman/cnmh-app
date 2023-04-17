@@ -13,6 +13,6 @@ class FonctionsTableSeeder extends Seeder
      */
     public function run()
     {
-
+        \App\Models\Fonction::factory(4)->create();
     }
 }

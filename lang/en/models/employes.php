@@ -12,7 +12,7 @@ return [
         'adresse' => 'Adresse',
         'date_naissance' => 'Date Naissance',
         'cin' => 'Cin',
-        'fonction' => 'Fonction',
+        'fonction_id' => 'Fonction id',
         'date_embauche' => 'Date embauche',
         'created_at' => 'Created At',
         'updated_at' => 'Updated At',
