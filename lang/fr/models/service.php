@@ -3,6 +3,7 @@ return [
     'management'=>'Gestion',
     'singular' => 'Préstation',
     'plural' => 'Préstations',
+    "isMale" => "false",
     'fields' => [
         'id' => 'Id',
         'name' => 'Nom',
