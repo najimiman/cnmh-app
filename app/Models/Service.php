@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
  use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Service extends Model
 {
-    use HasFactory;    public $table = 'service';
+    use HasFactory;    public $table = 'services';
 
     public $fillable = [
         'nom',
@@ -25,5 +25,5 @@ class Service extends Model
         'updated_at' => 'nullable'
     ];
 
-    
+
 }
