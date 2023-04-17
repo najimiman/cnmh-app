@@ -3,6 +3,7 @@
 return [
     'singular' => 'niveau scolaire',
     'plural' => 'Niveau scolaires',
+    "isMale" => "true",
     'fields' => [
         'id' => 'Id',
         'nom' => 'Niveau scolaire',

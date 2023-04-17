@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 class EtatCivil extends Model
 {
-    use HasFactory;    public $table = 'etat_civil';
+    use HasFactory;    public $table = 'etat_civils';
 
     public $fillable = [
         'nom',
