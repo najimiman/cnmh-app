@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\ImportEtatCivil;
+use App\Exports\ExportEtatCivil;
+
 use App\Http\Requests\CreateEtatCivilRequest;
 use App\Http\Requests\UpdateEtatCivilRequest;
 use App\Http\Controllers\AppBaseController;
@@ -134,5 +138,13 @@ class EtatCivilController extends AppBaseController
         Flash::success(__('messages.deleted', ['model' => __('models/etatCivils.singular')]));
 
         return redirect(route('etatCivils.index'));
+    }
+
+    public function export(){
+        return Excel::download(new ExportEtatCivil, 'SituationFamiliere.xlsx');
+    }
+    public function import(Request $request){
+        Excel::import(new ImportEtatCivil, $request->file('file')->store('files'));
+        return redirect()->back();
     }
 }

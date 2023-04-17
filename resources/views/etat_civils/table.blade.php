@@ -63,13 +63,25 @@
         <div class="float-right">
             @include('adminlte-templates::common.paginate', ['records' => $etatCivils])
         </div>
-        <div class="float-left">
+        {{-- <div class="float-left">
             <button type="button" class="btn btn-default swalDefaultQuestion">
                 <i class="fas fa-download"></i> Exporter
             </button>
             <button type="button" class="btn btn-default swalDefaultQuestion">
                 <i class="fas fa-file-import"></i> Importer
             </button>
+        </div> --}}
+
+        <div class="float-left">
+            <a href="{{ route('etatCivils.export') }}" class="btn btn-default swalDefaultQuestion">
+                <i class="fas fa-download"></i> Exporter
+            </a>
+            <form action="{{ route('etatCivils.import') }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <button class="btn btn-default swalDefaultQuestion">
+                    <i class="fas fa-file-import"></i> Importer
+                </button>
+            </form>
         </div>
     </div>
 </div>
