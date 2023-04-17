@@ -32,3 +32,9 @@ Route::resource('niveauScolaires', App\Http\Controllers\NiveauScolaireController
 Route::resource('etatCivils', App\Http\Controllers\EtatCivilController::class);
 Route::resource('employes', App\Http\Controllers\EmployeController::class);
 Route::resource('reclamations', App\Http\Controllers\ReclamationController::class);
+Route::resource('fonctions', App\Http\Controllers\FonctionController::class);
+Route::resource('patients', App\Http\Controllers\PatientController::class);
+Route::resource('dossier-patients', App\Http\Controllers\DossierPatientController::class);
+Route::resource('orientation-externes', App\Http\Controllers\OrientationExterneController::class);
+Route::resource('consultations', App\Http\Controllers\ConsultationController::class);
+Route::resource('rendez-vouses', App\Http\Controllers\RendezVousController::class);

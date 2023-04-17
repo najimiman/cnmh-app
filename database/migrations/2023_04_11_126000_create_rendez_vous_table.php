@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('rendez_vous', function (Blueprint $table) {
 
             $table->id();
-            $table->foreignId('id_consultation')->constrained('consultations');
+            $table->foreignId('consultation_id')->constrained('consultations');
             $table->dateTime("date_rendez_vous");
             $table->string('etat');
             $table->text('remarques')->nullable();

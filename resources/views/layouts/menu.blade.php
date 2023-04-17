@@ -53,3 +53,45 @@
         <p>@lang('models/reclamations.plural')</p>
     </a>
 </li>
+
+<li class="nav-item">
+    <a href="{{ route('fonctions.index') }}" class="nav-link {{ Request::is('fonctions*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-home"></i>
+        <p>@lang('models/fonctions.plural')</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="{{ route('patients.index') }}" class="nav-link {{ Request::is('patients*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-home"></i>
+        <p>@lang('models/patients.plural')</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="{{ route('dossier-patients.index') }}" class="nav-link {{ Request::is('dossierPatients*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-home"></i>
+        <p>@lang('models/dossierPatients.plural')</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="{{ route('orientation-externes.index') }}" class="nav-link {{ Request::is('orientationExternes*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-home"></i>
+        <p>@lang('models/orientationExternes.plural')</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="{{ route('consultations.index') }}" class="nav-link {{ Request::is('consultations*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-home"></i>
+        <p>@lang('models/consultations.plural')</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="{{ route('rendez-vouses.index') }}" class="nav-link {{ Request::is('rendezVouses*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-home"></i>
+        <p>@lang('models/rendezVouses.plural')</p>
+    </a>
+</li>
