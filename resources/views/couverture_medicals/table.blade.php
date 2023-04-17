@@ -39,12 +39,15 @@
             @include('adminlte-templates::common.paginate', ['records' => $couvertureMedicals])
         </div>
         <div class="float-left">
-                                <button type="button" class="btn btn-default swalDefaultQuestion">
+                                <a href="{{ route('couvertureMedicals.export') }}" class="btn btn-default swalDefaultQuestion">
                                     <i class="fas fa-download"></i> Exporter
-                                </button>
-                                <button type="button" class="btn btn-default swalDefaultQuestion">
+                                </a>
+                                <form action="{{route('couvertureMedicals.import')}}" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                <button  class="btn btn-default swalDefaultQuestion">
                                     <i class="fas fa-file-import"></i> Importer
                                 </button>
+                                </form>
         </div>
     </div>
 </div>

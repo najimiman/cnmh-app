@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
  use Illuminate\Database\Eloquent\Factories\HasFactory;
 class CouvertureMedical extends Model
 {
-    use HasFactory;    public $table = 'couverturemedical';
+    use HasFactory;    public $table = 'couverture_medicals';
 
     public $fillable = [
         'nom',
@@ -25,5 +25,5 @@ class CouvertureMedical extends Model
         'updated_at' => 'nullable'
     ];
 
-    
+
 }
