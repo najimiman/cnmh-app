@@ -16,7 +16,14 @@
                     <div class="col-md-12  ">
                         <div class="card card-primary card-create ">
                             <div class="card-header">
-                                <h3 class="card-title">@lang('crud.create') @lang('models/services.singular')</h3>
+                                <h3 class="card-title"> @lang('crud.create')
+                                    @if (app()->getLocale() == 'fr')
+                                        {{ is_male_localisation('message.isMale') }} @lang(strtolower(__('models/service.singular')))
+                                    @else
+                                        @lang(strtolower(__('models/service.singular')))
+                                    @endif
+
+                                </h3>
                             </div>
                             <div class="card-body ">
                                 {!! Form::open(['route' => 'services.store']) !!}
@@ -53,7 +60,6 @@
     <script>
         $(document).ready(function() {
             $('#description').summernote({
-                placeholder: '{{__("models/services.summerNote-placeholder")}}',
                 height: 100,
             });
             $('.dropdown-toggle').dropdown();
