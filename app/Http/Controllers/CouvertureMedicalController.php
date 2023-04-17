@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ExportCouvertureMedical;
 use App\Http\Requests\CreateCouvertureMedicalRequest;
 use App\Http\Requests\UpdateCouvertureMedicalRequest;
 use App\Http\Controllers\AppBaseController;
+use App\Imports\ImportCouvertureMedical;
 use App\Repositories\CouvertureMedicalRepository;
 use Illuminate\Http\Request;
 use Flash;
+use Maatwebsite\Excel\Facades\Excel;
 
 class CouvertureMedicalController extends AppBaseController
 {
@@ -130,5 +133,13 @@ class CouvertureMedicalController extends AppBaseController
         Flash::success(__('messages.deleted', ['model' => __('models/couvertureMedicals.singular')]));
 
         return redirect(route('couvertureMedicals.index'));
+    }
+
+    public function export(){
+        return Excel::download(new ExportCouvertureMedical, 'CouvertureMedical.xlsx');
+    }
+    public function import(Request $request){
+        Excel::import(new ImportCouvertureMedical, $request->file('file')->store('files'));
+        return redirect()->back();
     }
 }

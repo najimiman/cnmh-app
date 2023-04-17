@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CouvertureMedicalController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,6 +26,8 @@ Route::resource('projects', App\Http\Controllers\ProjectController::class);
 Route::resource('tasks', App\Http\Controllers\TaskController::class);
 Route::resource('members', App\Http\Controllers\MemberController::class);
 Route::resource('couvertureMedicals', App\Http\Controllers\CouvertureMedicalController::class);
+Route::get('/export_couvertureMedicals',[CouvertureMedicalController::class,'export'])->name('couvertureMedicals.export');
+Route::post('/import_couvertureMedicals',[CouvertureMedicalController::class,'import'])->name('couvertureMedicals.import');
 Route::resource('typeHandicaps', App\Http\Controllers\TypeHandicapController::class);
 Route::resource('typeHandicaps', App\Http\Controllers\TypeHandicapController::class);
 Route::resource('services', App\Http\Controllers\ServiceController::class);
