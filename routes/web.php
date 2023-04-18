@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\CouvertureMedicalController;
-use App\Http\Controllers\EmployeController;
+use App\Http\Controllers\TypeHandicapController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -46,3 +46,6 @@ Route::resource('dossier-patients', App\Http\Controllers\DossierPatientControlle
 Route::resource('orientation-externes', App\Http\Controllers\OrientationExterneController::class);
 Route::resource('consultations', App\Http\Controllers\ConsultationController::class);
 Route::resource('rendez-vouses', App\Http\Controllers\RendezVousController::class);
+
+Route::get('/export_typehandicap',[TypeHandicapController::class,'export'])->name('typehandicap.export');
+Route::post('/import_typehandicap',[TypeHandicapController::class,'import'])->name('typehandicap.import');
