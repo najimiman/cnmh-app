@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ExportTypehandicap;
 use App\Http\Requests\CreateTypeHandicapRequest;
 use App\Http\Requests\UpdateTypeHandicapRequest;
 use App\Http\Controllers\AppBaseController;
+use App\Imports\importTypehandicap;
 use App\Repositories\TypeHandicapRepository;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 use Flash;
 
 class TypeHandicapController extends AppBaseController
@@ -24,8 +27,12 @@ class TypeHandicapController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $typeHandicaps = $this->typeHandicapRepository->paginate();
-
+        $query = $request->input('query');
+        $typeHandicaps = $this->typeHandicapRepository->paginate($query);
+        if ($request->ajax()) {
+            return view('type_handicaps.table')
+                ->with('typeHandicaps', $typeHandicaps);
+        }
         return view('type_handicaps.index')
             ->with('typeHandicaps', $typeHandicaps);
     }
@@ -124,5 +131,12 @@ class TypeHandicapController extends AppBaseController
         Flash::success(__('messages.deleted', ['model' => __('models/typeHandicaps.singular')]));
 
         return redirect(route('typeHandicaps.index'));
+    }
+    public function export(){
+        return Excel::download(new ExportTypehandicap, 'type handicap.xlsx');
+    }
+    public function import(Request $request){
+        Excel::import(new importTypehandicap, $request->file('file')->store('files'));
+        return redirect()->back();
     }
 }
