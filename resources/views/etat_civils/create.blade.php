@@ -19,8 +19,15 @@
             <div class="col-md-10">
                 <div class="card card-primary card-create">
                     <div class="card-header">
-                        <h3 class="card-title">@lang('crud.create') une nouvelle
-                            {{ strtolower(__('models/etatCivils.singular')) }}</h3>
+                        <h3 class="card-title">@lang('crud.create')
+                            {{-- une nouvelle --}}
+                            @if (app()->getLocale() == 'fr')
+                                {{ is_male_localisation('message.isMale') }} 
+                                @lang(strtolower(__('models/etatCivils.singular')))
+                            @else
+                                {{ strtolower(__('models/etatCivils.singular')) }}
+                            @endif
+                        </h3>
                     </div>
                     {!! Form::open(['route' => 'etatCivils.store']) !!}
                     <div class="card-body">
@@ -45,15 +52,14 @@
 
         </div>
     </section>
-
 @endsection
 @push('page_scripts')
-<script>
-    $(document).ready(function() {
-        $('#description').summernote({
-            height: 100,
+    <script>
+        $(document).ready(function() {
+            $('#description').summernote({
+                height: 100,
+            });
+            $('.dropdown-toggle').dropdown();
         });
-        $('.dropdown-toggle').dropdown();
-    });
-</script>
+    </script>
 @endpush

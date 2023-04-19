@@ -4,20 +4,26 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1> Gestion des {{ strtolower(__('models/etatCivils.plural')) }}</h1>
+                    <h1> @lang('models/etatCivils.management')
+                        des
+                        {{ strtolower(__('models/etatCivils.plural')) }}
+                    </h1>
                 </div>
-                {{-- <div class="col-sm-6">
-                    <a class="btn btn-primary float-right"
-                       href="{{ route('etatCivils.create') }}">
-                         @lang('crud.add_new') @lang('models/etatCivils.singular')
+                <div class="col-sm-6">
+                    <a class="btn btn-primary float-right" href="{{ route('etatCivils.create') }}">
+                        @lang('crud.create') @if (app()->getLocale() == 'fr')
+                            {{ is_male_localisation('message.isMale') }}
+                            @lang(strtolower(__('models/etatCivils.singular')))
+                        @else
+                            {{ strtolower(__('models/etatCivils.singular')) }}
+                        @endif
                     </a>
-                </div> --}}
+                </div>
             </div>
         </div>
     </section>
 
     <div class="content px-3">
-
         @include('flash::message')
 
         <div class="clearfix"></div>
