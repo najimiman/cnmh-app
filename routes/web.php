@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CouvertureMedicalController;
+use App\Http\Controllers\Root\RootController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,9 +23,9 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 
 Auth::routes();
 
-Route::resource('projects', App\Http\Controllers\ProjectController::class);
-Route::resource('tasks', App\Http\Controllers\TaskController::class);
-Route::resource('members', App\Http\Controllers\MemberController::class);
+// Route::resource('projects', App\Http\Controllers\ProjectController::class);
+// Route::resource('tasks', App\Http\Controllers\TaskController::class);
+// Route::resource('members', App\Http\Controllers\MemberController::class);
 // couvertureMedicals
 Route::resource('couvertureMedicals', App\Http\Controllers\CouvertureMedicalController::class);
 Route::get('/export_couvertureMedicals',[CouvertureMedicalController::class,'export'])->name('couvertureMedicals.export');
@@ -42,3 +43,11 @@ Route::resource('dossier-patients', App\Http\Controllers\DossierPatientControlle
 Route::resource('orientation-externes', App\Http\Controllers\OrientationExterneController::class);
 Route::resource('consultations', App\Http\Controllers\ConsultationController::class);
 Route::resource('rendez-vouses', App\Http\Controllers\RendezVousController::class);
+
+Route::prefix('/root')->group(function() {
+    Route::controller(RootController::class)->group(function() {
+        Route::get('/', 'index');
+    });
+    Route::resource('menu-items', App\Http\Controllers\Root\MenuItemController::class);
+    Route::resource('menu-groups', App\Http\Controllers\Root\MenuGroupController::class);
+});
