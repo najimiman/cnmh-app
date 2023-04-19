@@ -9,7 +9,7 @@
                 </div>
                 <div class="col-sm-6">
                     <a class="btn btn-primary float-right" href="{{ route('couvertureMedicals.create') }}">
-                        @lang('crud.add_new') Couverture Medical
+                        @lang('crud.create') une @lang('models/couvertureMedicals.singular')
                     </a>
                 </div>
             </div>

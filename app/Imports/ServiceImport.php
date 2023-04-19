@@ -2,10 +2,10 @@
 
 namespace App\Imports;
 
-use App\Models\couvertureMedical;
+use App\Models\Service;
 use Maatwebsite\Excel\Concerns\ToModel;
 
-class ImportCouvertureMedical implements ToModel
+class ServiceImport implements ToModel
 {
     /**
     * @param array $row
@@ -14,9 +14,9 @@ class ImportCouvertureMedical implements ToModel
     */
     public function model(array $row)
     {
-        return new couvertureMedical([
-            'nom' => $row[0],
-            'description' => $row[1],
+        return new Service([
+            'nom' => $row[1],
+            'description' => $row[2],
         ]);
     }
 }

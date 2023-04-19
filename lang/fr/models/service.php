@@ -1,8 +1,8 @@
 <?php
 return [
     'management'=>'Gestion',
-    'singular' => 'Préstation',
-    'plural' => 'Préstations',
+    'singular' => 'Prestation',
+    'plural' => 'Prestations',
     "isMale" => "false",
     'fields' => [
         'id' => 'Id',
