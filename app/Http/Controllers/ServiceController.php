@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ServiceExport;
 use Laracasts\Flash\Flash;
 use Illuminate\Http\Request;
 use App\Repositories\ServiceRepository;
 use App\Http\Controllers\AppBaseController;
 use App\Http\Requests\CreateServiceRequest;
 use App\Http\Requests\UpdateServiceRequest;
+use App\Imports\ServiceImport;
+use Maatwebsite\Excel\Facades\Excel;
+
 // use Flash;
 
 class ServiceController extends AppBaseController
@@ -55,7 +59,7 @@ class ServiceController extends AppBaseController
 
         $service = $this->serviceRepository->create($input);
 
-        Flash::success(__('messages.saved', ['model' => __('models/services.singular')]));
+        Flash::success(__('messages.saved', ['model' => __('models/service.singular')]));
 
         return redirect(route('services.index'));
     }
@@ -68,7 +72,7 @@ class ServiceController extends AppBaseController
         $service = $this->serviceRepository->find($id);
 
         if (empty($service)) {
-            Flash::error(__('models/services.singular').' '.__('messages.not_found'));
+            Flash::error(__('models/service.singular').' '.__('messages.not_found'));
 
             return redirect(route('services.index'));
         }
@@ -84,7 +88,7 @@ class ServiceController extends AppBaseController
         $service = $this->serviceRepository->find($id);
 
         if (empty($service)) {
-            Flash::error(__('models/services.singular').' '.__('messages.not_found'));
+            Flash::error(__('models/service.singular').' '.__('messages.not_found'));
 
             return redirect(route('services.index'));
         }
@@ -100,14 +104,14 @@ class ServiceController extends AppBaseController
         $service = $this->serviceRepository->find($id);
 
         if (empty($service)) {
-            Flash::error(__('models/services.singular').' '.__('messages.not_found'));
+            Flash::error(__('models/service.singular').' '.__('messages.not_found'));
 
             return redirect(route('services.index'));
         }
 
         $service = $this->serviceRepository->update($request->all(), $id);
 
-        Flash::success(__('messages.updated', ['model' => __('models/services.singular')]));
+        Flash::success(__('messages.updated', ['model' => __('models/service.singular')]));
 
         return redirect(route('services.index'));
     }
@@ -122,15 +126,22 @@ class ServiceController extends AppBaseController
         $service = $this->serviceRepository->find($id);
 
         if (empty($service)) {
-            Flash::error(__('models/services.singular').' '.__('messages.not_found'));
+            Flash::error(__('models/service.singular').' '.__('messages.not_found'));
 
             return redirect(route('services.index'));
         }
 
         $this->serviceRepository->delete($id);
 
-        Flash::success(__('messages.deleted', ['model' => __('models/services.singular')]));
+        Flash::success(__('messages.deleted', ['model' => __('models/service.singular')]));
 
         return redirect(route('services.index'));
+    }
+    public function export(){
+        return Excel::download(new ServiceExport, 'prestation.xlsx');
+    }
+    public function import(Request $request){
+        Excel::import(new ServiceImport, $request->file('file')->store('files'));
+        return redirect()->back();
     }
 }
