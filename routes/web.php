@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\CouvertureMedicalController;
+use App\Http\Controllers\EmployeController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TypeHandicapController;
 use App\Http\Controllers\NiveauScolaireController;
@@ -61,3 +62,4 @@ Route::post('/import_niveauScolaires',[NiveauScolaireController::class,'import']
 // EtatCivil export and import
 Route::get('/export_etatCivils',[EtatCivilController::class,'export'])->name('etatCivils.export');
 Route::post('/import_etatCivils',[EtatCivilController::class,'import'])->name('etatCivils.import');
+Route::resource('tuteurs', App\Http\Controllers\TuteurController::class);

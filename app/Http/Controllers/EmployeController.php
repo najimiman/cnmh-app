@@ -28,9 +28,16 @@ class EmployeController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $employes = $this->employeRepository->paginate(10);
-         $function = Fonction::all();
-         return view('employes.index', compact("employes","function"));
+        $query = $request->input('query');
+        $employes = $this->employeRepository->paginate($query);
+
+        if ($request->ajax()) {
+            return view('employes.table')
+                ->with('employes', $employes);
+        }
+
+        return view('employes.index')
+            ->with('employes', $employes);
         }
 
         /**
