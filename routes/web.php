@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CouvertureMedicalController;
+use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TypeHandicapController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,13 +27,14 @@ Auth::routes();
 Route::resource('projects', App\Http\Controllers\ProjectController::class);
 Route::resource('tasks', App\Http\Controllers\TaskController::class);
 Route::resource('members', App\Http\Controllers\MemberController::class);
-// couvertureMedicals routes
 Route::resource('couvertureMedicals', App\Http\Controllers\CouvertureMedicalController::class);
 Route::get('/export_couvertureMedicals',[CouvertureMedicalController::class,'export'])->name('couvertureMedicals.export');
 Route::post('/import_couvertureMedicals',[CouvertureMedicalController::class,'import'])->name('couvertureMedicals.import');
 Route::resource('typeHandicaps', App\Http\Controllers\TypeHandicapController::class);
 Route::resource('typeHandicaps', App\Http\Controllers\TypeHandicapController::class);
 Route::resource('services', App\Http\Controllers\ServiceController::class);
+Route::get('/export_service',[ServiceController::class,'export'])->name('services.export');
+Route::post('/import_service',[ServiceController::class,'import'])->name('services.import');
 Route::resource('niveauScolaires', App\Http\Controllers\NiveauScolaireController::class);
 Route::resource('etatCivils', App\Http\Controllers\EtatCivilController::class);
 //employes routes
