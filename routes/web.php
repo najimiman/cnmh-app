@@ -1,8 +1,10 @@
 <?php
 
+
 use App\Http\Controllers\CouvertureMedicalController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TypeHandicapController;
+use App\Http\Controllers\NiveauScolaireController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -48,3 +50,7 @@ Route::resource('rendez-vouses', App\Http\Controllers\RendezVousController::clas
 
 Route::get('/export_typehandicap',[TypeHandicapController::class,'export'])->name('typehandicap.export');
 Route::post('/import_typehandicap',[TypeHandicapController::class,'import'])->name('typehandicap.import');
+
+
+Route::get('/export_niveauScolaires',[NiveauScolaireController::class,'export'])->name('niveauScolaires.export');
+Route::post('/import_niveauScolaires',[NiveauScolaireController::class,'import'])->name('niveauScolaires.import');
