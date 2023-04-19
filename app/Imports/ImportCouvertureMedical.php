@@ -15,8 +15,8 @@ class ImportCouvertureMedical implements ToModel
     public function model(array $row)
     {
         return new couvertureMedical([
-            'nom' => $row[1],
-            'description' => $row[2],
+            'nom' => $row[0],
+            'description' => $row[1],
         ]);
     }
 }
