@@ -21,12 +21,11 @@
             <div class="card card-primary card-create">
                 <div class="card-header">
                     <h3 class="card-title"> @lang('crud.create')
-                        @if (__('models/couvertureMedicals.isMale') == true)
-                            un nouveau
-                        @else
-                            une nouvelle
-                        @endif
-                        {{ strtolower(__('models/couvertureMedicals.singular')) }}
+                        @if (app()->getLocale() == 'fr')
+                        {{ is_male_localisation('couvertureMedicals.isMale') }} @lang(strtolower(__('models/couvertureMedicals.singular')))
+                    @else
+                        @lang(strtolower(__('models/models/service.singular')))
+                    @endif
                     </h3>
                 </div>
                 {!! Form::open(['route' => 'couvertureMedicals.store']) !!}
@@ -57,12 +56,12 @@
     </div>
 @endsection
 @push('page_scripts')
-<script>
-   $(document).ready(function() {
- $('#description').summernote({
-placeholder: '{{__("models/typeHandicaps.summerNote-placeholder")}}',
-});
-   $('.dropdown-toggle').dropdown();
-});
-</script>
+    <script>
+        $(document).ready(function() {
+            $('#description').summernote({
+                height: 100,
+            });
+            $('.dropdown-toggle').dropdown();
+        });
+    </script>
 @endpush

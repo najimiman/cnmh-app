@@ -12,7 +12,7 @@
             @foreach($couvertureMedicals as $couvertureMedical)
                 <tr>
                     <td>{{ $couvertureMedical->nom }}</td>
-                    <td>{{ $couvertureMedical->description }}</td>
+                    <td>{!! $couvertureMedical->description !!}</td>
                     <td  style="width: 120px">
                         {!! Form::open(['route' => ['couvertureMedicals.destroy', $couvertureMedical->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>
