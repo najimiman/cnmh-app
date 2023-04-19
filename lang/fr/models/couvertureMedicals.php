@@ -4,7 +4,7 @@ return [
     'singular' => 'Couverture Médicale',
     'plural' => 'Couvertures Médicales',
     'isMale' => false,
-    'fields' => [
+    'fields' => [   
     'id' => 'Id',
     'nom' => 'Nom',
     'description' => 'Description',
