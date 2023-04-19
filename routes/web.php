@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CouvertureMedicalController;
+use App\Http\Controllers\EmployeController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TypeHandicapController;
 use Illuminate\Support\Facades\Route;

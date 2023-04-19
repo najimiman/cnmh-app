@@ -4,8 +4,9 @@ namespace App\Exports;
 
 use App\Models\Employe;
 use Maatwebsite\Excel\Concerns\FromCollection;
+use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class ExportEmployes implements FromCollection
+class ExportEmployes implements FromCollection ,WithHeadings
 {
     /**
     * @return \Illuminate\Support\Collection
@@ -13,15 +14,29 @@ class ExportEmployes implements FromCollection
     public function collection()
     {
         return Employe::select(
-            'id',
             'nom',
             'prenom',
             'email',
             'telephone',
             'adresse',
             'date_naissance',
+            'fonction_id',
             'cin',
-            'date_embauche',
+            'date_embauche'
         )->get();
+    }
+    public function headings(): array
+    {
+        return [
+        'nom',
+        'prenom',
+        'email',
+        'telephone',
+        'adresse',
+        'date_naissance',
+        'fonction_id',
+        'cin',
+        'date_embauche'
+    ];
     }
 }
