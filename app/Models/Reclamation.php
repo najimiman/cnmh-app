@@ -12,7 +12,6 @@ class Reclamation extends Model
         'patients_id',
         'objet',
         'description',
-        'remarques',
         'date_reclamation'
     ];
 
