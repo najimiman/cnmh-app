@@ -6,6 +6,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\TypeHandicapController;
 use App\Http\Controllers\NiveauScolaireController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EtatCivilController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,7 +39,7 @@ Route::resource('services', App\Http\Controllers\ServiceController::class);
 Route::get('/export_service',[ServiceController::class,'export'])->name('services.export');
 Route::post('/import_service',[ServiceController::class,'import'])->name('services.import');
 Route::resource('niveauScolaires', App\Http\Controllers\NiveauScolaireController::class);
-Route::resource('etatCivils', App\Http\Controllers\EtatCivilController::class);
+Route::resource('etatCivils', EtatCivilController::class);
 Route::resource('employes', App\Http\Controllers\EmployeController::class);
 Route::get('/export_employes',[EmployeController::class,'export'])->name('employes.export');
 Route::post('/import_employes',[EmployeController::class,'import'])->name('employes.import');
@@ -56,3 +57,7 @@ Route::post('/import_typehandicap',[TypeHandicapController::class,'import'])->na
 
 Route::get('/export_niveauScolaires',[NiveauScolaireController::class,'export'])->name('niveauScolaires.export');
 Route::post('/import_niveauScolaires',[NiveauScolaireController::class,'import'])->name('niveauScolaires.import');
+
+// EtatCivil export and import
+Route::get('/export_etatCivils',[EtatCivilController::class,'export'])->name('etatCivils.export');
+Route::post('/import_etatCivils',[EtatCivilController::class,'import'])->name('etatCivils.import');
