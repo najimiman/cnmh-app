@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\ExportEmployes;
 use App\Http\Requests\CreateEmployeRequest;
 use App\Http\Requests\UpdateEmployeRequest;
 use App\Http\Controllers\AppBaseController;
+use App\Imports\ImportEmployes;
 use App\Models\Fonction;
 use App\Repositories\EmployeRepository;
 use Illuminate\Http\Request;
 use Flash;
+use Maatwebsite\Excel\Facades\Excel;
 
 class EmployeController extends AppBaseController
 {
@@ -126,5 +129,12 @@ class EmployeController extends AppBaseController
         Flash::success(__('messages.deleted', ['model' => __('models/employes.singular')]));
 
         return redirect(route('employes.index'));
+    }
+    public function export(){
+        return Excel::download(new ExportEmployes , 'Employe.xlsx');
+    }
+    public function import(Request $request){
+        Excel::import(new ImportEmployes , $request->file('file')->store('files'));
+        return redirect()->back();
     }
 }

@@ -39,7 +39,10 @@ Route::get('/export_service',[ServiceController::class,'export'])->name('service
 Route::post('/import_service',[ServiceController::class,'import'])->name('services.import');
 Route::resource('niveauScolaires', App\Http\Controllers\NiveauScolaireController::class);
 Route::resource('etatCivils', App\Http\Controllers\EtatCivilController::class);
+//employes routes
 Route::resource('employes', App\Http\Controllers\EmployeController::class);
+Route::get('/export_employes',[EmployeController::class,'export'])->name('employes.export');
+Route::post('/import_employes',[EmployeController::class,'import'])->name('employes.import');
 Route::resource('reclamations', App\Http\Controllers\ReclamationController::class);
 Route::resource('fonctions', App\Http\Controllers\FonctionController::class);
 Route::resource('patients', App\Http\Controllers\PatientController::class);
