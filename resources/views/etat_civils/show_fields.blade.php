@@ -7,6 +7,6 @@
 <!-- Description Field -->
 <div class="col-sm-12">
     {!! Form::label('description', __('models/etatCivils.fields.description').':') !!}
-    <p>{{ $etatCivil->description }}</p>
+    <p>{!! $etatCivil->description !!}</p>
 </div>
 

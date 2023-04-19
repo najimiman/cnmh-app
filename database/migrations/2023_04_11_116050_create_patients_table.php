@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('patients', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('parent_id');
+            $table->unsignedBigInteger('tuteur_id');
             $table->unsignedBigInteger('niveau_scolaire_id')->nullable();
             $table->string('nom');
             $table->string('prenom');
@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->string('adresse')->nullable();
             $table->text('remarques')->nullable();
-            $table->foreign('parent_id')->references('id')->on('parents');
+            $table->foreign('tuteur_id')->references('id')->on('tuteurs');
             $table->foreign('niveau_scolaire_id')->references('id')->on('niveau_scolaires');
             $table->timestamps();
         });

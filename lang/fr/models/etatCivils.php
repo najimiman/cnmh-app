@@ -2,8 +2,10 @@
 <?php
 
 return [
+    'management'=>'Gestion',
     'singular' => 'Situation familière',
     'plural' => 'Situations familières',
+    "isMale" => "false",
     'fields' => [
         'id' => 'Id',
         'nom' => 'Nom',
@@ -11,4 +13,5 @@ return [
         'created_at' => 'Créé à',
         'updated_at' => 'Mis à jour à',
     ],
+
 ];

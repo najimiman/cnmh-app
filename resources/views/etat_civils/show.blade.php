@@ -6,14 +6,14 @@
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1>
-@lang('models/etatCivils.singular') @lang('crud.detail')
+                        @lang('crud.detail') de la 
+                        {{ strtolower(__('models/etatCivils.singular')) }}
                     </h1>
                 </div>
                 <div class="col-sm-6">
-                    <a class="btn btn-default float-right"
-                       href="{{ route('etatCivils.index') }}">
-                                                    @lang('crud.back')
-                                            </a>
+                    <a class="btn btn-default float-right" href="{{ route('etatCivils.index') }}">
+                        @lang('crud.back')
+                    </a>
                 </div>
             </div>
         </div>

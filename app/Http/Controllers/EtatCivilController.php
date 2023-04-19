@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Maatwebsite\Excel\Facades\Excel;
+use App\Imports\ImportEtatCivil;
+use App\Exports\ExportEtatCivil;
+
 use App\Http\Requests\CreateEtatCivilRequest;
 use App\Http\Requests\UpdateEtatCivilRequest;
 use App\Http\Controllers\AppBaseController;
@@ -24,7 +28,17 @@ class EtatCivilController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $etatCivils = $this->etatCivilRepository->paginate(10);
+        // $etatCivils = $this->etatCivilRepository->paginate();
+        // return view('etat_civils.index')
+        //     ->with('etatCivils', $etatCivils);
+
+        $query = $request->input('query');
+        $etatCivils = $this->etatCivilRepository->paginate($query);
+
+        if ($request->ajax()) {
+            return view('etat_civils.table')
+                ->with('etatCivils', $etatCivils);
+        }
 
         return view('etat_civils.index')
             ->with('etatCivils', $etatCivils);
@@ -60,7 +74,7 @@ class EtatCivilController extends AppBaseController
         $etatCivil = $this->etatCivilRepository->find($id);
 
         if (empty($etatCivil)) {
-            Flash::error(__('models/etatCivils.singular').' '.__('messages.not_found'));
+            Flash::error(__('models/etatCivils.singular') . ' ' . __('messages.not_found'));
 
             return redirect(route('etatCivils.index'));
         }
@@ -76,7 +90,7 @@ class EtatCivilController extends AppBaseController
         $etatCivil = $this->etatCivilRepository->find($id);
 
         if (empty($etatCivil)) {
-            Flash::error(__('models/etatCivils.singular').' '.__('messages.not_found'));
+            Flash::error(__('models/etatCivils.singular') . ' ' . __('messages.not_found'));
 
             return redirect(route('etatCivils.index'));
         }
@@ -92,7 +106,7 @@ class EtatCivilController extends AppBaseController
         $etatCivil = $this->etatCivilRepository->find($id);
 
         if (empty($etatCivil)) {
-            Flash::error(__('models/etatCivils.singular').' '.__('messages.not_found'));
+            Flash::error(__('models/etatCivils.singular') . ' ' . __('messages.not_found'));
 
             return redirect(route('etatCivils.index'));
         }
@@ -114,7 +128,7 @@ class EtatCivilController extends AppBaseController
         $etatCivil = $this->etatCivilRepository->find($id);
 
         if (empty($etatCivil)) {
-            Flash::error(__('models/etatCivils.singular').' '.__('messages.not_found'));
+            Flash::error(__('models/etatCivils.singular') . ' ' . __('messages.not_found'));
 
             return redirect(route('etatCivils.index'));
         }
@@ -124,5 +138,15 @@ class EtatCivilController extends AppBaseController
         Flash::success(__('messages.deleted', ['model' => __('models/etatCivils.singular')]));
 
         return redirect(route('etatCivils.index'));
+    }
+
+    public function export(){
+        return Excel::download(new ExportEtatCivil, 'SituationFamiliere.xlsx');
+    }
+    public function import(Request $request){
+        Excel::import(new ImportEtatCivil, $request->file('file')->store('files'));
+        return redirect()->back();
+
+
     }
 }
