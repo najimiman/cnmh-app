@@ -1,19 +1,4 @@
-<div class="card-header">
-    <div class="col-sm-12 d-flex justify-content-between p-0">
-        <!-- SEARCH FORM -->
-        <form class="form-inline ml-3">
-            <div class="input-group input-group-sm">
-                <input type="search" class="form-control form-control-lg"
-                    placeholder="Recherche">
-                <div class="input-group-append">
-                    <button type="submit" class="btn btn-lg btn-default">
-                        <i class="fa fa-search"></i>
-                    </button>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
+
 
 <div class="card-body p-0">
     <div class="table-responsive">
@@ -62,12 +47,38 @@
             @include('adminlte-templates::common.paginate', ['records' => $employes])
         </div>
         <div class="float-left">
-                                <button type="button" class="btn btn-default swalDefaultQuestion">
-                                    <i class="fas fa-download"></i> Exporter
-                                </button>
-                                <button type="button" class="btn btn-default swalDefaultQuestion">
-                                    <i class="fas fa-file-import"></i> Importer
-                                </button>
+            <a href="{{ route('employes.export') }}" class="btn btn-default swalDefaultQuestion">
+                <i class="fas fa-download"></i> Exporter
+            </a>
+            <button  class="btn btn-default swalDefaultQuestion" data-toggle="modal" data-target="#importModelEmploye">
+                <i class="fas fa-file-import"></i> Importer
+            </button>
         </div>
     </div>
 </div>
+<!-- Modal Import -->
+<div class="modal fade" id="importModelEmploye" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Importer </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{{ route('employes.import') }}" method="post" enctype="multipart/form-data">
+                    @csrf
+                    <input type="file" name="file" class="form-control">
+                    <br>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button class="btn btn-success">Importer</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{{-- end Model --}}
