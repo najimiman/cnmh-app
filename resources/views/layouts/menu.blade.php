@@ -95,3 +95,10 @@
         <p>@lang('models/rendezVouses.plural')</p>
     </a>
 </li>
+
+<li class="nav-item">
+    <a href="{{ route('tuteurs.index') }}" class="nav-link {{ Request::is('tuteurs*') ? 'active' : '' }}">
+        <i class="nav-icon fas fa-home"></i>
+        <p>@lang('models/tuteurs.plural')</p>
+    </a>
+</li>
