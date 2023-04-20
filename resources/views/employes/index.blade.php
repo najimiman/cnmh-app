@@ -5,8 +5,8 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>@lang('')
-                        {{ strtolower(__('models/employes.plural')) }}</h1>
+                    <h1>
+                        {{ __('models/employes.plural') }}</h1>
                 </div>
                 <div class="col-sm-6">
                     <a class="btn btn-primary float-right" href="{{ route('employes.create') }}">
@@ -44,10 +44,6 @@
         <div class="card" id="table-container">
             @include('employes.table')
         </div>
-
-        {{-- <div class="card" id="table-container">
-            @include('fonctions.table')
-        </div> --}}
     </div>
 @endsection
 @push('page_scripts')

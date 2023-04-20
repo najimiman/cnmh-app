@@ -35,18 +35,6 @@
     <p>{{ $employe->date_naissance }}</p>
 </div>
 
-<!-- Lieu Naissance Field -->
-<div class="col-sm-12">
-    {!! Form::label('lieu_naissance', __('models/employes.fields.lieu_naissance').':') !!}
-    <p>{{ $employe->lieu_naissance }}</p>
-</div>
-
-<!-- Sexe Field -->
-<div class="col-sm-12">
-    {!! Form::label('sexe', __('models/employes.fields.sexe').':') !!}
-    <p>{{ $employe->sexe }}</p>
-</div>
-
 <!-- Cin Field -->
 <div class="col-sm-12">
     {!! Form::label('cin', __('models/employes.fields.cin').':') !!}
@@ -56,7 +44,7 @@
 <!-- Fonction Field -->
 <div class="col-sm-12">
     {!! Form::label('fonction', __('models/employes.fields.fonction').':') !!}
-    <p>{{ $employe->fonction }}</p>
+    <p>{{ $fonction->nom }}</p>
 </div>
 
 <!-- Date Embauche Field -->
@@ -65,15 +53,4 @@
     <p>{{ $employe->date_embauche }}</p>
 </div>
 
-<!-- Date Depart Field -->
-<div class="col-sm-12">
-    {!! Form::label('date_depart', __('models/employes.fields.date_depart').':') !!}
-    <p>{{ $employe->date_depart }}</p>
-</div>
-
-<!-- Statut Field -->
-<div class="col-sm-12">
-    {!! Form::label('statut', __('models/employes.fields.statut').':') !!}
-    <p>{{ $employe->statut }}</p>
-</div>
 

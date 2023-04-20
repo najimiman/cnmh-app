@@ -10,7 +10,7 @@
 
                 <th>Telephone</th>
 
-                <th>Sexe</th>
+                <th>Email</th>
                 <th colspan="3">Action</th>
             </tr>
             </thead>
@@ -20,7 +20,7 @@
                     <td>{{ $employe->nom }}</td>
                     <td>{{ $employe->prenom }}</td>
                     <td>{{ $employe->telephone }}</td>
-                    <td>{{ $employe->sexe }}</td>
+                    <td>{{ $employe->email }}</td>
                     <td  style="width: 120px">
                         {!! Form::open(['route' => ['employes.destroy', $employe->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>

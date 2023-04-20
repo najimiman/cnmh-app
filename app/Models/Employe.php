@@ -45,4 +45,9 @@ class Employe extends Model
         'created_at' => 'nullable',
         'updated_at' => 'nullable'
     ];
+
+    public function fonction(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    {
+        return $this->belongsTo(\App\Models\fonction::class, 'fonction_id');
+    }
 }
