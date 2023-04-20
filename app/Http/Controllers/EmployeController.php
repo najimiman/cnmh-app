@@ -46,8 +46,8 @@ class EmployeController extends AppBaseController
         public function create()
         {
 
-            $function = Fonction::all();
-            return view('employes.create',compact("function"));
+            $fonction = Fonction::all();
+            return view('employes.create',compact("fonction"));
     }
 
     /**
@@ -70,6 +70,7 @@ class EmployeController extends AppBaseController
     public function show($id)
     {
         $employe = $this->employeRepository->find($id);
+        $fonction = $employe->fonction;
 
         if (empty($employe)) {
             Flash::error(__('models/employes.singular') . ' ' . __('messages.not_found'));
@@ -77,7 +78,9 @@ class EmployeController extends AppBaseController
             return redirect(route('employes.index'));
         }
 
-        return view('employes.show')->with('employe', $employe);
+        return view('employes.show')
+        ->with('employe', $employe)
+        ->with("fonction", $fonction);;
     }
 
     /**
@@ -86,14 +89,16 @@ class EmployeController extends AppBaseController
     public function edit($id)
     {
         $employe = $this->employeRepository->find($id);
-
+        $fonction = $employe->fonction;
         if (empty($employe)) {
             Flash::error(__('models/employes.singular') . ' ' . __('messages.not_found'));
 
             return redirect(route('employes.index'));
         }
 
-        return view('employes.edit')->with('employe', $employe);
+        return view('employes.edit')
+        ->with("employe", $employe)
+        ->with("fonction", $fonction);
     }
 
     /**
