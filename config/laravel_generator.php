@@ -11,49 +11,49 @@ return [
 
     'path' => [
 
-        'migration'         => database_path('migrations/'),
+        'migration'         => database_path('_components/migrations/'),
 
-        'model'             => app_path('Models/'),
+        'model'             => app_path('_components/Models/'),
 
-        'datatables'        => app_path('DataTables/'),
+        'datatables'        => app_path('_components/DataTables/'),
 
-        'livewire_tables'   => app_path('Http/Livewire/'),
+        'livewire_tables'   => app_path('_components/Http/Livewire/'),
 
-        'repository'        => app_path('Repositories/'),
+        'repository'        => app_path('_components/Repositories/'),
 
-        'routes'            => base_path('routes/web.php'),
+        'routes'            => base_path('_components/routes/web.php'),
 
-        'api_routes'        => base_path('routes/api.php'),
+        'api_routes'        => base_path('_components/routes/api.php'),
 
-        'request'           => app_path('Http/Requests/'),
+        'request'           => app_path('_components/Http/Requests/'),
 
-        'api_request'       => app_path('Http/Requests/API/'),
+        'api_request'       => app_path('_components/Http/Requests/API/'),
 
-        'controller'        => app_path('Http/Controllers/'),
+        'controller'        => app_path('_components/Http/Controllers/'),
 
-        'api_controller'    => app_path('Http/Controllers/API/'),
+        'api_controller'    => app_path('_components/Http/Controllers/API/'),
 
-        'api_resource'      => app_path('Http/Resources/'),
+        'api_resource'      => app_path('_components/Http/Resources/'),
 
         'schema_files'      => resource_path('model_schemas/'),
 
-        'seeder'            => database_path('seeders/'),
+        'seeder'            => database_path('_components/seeders/'),
 
-        'database_seeder'   => database_path('seeders/DatabaseSeeder.php'),
+        'database_seeder'   => database_path('_components/seeders/DatabaseSeeder.php'),
 
-        'factory'           => database_path('factories/'),
+        'factory'           => database_path('_components/factories/'),
 
         'view_provider'     => app_path('Providers/ViewServiceProvider.php'),
 
-        'tests'             => base_path('tests/'),
+        'tests'             => base_path('_components/tests/'),
 
-        'repository_test'   => base_path('tests/Repositories/'),
+        'repository_test'   => base_path('_components/tests/Repositories/'),
 
-        'api_test'          => base_path('tests/APIs/'),
+        'api_test'          => base_path('_components/tests/APIs/'),
 
-        'views'             => resource_path('views/'),
+        'views'             => resource_path('_components/views/'),
 
-        'menu_file'         => resource_path('views/layouts/menu.blade.php'),
+        'menu_file'         => resource_path('_components/views/layouts/menu.blade.php'),
     ],
 
     /*

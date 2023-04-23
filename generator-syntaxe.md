@@ -1,5 +1,6 @@
 
 ## Afficher le nom du model
+
 {{ $config->modelNames->camelPlural }}
 @@extends('layouts.app') -> @extends('layouts.app')
 
