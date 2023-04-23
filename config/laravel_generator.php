@@ -58,6 +58,7 @@ return [
         'views'             => base_path('_components/resources/views/'),
 
         'menu_file'         => base_path('_components/resources/views/layouts/menu.blade.php'),
+        'exports'       => base_path('_components/app/Exports/'),
     ],
 
     /*

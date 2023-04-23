@@ -13,6 +13,7 @@ use {{ $config->namespaces->app }}\Http\Controllers\AppBaseController;
 use {{ $config->namespaces->model }}\{{ $config->modelNames->name }};
 use Illuminate\Http\Request;
 use Flash;
+use Maatwebsite\Excel\Facades\Excel;
 
 class {{ $config->modelNames->name }}Controller extends AppBaseController
 {
@@ -105,5 +106,14 @@ class {{ $config->modelNames->name }}Controller extends AppBaseController
         @include('laravel-generator::scaffold.controller.messages.delete_success')
 
         return redirect(route('{{ $config->prefixes->getRoutePrefixWith('.') }}{{ $config->modelNames->camelPlural }}.index'));
+    }
+
+    public function export(){
+        return Excel::download(new Export{{ $config->modelNames->plural }} , '{{ $config->modelNames->plural }}.xlsx');
+    }
+    
+    public function import(Request $request){
+        Excel::import(new Import{{ $config->modelNames->plural }} , $request->file('file')->store('files'));
+        return redirect()->back();
     }
 }

@@ -6,6 +6,11 @@
 
 ## Model name 
 
+- Project
+  - {{ $config->modelNames->name }}
+- Projects 
+  - {{ $config->modelNames->plural }}
+  - 
 - couvertureMedical
   - {{ $config->modelNames->camel }}
 - couvertureMedicals
