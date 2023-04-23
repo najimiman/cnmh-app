@@ -9,7 +9,6 @@
         "doctrine/dbal": "^3.6",
         "guzzlehttp/guzzle": "^7.2",
         "infyomlabs/adminlte-templates": "^6.0",
-        "infyomlabs/laravel-generator": "^6.0",
         "infyomlabs/laravel-ui-adminlte": "^5.2",
         "laravel/framework": "^10.0",
         "laravel/sanctum": "^3.2",
@@ -69,6 +68,6 @@
             "php-http/discovery": true
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true
 }
