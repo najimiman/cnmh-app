@@ -13,7 +13,7 @@ class ExportGenerator extends BaseGenerator
     {
         parent::__construct();
         $this->path = config('laravel_generator.path.exports', app_path('Exports/'));
-        $this->exportFileName = 'Export'.$this->config->modelNames->plural.'.php';
+        $this->exportFileName = 'Export'.$this->config->modelNames->name.'.php';
     }
 
     public function generate()

@@ -1,14 +1,12 @@
-@php
-    echo "<?php".PHP_EOL;
-@endphp
+<?php
 
 namespace App\Exports;
 
-use App\Models\{{ $config->modelNames->camel }};
+use App\Models\fonction;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 
-class Export{{ $config->modelNames->name }} implements FromCollection,WithHeadings
+class ExportFonction implements FromCollection,WithHeadings
 {
     /**
     * @return \Illuminate\Support\Collection
