@@ -60,6 +60,12 @@ return [
         'menu_file'         => base_path('_components/resources/views/layouts/menu.blade.php'),
 
         'exports'       => base_path('_components/app/Exports/'),
+
+        'model_lang'       => base_path('_components/lang/fr/models/'),
+
+        
+
+
     ],
 
     /*

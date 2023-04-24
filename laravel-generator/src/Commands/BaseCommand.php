@@ -236,9 +236,10 @@ class BaseCommand extends Command
 
         $fileName = $this->config->modelNames->name.'.json';
 
-        if (file_exists($path.$fileName) && !$this->confirmOverwrite($fileName)) {
-            return;
-        }
+        // model_schemas doit être créer deux fois dans _Compoenets et dans le projet s'il n'exist pas 
+        // if (file_exists($path.$fileName) && !$this->confirmOverwrite($fileName)) {
+        //     return;
+        // }
         g_filesystem()->createFile($path.$fileName, json_encode($fileFields, JSON_PRETTY_PRINT));
         $this->comment("\nSchema File saved: ");
         $this->info($fileName);
@@ -256,17 +257,23 @@ class BaseCommand extends Command
             $locales['fields'][$field->name] = Str::title(str_replace('_', ' ', $field->name));
         }
 
-        $path = lang_path('en/models/');
+        
+        $path = config('laravel_generator.path.model_lang', lang_path('en/models/'));
+
 
         $fileName = $this->config->modelNames->snakePlural.'.php';
 
-        if (file_exists($path.$fileName) && !$this->confirmOverwrite($fileName)) {
-            return;
-        }
+        // Le fichier doit être compier deux fois : 
+        // - dans le répertoire _Components 
+        // - et dans le projet s'il n'exist pas 
+        // if (file_exists($path.$fileName) && !$this->confirmOverwrite($fileName)) {
+        //     return;
+        // }
 
         $locales = VarExporter::export($locales);
         $end = ';'.infy_nl();
         $content = "<?php\n\nreturn ".$locales.$end;
+        // dd($path.$fileName);
         g_filesystem()->createFile($path.$fileName, $content);
         $this->comment("\nModel Locale File saved.");
         $this->info($fileName);

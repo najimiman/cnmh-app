@@ -1,5 +1,5 @@
 [
-    {
+    { 
         "name": "id",
         "dbType": "bigInteger,true,true",
         "htmlType": "number",
