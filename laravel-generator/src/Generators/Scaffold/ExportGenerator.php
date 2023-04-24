@@ -20,7 +20,7 @@ class ExportGenerator extends BaseGenerator
     {
         $templateData = view('laravel-generator::scaffold.exports.export', $this->variables())->render();
 
-        g_filesystem()->createFile($this->path.$this->exportFileName, $templateData);
+       this->createComponentAndFileIfNotExist($this->path.$this->exportFileName, $templateData);
 
         $this->config->commandComment(infy_nl().'Export created: ');
         $this->config->commandInfo($this->exportFileName);

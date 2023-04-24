@@ -19,7 +19,7 @@ return [
 
         'model'             => base_path('_components/app/Models/'),
 
-        'datatables'        => base_path('_components//app/DataTables/'),
+        'datatables'        => base_path('_components/app/DataTables/'),
 
         'livewire_tables'   => base_path('_components/app/Http/Livewire/'),
 
@@ -58,6 +58,7 @@ return [
         'views'             => base_path('_components/resources/views/'),
 
         'menu_file'         => base_path('_components/resources/views/layouts/menu.blade.php'),
+
         'exports'       => base_path('_components/app/Exports/'),
     ],
 
