@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'singular' => 'CouvertureMedical',
-    'plural' => 'CouvertureMedicals',
+    'singular' => 'TypeHandicap',
+    'plural' => 'TypeHandicaps',
     'fields' => [
         'id' => 'Id',
         'nom' => 'Nom',

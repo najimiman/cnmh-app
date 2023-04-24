@@ -260,8 +260,8 @@ class BaseCommand extends Command
         
         $path = config('laravel_generator.path.model_lang', lang_path('en/models/'));
 
-
-        $fileName = $this->config->modelNames->snakePlural.'.php';
+        // fix bug snakePlural to camelPlural
+        $fileName = $this->config->modelNames->camelPlural.'.php';
 
         // Le fichier doit être compier deux fois : 
         // - dans le répertoire _Components 
