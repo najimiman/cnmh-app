@@ -20,10 +20,13 @@ class ExportGenerator extends BaseGenerator
     {
         $templateData = view('laravel-generator::scaffold.exports.export', $this->variables())->render();
 
-       this->createComponentAndFileIfNotExist($this->path.$this->exportFileName, $templateData);
+        g_filesystem()->createFile($this->path.$this->exportFileName, $templateData);
 
         $this->config->commandComment(infy_nl().'Export created: ');
-        $this->config->commandInfo($this->exportFileName);
+        $this->config->commandInfo($this->path.$this->exportFileName);
+       
+
+
     }
 
     public function rollback()

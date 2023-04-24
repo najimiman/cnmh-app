@@ -29,32 +29,26 @@ class BaseGenerator
         return [];
     }
 
-    /**
-     * Création de fichier deux fois
-     * - dans le dossier _Compoenets
-     * - et dans le projet si le fichier n'existe pas 
-     */
-    public function createComponentAndFileIfNotExist ($path, $fileName,$templateData){
 
-        $component_path = $path;
-        $project_path = Str::replace("_component","",$path);
+    // public function createComponentAndFileIfNotExist ($path, $fileName,$templateData){
 
-        $fileInComponent =  $component_path.$fileName;
-        $fileInProject =  $project_path.$fileName;
+    //     $component_path = $path;
+    //     $project_path = Str::replace("_components/","",$path);
 
-        $this->info("createComponentAndFileIfNotExist $fileInComponent : ". $fileInComponent );
-        $this->info("createComponentAndFileIfNotExist $fileInProject : ". $fileInProject );
-        dd($fileInComponent);
-        var_dump($fileInComponent);
+    //     $fileInComponent =  $component_path.$fileName;
+    //     $fileInProject =  $project_path.$fileName;
 
+    //     // $this->config->commandInfo(infy_nl()."createComponentAndFileIfNotExist fileInComponent : ". $fileInComponent );
+    //     // $this->config->commandInfo(infy_nl()."createComponentAndFileIfNotExist fileInProject : ". $fileInProject );
+        
+    //     // dd($fileInComponent);
+    
+    //     g_filesystem()->createFile($fileInComponent, $templateData);
 
-        g_filesystem()->createFile($fileInComponent, $templateData);
-
-        // Create file in project if not exist
-        if(!file_exists($fileInProject)) {
-            g_filesystem()->createFile($fileInProject, $templateData);
-            $this->config->commandComment(infy_nl().'Create note exist file : ');
-            $this->config->commandInfo($fileInProject);
-        } 
-    }
+    //     // Create file in project if not exist
+    //     if(!file_exists($fileInProject)) {
+    //         g_filesystem()->createFile($fileInProject, $templateData);
+    //         $this->config->commandWarn($fileInProject);
+    //     } 
+    // }
 }
