@@ -58,7 +58,7 @@
     "repositories": [
         {
             "type": "path",
-            "url": "./laravel-generator",
+            "url": "../laravel-generator",
             "canonical": false,
             "options": {
                 "symlink": true
