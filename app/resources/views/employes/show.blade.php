@@ -6,7 +6,12 @@
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1>
-                        @lang('models/employes.singular') {{ strtolower(__('crud.detail'))}}
+                        @lang('crud.details')
+                        @if (app()->getLocale() == 'fr')
+                            de l'{{ strtolower(__('models/employes.singular')) }}
+                        @else
+                            {{ strtolower(__('models/employes.singular')) }}
+                        @endif
                     </h1>
                 </div>
                 <div class="col-sm-6">

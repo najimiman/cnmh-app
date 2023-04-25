@@ -6,11 +6,11 @@
             <thead>
             <tr>
                 <th>Nom</th>
-                <th>Prenom</th>
+                <th>prénom</th>
 
-                <th>Telephone</th>
+                <th>Téléphone</th>
 
-                <th>Email</th>
+                <th>E-mail</th>
                 <th colspan="3">Action</th>
             </tr>
             </thead>
