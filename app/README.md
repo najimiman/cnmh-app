@@ -3,7 +3,8 @@
 ## Installation
 
 ````bash
-composer update
+npm install
+composer install
 php artisan migrate:fresh
 php artisan db:seed
 php artisan init
