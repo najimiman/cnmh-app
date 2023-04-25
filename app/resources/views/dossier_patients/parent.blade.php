@@ -2,7 +2,7 @@
 
 @section('content')
     <section class="content-header">
-        {{-- <div class="container-fluid">
+        <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1>@lang('models/tuteurs.plural')</h1>
@@ -14,7 +14,7 @@
                     </a>
                 </div>
             </div>
-        </div> --}}
+        </div>
     </section>
 
     <div class="content px-3">
@@ -53,15 +53,16 @@
                         <table class="table table-striped" id="tuteurs-table">
                         <thead>
                             <tr>
-                                <th>Etat Civil Id</th>
+                                <th></th>
                                 <th>Nom</th>
                                 <th>Prenom</th>
-                                <th>Sexe</th>
                                 <th>Telephone</th>
                                 <th>Email</th>
                                 <th>Adresse</th>
-                                <th>Cin</th>
-                                <th>Remarques</th>
+                                <th>Etat Civil</th>
+
+                                {{-- <th>Cin</th>
+                                <th>Remarques</th> --}}
                                 <th colspan="3">Action</th>
                             </tr>
                         </thead>
@@ -73,15 +74,15 @@
                                         <input type="radio" value="{{ $tuteur->id }}" name="parentRadio"
                                             aria-label="Radio button for following text input" >
                                     </td>
-                                    <td>{{ $tuteur->etat_civil_id }}</td>
+
                                     <td>{{ $tuteur->nom }}</td>
                                     <td>{{ $tuteur->prenom }}</td>
-                                    <td>{{ $tuteur->sexe }}</td>
                                     <td>{{ $tuteur->telephone }}</td>
                                     <td>{{ $tuteur->email }}</td>
                                     <td>{{ $tuteur->adresse }}</td>
-                                    <td>{{ $tuteur->cin }}</td>
-                                    <td>{{ $tuteur->remarques }}</td>
+                                    <td>{{ $tuteur->etatCivil->nom }}</td>
+                                    {{-- <td>{{ $tuteur->cin }}</td>
+                                    <td>{{ $tuteur->remarques }}</td> --}}
                                     <td style="width: 120px">
 
                                         <div class='btn-group'>
@@ -98,10 +99,14 @@
                         </tbody>
 
                     </table>
-                    <button  class="btn btn-primary">Next</button>
-                </form>
-                </div>
 
+
+                </div>
+                <div class="ml-4 mb-3">
+                    <button  class="btn btn-primary">Next</button>
+
+                </div>
+            </form>
                 <div class="card-footer clearfix">
                     <div class="float-right">
                         @include('adminlte-templates::common.paginate', ['records' => $tuteurs])
