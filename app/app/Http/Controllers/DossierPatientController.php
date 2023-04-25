@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CreateDossierPatientRequest;
-use App\Http\Requests\UpdateDossierPatientRequest;
+use Flash;
+use App\Models\Patient;
+use Illuminate\Http\Request;
+use App\Repositories\TuteurRepository;
+use App\Repositories\PatientRepository;
 use App\Http\Controllers\AppBaseController;
 use App\Repositories\DossierPatientRepository;
-use Illuminate\Http\Request;
-use Flash;
+use App\Http\Requests\CreateDossierPatientRequest;
+use App\Http\Requests\UpdateDossierPatientRequest;
 
 class DossierPatientController extends AppBaseController
 {
@@ -24,10 +27,10 @@ class DossierPatientController extends AppBaseController
      */
     public function index(Request $request)
     {
-        
+
         $query = $request->input('query');
         $dossierPatients = $this->dossierPatientRepository->paginate($query);
-       
+
         if ($request->ajax()) {
             return view('dossier_patients.table')
                 ->with('dossierPatients', $dossierPatients);
@@ -51,6 +54,7 @@ class DossierPatientController extends AppBaseController
     public function store(CreateDossierPatientRequest $request)
     {
         $input = $request->all();
+        // dd($input);
 
         $dossierPatient = $this->dossierPatientRepository->create($input);
 
@@ -132,4 +136,28 @@ class DossierPatientController extends AppBaseController
 
         return redirect(route('dossier-patients.index'));
     }
+    public function parent(Request $request){
+        $query = $request->input('query');
+         $tuteurRepository = new TuteurRepository;
+         $tuteurs  =  $tuteurRepository->paginate($query);
+        return view('dossier_patients.parent',compact("tuteurs"));
+    }
+    public function patient(Request $request){
+
+        $query = $request->input('query');
+
+         $patientRepository = new PatientRepository;
+         $patients  =  Patient::where("tuteur_id",$request->parentRadio)->get();
+        return view('dossier_patients.patient',compact("patients"));
+    }
+    public function entretien(Request $request){
+
+        return view('dossier_patients.entretien');
+    }
+    // public function storeEntetien(Request $request){
+    //   $entertien= $request->input();
+
+
+
+    // }
 }
