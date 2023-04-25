@@ -10,7 +10,7 @@
                 </div>
                 <div class="col-sm-6">
                     <a class="btn btn-primary float-right"
-                       href="{{ route('dossier-patients.create') }}">
+                       href="{{ route('dossier-patients.parent') }}">
                          @lang('crud.add_new') Dossier Patient
                     </a>
                 </div>

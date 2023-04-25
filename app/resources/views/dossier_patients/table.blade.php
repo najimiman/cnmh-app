@@ -19,7 +19,7 @@
                     <td>{{ $dossierPatient->numero_dossier }}</td>
                     <td>{{ $dossierPatient->etat }}</td>
                     <td>{{ $dossierPatient->date_enregsitrement }}</td>
-                    <td  style="width: 120px">
+                    {{-- <td  style="width: 120px">
                         {!! Form::open(['route' => ['dossierPatients.destroy', $dossierPatient->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>
                             <a href="{{ route('dossier-patients.show', [$dossierPatient->id]) }}"
@@ -33,7 +33,7 @@
                             {!! Form::button('<i class="far fa-trash-alt"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-xs', 'onclick' => "return confirm('Are you sure?')"]) !!}
                         </div>
                         {!! Form::close() !!}
-                    </td>
+                    </td> --}}
                 </tr>
             @endforeach
             </tbody>

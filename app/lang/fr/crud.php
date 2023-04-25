@@ -20,4 +20,6 @@ return [
     'deleted_at' => 'Supprimé le',
     'are_you_sure' => 'Êtes-vous sûr(e) ?',
     'addtypehandicap'=>'Ajouter un nouveau type d handicap',
+    'import'       => 'Import',
+
 ];
