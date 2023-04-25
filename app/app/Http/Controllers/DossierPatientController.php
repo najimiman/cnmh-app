@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CreateDossierPatientRequest;
 use App\Http\Requests\UpdateDossierPatientRequest;
 use App\Http\Controllers\AppBaseController;
+use App\Models\Patient;
 use App\Repositories\DossierPatientRepository;
 use Illuminate\Http\Request;
 use Flash;
@@ -65,7 +66,8 @@ class DossierPatientController extends AppBaseController
     public function show($id)
     {
         $dossierPatient = $this->dossierPatientRepository->find($id);
-
+        $pasient= Patient::find($id);
+        // $parent  = $pasient->tu
         if (empty($dossierPatient)) {
             Flash::error(__('models/dossierPatients.singular').' '.__('messages.not_found'));
 

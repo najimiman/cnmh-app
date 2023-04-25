@@ -31,7 +31,7 @@
 <div class="tab-content" id="custom-tabs-two-tabContent">
         <!-- /.col -->
         <br>
-    @include('dossier_patients.show_partials.Patient_Parent')
+    @include('dossier_patients.show_partials.Patient_Tuteurs')
     @include('dossier_patients.show_partials.Entretien_Social')
     @include('dossier_patients.show_partials.rendez_vous')
     @include('dossier_patients.show_partials.liste_attente')
