@@ -14,6 +14,7 @@ class Employe extends BaseModel
 
     public $fillable = [
         'nom',
+        'user_id',
         'prenom',
         'email',
         'telephone',
@@ -53,5 +54,9 @@ class Employe extends BaseModel
     public function fonction(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(\App\Models\fonction::class, 'fonction_id');
+    }
+    function user()
+    {
+        $this->belongsTo(\App\Models\User::class, 'user_id');
     }
 }

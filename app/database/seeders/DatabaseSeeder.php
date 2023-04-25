@@ -15,14 +15,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        \App\Models\User::factory(5)->create();
         $this->call([
+            ProjectsTableSeeder::class,
             ProjectsTableSeeder::class,
             CouvertureMedicalTableSeeder::class,
             TypeHandicapsTableSeeder::class,
             EtatCivilsTableSeeder::class,
             EmployesTableSeeder::class,
             NiveauScolairesTableSeeder::class,
-            
+
         ]);
 
     }
