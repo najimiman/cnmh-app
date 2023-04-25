@@ -2,18 +2,23 @@
 	"folders": [
 		{
 			// Source code
-			"name": "CNMH",
+			"name": "Manager",
 			"path": "."
 		  },
 		  {
 			// Docs and release notes
-			"name": "Components manager",
-			"path": "./generator"
+			"name": "Components",
+			"path": "../components"
 		  },
 		  {
 			// Generator
 			"name": "Generator",
-			"path": "./laravel-generator"
+			"path": "../laravel-generator"
+		  },
+		  {
+			// CNMH
+			"name": "CNMH",
+			"path": "../app"
 		  }
 	],
 	"settings": {}

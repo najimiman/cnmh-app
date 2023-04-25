@@ -4,6 +4,11 @@
 			// Source code
 			"name": "CNMH",
 			"path": "."
+		  },
+		  {
+			// Docs and release notes
+			"name": "Components",
+			"path": "../components"
 		  }
 	],
 	"settings": {}

@@ -29,7 +29,7 @@ class FileSystem
     {
 
         $fileInComponent = $file;
-        $fileInProject =  Str::replace("_components/","",$file);
+        $fileInProject =  Str::replace("../components","",$file);
 
         $path = dirname($file);
 
