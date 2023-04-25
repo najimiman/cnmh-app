@@ -6,7 +6,7 @@
 composer update
 php artisan migrate:fresh
 php artisan db:seed
-
+php artisan init
 ````
 
 ### laravel-excel
