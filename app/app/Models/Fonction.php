@@ -30,5 +30,4 @@ class Fonction extends BaseModel
         'updated_at' => 'nullable'
     ];
 
-
 }

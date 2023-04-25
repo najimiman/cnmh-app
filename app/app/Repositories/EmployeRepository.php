@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Models\Employe;
 use App\Repositories\BaseRepository;
+use Illuminate\Database\Eloquent\Model;
 
 class EmployeRepository extends BaseRepository
 {
@@ -17,6 +18,7 @@ class EmployeRepository extends BaseRepository
         'cin',
         'fonction_id',
         'date_embauche',
+        'user_id',
     ];
 
     public function getFieldsSearchable(): array
@@ -28,4 +30,5 @@ class EmployeRepository extends BaseRepository
     {
         return Employe::class;
     }
+
 }

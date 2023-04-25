@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Models\User;
 use Illuminate\Container\Container as Application;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Builder;
@@ -16,13 +17,15 @@ abstract class BaseRepository
     protected $model;
 
     protected $paginationLimit = 10;
-
+    protected $connect_user;
     /**
      * @throws \Exception
      */
     public function __construct()
     {
         $this->makeModel();
+        $this->connect_user = User::first();
+
     }
 
     /**
@@ -117,6 +120,7 @@ abstract class BaseRepository
      */
     public function create(array $input): Model
     {
+        $input['user_id'] = $this->connect_user->id;
         $model = $this->model->newInstance($input);
 
         $model->save();
