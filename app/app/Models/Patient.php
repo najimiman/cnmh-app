@@ -9,7 +9,7 @@ class Patient extends Model
     use HasFactory;    public $table = 'patients';
 
     public $fillable = [
-        'parent_id',
+        'tuteur_id',
         'niveau_scolaire_id',
         'nom',
         'prenom',
@@ -33,7 +33,7 @@ class Patient extends Model
     ];
 
     public static array $rules = [
-        'parent_id' => 'required',
+        'tuteur_id' => 'required',
         'niveau_scolaire_id' => 'nullable',
         'nom' => 'required|string|max:255',
         'prenom' => 'required|string|max:255',

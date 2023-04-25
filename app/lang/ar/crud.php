@@ -21,4 +21,6 @@ return [
     'updated_at'   => 'تاريخ آخر تعديل',
     'deleted_at'   => 'تاريخ الحذف',
     'are_you_sure' => 'هل أنت متأكد؟',
+    'import'       => 'استيراد',
+
 ];

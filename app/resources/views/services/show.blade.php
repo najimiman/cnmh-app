@@ -6,7 +6,7 @@
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1>
-                        @lang('models/service.singular') @lang('crud.detail')
+                        @lang('models/services.singular') @lang('crud.detail')
                     </h1>
                 </div>
                 <div class="col-sm-6">

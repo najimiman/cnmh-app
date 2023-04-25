@@ -8,7 +8,7 @@ use App\Repositories\BaseRepository;
 class PatientRepository extends BaseRepository
 {
     protected $fieldSearchable = [
-        'parent_id',
+        'tuteur_id',
         'niveau_scolaire_id',
         'nom',
         'prenom',

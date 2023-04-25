@@ -3,8 +3,8 @@
         <table class="table table-striped" id="services-table">
             <thead>
                 <tr>
-                    <th>@lang('models/service.fields.name')</th>
-                    <th>@lang('models/service.fields.description')</th>
+                    <th>@lang('models/services.fields.name')</th>
+                    <th>@lang('models/services.fields.description')</th>
                     <th colspan="3">Action</th>
                 </tr>
             </thead>
@@ -46,7 +46,7 @@
             </a>
 
             <button class="btn btn-default swalDefaultQuestion" data-toggle="modal" data-target="#importModel">
-                <i class="fas fa-file-import"></i> @lang('crud.export')
+                <i class="fas fa-file-import"></i> @lang('crud.import')
             </button>
 
         </div>

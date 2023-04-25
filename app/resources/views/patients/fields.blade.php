@@ -1,7 +1,7 @@
 <!-- Parent Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('parent_id', __('models/patients.fields.parent_id').':') !!}
-    {!! Form::number('parent_id', null, ['class' => 'form-control', 'required']) !!}
+    {!! Form::label('tuteur_id', __('models/patients.fields.parent_id').':') !!}
+    {!! Form::number('tuteur_id', null, ['class' => 'form-control', 'required']) !!}
 </div>
 
 <!-- Niveau Scolaire Id Field -->
