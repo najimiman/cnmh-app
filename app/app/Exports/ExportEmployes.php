@@ -14,8 +14,9 @@ class ExportEmployes implements FromCollection, WithHeadings
      */
     public function collection()
     {
+        $fonction_referance_culomn = (new Fonction())->referance_culomn;
+        $fonction_referance_culomn='nom';
         return
-
             $employe =  Employe::select(
                 'employes.nom AS nom',
                 'prenom',
@@ -25,7 +26,7 @@ class ExportEmployes implements FromCollection, WithHeadings
                 'date_naissance',
                 'cin',
                 'date_embauche',
-                'fonctions.nom as fonction'
+                'fonctions.'.$fonction_referance_culomn.' as fonction'
             )->join('fonctions', 'fonctions.id', '=', 'employes.fonction_id')
             ->get();
     }

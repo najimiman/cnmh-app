@@ -4,9 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
  use Illuminate\Database\Eloquent\Factories\HasFactory;
-class Employe extends Model
+class Employe extends BaseModel
 {
     use HasFactory;    public $table = 'employes';
+    function __construct()
+    {
+        $this->referance_culomn ="cin";
+    }
 
     public $fillable = [
         'nom',
