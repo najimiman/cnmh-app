@@ -11,6 +11,9 @@ use App\Models\Patient;
 use App\Repositories\DossierPatientRepository;
 use App\Http\Requests\CreateDossierPatientRequest;
 use App\Http\Requests\UpdateDossierPatientRequest;
+use App\Models\Consultation;
+use App\Models\RendezVous;
+use App\Models\Service;
 
 class DossierPatientController extends AppBaseController
 {
@@ -68,18 +71,30 @@ class DossierPatientController extends AppBaseController
      */
     public function show($id)
     {
-
-        
         $dossierPatient = $this->dossierPatientRepository->find($id);
         $patient= Patient::find($dossierPatient->patient_id);
         $parent  = $patient->parent;
+        // $consultation=Consultation::find($dossierPatient->patient_id);
+        // $pp=$consultation->id;
+        // $rendevous=RendezVous::find($pp);
+        // dd($consultation);
+        // $consultation=Consultation::find($id);
+        $consultation=$dossierPatient->dossierPatientConsultations;
+        $service=$dossierPatient->dossierPatientServices;
+        foreach($consultation as $value){
+            $R=RendezVous::where('consultation_id',$value->id)->get();
+        }
+        // foreach($service as $value){
+        //    
+        // }
+        // dd($R);
         if (empty($dossierPatient)) {
             Flash::error(__('models/dossierPatients.singular').' '.__('messages.not_found'));
 
             return redirect(route('dossier-patients.index'));
         }
 
-        return view('dossier_patients.show',compact('dossierPatient',"patient","parent"));
+        return view('dossier_patients.show',compact('dossierPatient',"patient","parent","R","service"));
     }
 
     /**

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('employes', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('fonction_id')->nullable();
+            // $table->unsignedBigInteger('fonction_id');
             $table->string('nom');
             $table->string('prenom');
             $table->string('email');
@@ -22,6 +22,7 @@ return new class extends Migration
             $table->date('date_naissance');
             $table->string('cin');
             $table->date('date_embauche');
+            $table->foreignId('fonction_id')->references('id')->on('fonctions');
             $table->timestamps();
         });
     }
