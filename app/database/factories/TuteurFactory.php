@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 
 use App\Models\EtatCivil;
 
+
 class TuteurFactory extends Factory
 {
     /**
@@ -23,13 +24,10 @@ class TuteurFactory extends Factory
      */
     public function definition()
     {
-        $etatCivil = EtatCivil::first();
-        if (!$etatCivil) {
-            $etatCivil = EtatCivil::factory()->create();
-        }
+
 
         return [
-            'etat_civil_id' => $this->faker->word,
+            'etat_civil_id' => $this->faker->randomElement(EtatCivil::pluck("id")),
             'nom' => $this->faker->text($this->faker->numberBetween(5, 255)),
             'prenom' => $this->faker->text($this->faker->numberBetween(5, 255)),
             'sexe' => $this->faker->text($this->faker->numberBetween(5, 255)),
@@ -37,7 +35,7 @@ class TuteurFactory extends Factory
             'email' => $this->faker->email,
             'adresse' => $this->faker->text($this->faker->numberBetween(5, 255)),
             'cin' => $this->faker->text($this->faker->numberBetween(5, 255)),
-            'remarques' => $this->faker->text($this->faker->numberBetween(5, 65535)),
+            'remarques' => $this->faker->text($this->faker->numberBetween(5, 255)),
             'created_at' => $this->faker->date('Y-m-d H:i:s'),
             'updated_at' => $this->faker->date('Y-m-d H:i:s')
         ];

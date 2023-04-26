@@ -24,17 +24,12 @@ class DossierPatientFactory extends Factory
      */
     public function definition()
     {
-        
-        $patient = Patient::first();
-        if (!$patient) {
-            $patient = Patient::factory()->create();
-        }
 
         return [
-            'patient_id' => $this->faker->word,
-            'couverture_medical_id' => $this->faker->word,
-            'numero_dossier' => $this->faker->word,
-            'etat' => $this->faker->text($this->faker->numberBetween(5, 255)),
+            'patient_id' => $this->faker->randomElement(Patient::pluck("id")),
+            'couverture_medical_id' => $this->faker->randomElement(CouvertureMedical::pluck("id")),
+            'numero_dossier' => $this->faker->numberBetween(5, 255),
+            'etat' => $this->faker->word,
             'date_enregsitrement' => $this->faker->date('Y-m-d'),
             'created_at' => $this->faker->date('Y-m-d H:i:s'),
             'updated_at' => $this->faker->date('Y-m-d H:i:s')

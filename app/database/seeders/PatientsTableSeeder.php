@@ -13,6 +13,6 @@ class PatientsTableSeeder extends Seeder
      */
     public function run()
     {
-
+        \App\Models\Patient::factory(8)->create();
     }
 }
