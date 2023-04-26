@@ -3,10 +3,11 @@
 ## Installation
 
 ````bash
-composer update
+npm install
+composer install
 php artisan migrate:fresh
 php artisan db:seed
-
+npm run dev
 ````
 
 ### laravel-excel

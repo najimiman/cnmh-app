@@ -9,7 +9,7 @@ class Patient extends Model
     use HasFactory;    public $table = 'patients';
 
     public $fillable = [
-        'parent_id',
+        'tuteur_id',
         'niveau_scolaire_id',
         'nom',
         'prenom',
@@ -33,7 +33,7 @@ class Patient extends Model
     ];
 
     public static array $rules = [
-        'parent_id' => 'required',
+        'tuteur_id' => 'required',
         'niveau_scolaire_id' => 'nullable',
         'nom' => 'required|string|max:255',
         'prenom' => 'required|string|max:255',
@@ -54,7 +54,7 @@ class Patient extends Model
 
     public function parent(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(\App\Models\Parent::class, 'parent_id');
+        return $this->belongsTo(\App\Models\Tuteur::class, 'tuteur_id');
     }
 
     public function dossierPatients(): \Illuminate\Database\Eloquent\Relations\HasMany

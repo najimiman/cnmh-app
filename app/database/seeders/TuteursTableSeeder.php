@@ -13,6 +13,6 @@ class TuteursTableSeeder extends Seeder
      */
     public function run()
     {
-
+        \App\Models\Tuteur::factory(8)->create();
     }
 }

@@ -38,7 +38,7 @@
                             Nom:
                         </td>
                         <td>
-                            AHOUZI
+                            {{ $patient->nom }}
                         </td>
                     </tr>
                     <tr>
@@ -46,7 +46,7 @@
                             Prénom:
                         </td>
                         <td>
-                            Hasnae
+                            {{ $patient->prenom }}
                         </td>
                     </tr>
 
@@ -56,7 +56,7 @@
                             Sexe:
                         </td>
                         <td>
-                            Femme
+                            {{ $patient->telephone }}
                         </td>
                     </tr>
                     <tr>
@@ -65,7 +65,7 @@
                             Date de naissance:
                         </td>
                         <td>
-                            03 .09 .2011
+                            {{ $patient->patient_id }}
                         </td>
                     </tr>
                     <tr>
@@ -74,7 +74,7 @@
                             Telephone:
                         </td>
                         <td>
-                            06 70 33 08 45
+                            {{ $patient->telephone }}
                         </td>
                     </tr>
                     <tr>
@@ -83,7 +83,7 @@
                             CIN/Numéro d'état civil:
                         </td>
                         <td>
-                            JE250344
+                            {{ $patient->cin }}
                         </td>
                     </tr>
                     <tr>
@@ -92,7 +92,7 @@
                             Adresse:
                         </td>
                         <td>
-                            RUE SEDAM BIR CHIFA TANGER MAROC
+                            {{ $patient->adresse }}
                         </td>
                     </tr>
                     <tr>
@@ -101,7 +101,7 @@
                             Date d'enregistrement:
                         </td>
                         <td>
-                            03 .09 .2011 / 2:45PM
+                            {{ $dossierPatient->date_enregsitrement }}
                         </td>
                     </tr>
                     <tr>
@@ -110,7 +110,7 @@
                             Remarques:
                         </td>
                         <td>
-                            ceci est une remarque concernant le patient
+                            {{ $patient->remarques }}
                         </td>
                     </tr>
 
@@ -150,7 +150,7 @@
                             Nom:
                         </td>
                         <td>
-                            AHOUZI
+                            {{ $parent->nom }}
                         </td>
                     </tr>
                     <tr>
@@ -158,7 +158,7 @@
                             Prénom:
                         </td>
                         <td>
-                            Fahd
+                            {{ $parent->prenom }}
                         </td>
                     </tr>
                     <tr>
@@ -166,7 +166,7 @@
                             Sexe:
                         </td>
                         <td>
-                            Homme
+                            {{ $parent->sexe }}
                         </td>
                     </tr>
                     <tr>
@@ -174,7 +174,7 @@
                             Telephone:
                         </td>
                         <td>
-                            06 70 33 08 45
+                            {{ $parent->telephone }}
                         </td>
                     </tr>
                     <tr>
@@ -182,7 +182,7 @@
                             Email:
                         </td>
                         <td>
-                            ahouzifahd@gmail.com
+                            {{ $parent->email }}
                         </td>
                     </tr>
                     <tr>
@@ -190,7 +190,7 @@
                             CIN:
                         </td>
                         <td>
-                            K456763
+                            {{ $parent->cin }}
                         </td>
                     </tr>
                     <tr>
@@ -198,7 +198,7 @@
                             Adresse:
                         </td>
                         <td>
-                            RUE SEDAM BIR CHIFA TANGER MAROC
+                            {{ $parent->adresse }}
                         </td>
                     </tr>
                     <tr>
@@ -206,7 +206,7 @@
                             Remarques:
                         </td>
                         <td>
-                            ceci est une remarque dit par le parent
+                            {{ $parent->remarques }}
                         </td>
                     </tr>
 
