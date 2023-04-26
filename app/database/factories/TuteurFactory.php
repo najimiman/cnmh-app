@@ -28,14 +28,14 @@ class TuteurFactory extends Factory
 
         return [
             'etat_civil_id' => $this->faker->randomElement(EtatCivil::pluck("id")),
-            'nom' => $this->faker->text($this->faker->numberBetween(5, 255)),
-            'prenom' => $this->faker->text($this->faker->numberBetween(5, 255)),
-            'sexe' => $this->faker->text($this->faker->numberBetween(5, 255)),
+            'nom' => $this->faker->name(),
+            'prenom' => $this->faker->name(),
+            'sexe' => $this->faker->text($this->faker->numberBetween(5, 7)),
             'telephone' => $this->faker->numerify('0##########'),
             'email' => $this->faker->email,
-            'adresse' => $this->faker->text($this->faker->numberBetween(5, 255)),
-            'cin' => $this->faker->text($this->faker->numberBetween(5, 255)),
-            'remarques' => $this->faker->text($this->faker->numberBetween(5, 255)),
+            'adresse' => $this->faker->text($this->faker->numberBetween(5, 30)),
+            'cin' => $this->faker->text($this->faker->numberBetween(5, 10)),
+            'remarques' => $this->faker->text($this->faker->numberBetween(5, 40)),
             'created_at' => $this->faker->date('Y-m-d H:i:s'),
             'updated_at' => $this->faker->date('Y-m-d H:i:s')
         ];

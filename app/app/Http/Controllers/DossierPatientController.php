@@ -11,6 +11,8 @@ use App\Models\Patient;
 use App\Repositories\DossierPatientRepository;
 use App\Http\Requests\CreateDossierPatientRequest;
 use App\Http\Requests\UpdateDossierPatientRequest;
+use App\Models\DossierPatient;
+use App\Models\TypeHandicap;
 
 class DossierPatientController extends AppBaseController
 {
@@ -53,6 +55,10 @@ class DossierPatientController extends AppBaseController
      */
     public function store(CreateDossierPatientRequest $request)
     {
+        $TypeHandicaps= DossierPatient_ty::create([
+           'type_id' =  $request->type
+           'pation_id' =  $request->idpatient
+        ])
         $input = $request->all();
         // dd($input);
 
@@ -69,7 +75,7 @@ class DossierPatientController extends AppBaseController
     public function show($id)
     {
 
-        
+
         $dossierPatient = $this->dossierPatientRepository->find($id);
         $patient= Patient::find($dossierPatient->patient_id);
         $parent  = $patient->parent;
@@ -155,7 +161,8 @@ class DossierPatientController extends AppBaseController
     }
     public function entretien(Request $request){
 
-        return view('dossier_patients.entretien');
+        $type_handicap= TypeHandicap::all();
+        return view('dossier_patients.entretien',compact('type_handicap'));
     }
     // public function storeEntetien(Request $request){
     //   $entertien= $request->input();

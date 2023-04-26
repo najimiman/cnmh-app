@@ -18,6 +18,9 @@ return new class extends Migration
             $table->integer('numero_dossier');
             $table->string('etat');
             $table->date('date_enregsitrement');
+            $table->foreignId('user_id')->constrained('users');
+
+
             $table->timestamps();
         });
     }
