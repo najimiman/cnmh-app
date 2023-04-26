@@ -20,13 +20,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        \App\Models\User::factory(5)->create();
         $this->call([
+            ProjectsTableSeeder::class,
             ProjectsTableSeeder::class,
             CouvertureMedicalTableSeeder::class,
             TypeHandicapsTableSeeder::class,
             EtatCivilsTableSeeder::class,
             EmployesTableSeeder::class,
             NiveauScolairesTableSeeder::class,
+<<<<<<< HEAD
             TuteursTableSeeder::class,
             PatientsTableSeeder::class,
             EtatCivilsTableSeeder::class,
@@ -34,6 +37,9 @@ class DatabaseSeeder extends Seeder
             RendezVousesTableSeeder::class,
 
             
+=======
+
+>>>>>>> 18f5b5fd41ce0295c8160d8d03cdffb578572436
         ]);
 
     }

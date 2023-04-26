@@ -13,7 +13,7 @@ return [
         'date_naissance' => 'Date Naissance',
         'cin' => 'Cin',
         'fonction_id' => 'Fonction id',
-        'date_embauche' => 'Date embauche',
+        'date_embauche' => "Date d'embauche",
         'created_at' => 'Created At',
         'updated_at' => 'Updated At',
     ],

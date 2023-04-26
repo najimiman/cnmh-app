@@ -71,7 +71,7 @@
 
 <!-- Date Embauche Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('date_embauche', __('models/employes.fields.date_embauche') . ':') !!}
+    {!! Form::label("Date d'embauche", __('models/employes.fields.date_embauche') . ':') !!}
     @if (!empty($employe))
         {!! Form::date('date_embauche', $employe->date_embauche, ['class' => 'form-control', 'id' => 'date_embauche']) !!}
     @else
