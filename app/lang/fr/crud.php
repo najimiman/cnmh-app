@@ -7,6 +7,7 @@ return [
     'edit' => 'Modifier',
     'save' => 'Enregistrer',
     'detail' => 'Détail',
+    'details' => 'Détails',
     'back' => 'Retour',
     'search' => 'Rechercher',
     'export' => 'Exporter',
@@ -21,5 +22,4 @@ return [
     'are_you_sure' => 'Êtes-vous sûr(e) ?',
     'addtypehandicap'=>'Ajouter un nouveau type d handicap',
     'import'       => 'Import',
-
 ];

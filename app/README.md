@@ -7,7 +7,7 @@ npm install
 composer install
 php artisan migrate:fresh
 php artisan db:seed
-php artisan init
+npm run dev
 ````
 
 ### laravel-excel

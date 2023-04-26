@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Flash;
-use App\Models\Patient;
 use Illuminate\Http\Request;
 use App\Repositories\TuteurRepository;
 use App\Repositories\PatientRepository;
 use App\Http\Controllers\AppBaseController;
+use App\Models\Patient;
 use App\Repositories\DossierPatientRepository;
 use App\Http\Requests\CreateDossierPatientRequest;
 use App\Http\Requests\UpdateDossierPatientRequest;
@@ -68,15 +68,18 @@ class DossierPatientController extends AppBaseController
      */
     public function show($id)
     {
-        $dossierPatient = $this->dossierPatientRepository->find($id);
 
+        
+        $dossierPatient = $this->dossierPatientRepository->find($id);
+        $patient= Patient::find($dossierPatient->patient_id);
+        $parent  = $patient->parent;
         if (empty($dossierPatient)) {
             Flash::error(__('models/dossierPatients.singular').' '.__('messages.not_found'));
 
             return redirect(route('dossier-patients.index'));
         }
 
-        return view('dossier_patients.show')->with('dossierPatient', $dossierPatient);
+        return view('dossier_patients.show',compact('dossierPatient',"patient","parent"));
     }
 
     /**

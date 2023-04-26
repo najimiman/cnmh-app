@@ -54,7 +54,7 @@ class Patient extends Model
 
     public function parent(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(\App\Models\Parent::class, 'parent_id');
+        return $this->belongsTo(\App\Models\Tuteur::class, 'tuteur_id');
     }
 
     public function dossierPatients(): \Illuminate\Database\Eloquent\Relations\HasMany

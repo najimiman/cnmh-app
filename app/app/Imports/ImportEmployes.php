@@ -15,7 +15,7 @@ class ImportEmployes implements ToModel
     public function model(array $row)
     {
         $date_naissance = date('Y-m-d', strtotime($row[5]));
-        $date_embauche = date('Y-m-d', strtotime($row[8]));
+        $date_embauche = date('Y-m-d', strtotime($row[7]));
         return new Employe([
             'nom' => $row[0],
             'prenom' => $row[1],
@@ -23,8 +23,9 @@ class ImportEmployes implements ToModel
             'telephone' => $row[3],
             'adresse' => $row[4],
             'date_naissance' => $date_naissance,
-            'cin' => $row[7],
+            'cin' => $row[6],
             'date_embauche' => $date_embauche,
+            'fonction_id' => [""],
         ]);
     }
 }

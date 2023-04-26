@@ -23,18 +23,18 @@ class RendezVousFactory extends Factory
      */
     public function definition()
     {
-        $consultation = Consultation::first();
-        if (!$consultation) {
-            $consultation = Consultation::factory()->create();
-        }
+        // $consultation = Consultation::first();
+        // if (!$consultation) {
+        //     $consultation = Consultation::factory()->create();
+        // }
 
         return [
-            'id_consultation' => $this->faker->word,
+            'consultation_id' => $this->faker->randomElement(Consultation::pluck("id")),
             'date_rendez_vous' => $this->faker->date('Y-m-d H:i:s'),
             'etat' => $this->faker->text($this->faker->numberBetween(5, 255)),
-            'remarques' => $this->faker->text($this->faker->numberBetween(5, 65535)),
+            'remarques' => $this->faker->text($this->faker->numberBetween(5, 255)),
             'created_at' => $this->faker->date('Y-m-d H:i:s'),
-            'updated_at' => $this->faker->date('Y-m-d H:i:s')
+            'updated_at' => $this->faker->date('Y-m-d H:i:s'),
         ];
     }
 }

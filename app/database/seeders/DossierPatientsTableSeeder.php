@@ -13,6 +13,6 @@ class DossierPatientsTableSeeder extends Seeder
      */
     public function run()
     {
-
+        \App\Models\DossierPatient::factory(8)->create();
     }
 }

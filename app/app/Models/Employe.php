@@ -4,12 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
  use Illuminate\Database\Eloquent\Factories\HasFactory;
-class Employe extends Model
+class Employe extends BaseModel
 {
     use HasFactory;    public $table = 'employes';
+    function __construct()
+    {
+        $this->referance_culomn ="cin";
+    }
 
     public $fillable = [
         'nom',
+        'user_id',
         'prenom',
         'email',
         'telephone',
@@ -49,5 +54,9 @@ class Employe extends Model
     public function fonction(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(\App\Models\fonction::class, 'fonction_id');
+    }
+    function user()
+    {
+        $this->belongsTo(\App\Models\User::class, 'user_id');
     }
 }
