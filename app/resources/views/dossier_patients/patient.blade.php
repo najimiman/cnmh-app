@@ -2,19 +2,21 @@
 
 @section('content')
     <section class="content-header">
-        {{-- <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1>@lang('models/tuteurs.plural')</h1>
-                </div>
-                <div class="col-sm-6">
-                    <a class="btn btn-primary float-right"
-                       href="{{ route('tuteurs.create') }}">
-                         @lang('crud.add_new') Tuteur
-                    </a>
+        {{-- <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>@lang('models/tuteurs.plural')</h1>
+                    </div>
+                    <div class="col-sm-6">
+                        <a class="btn btn-primary float-right"
+                           href="{{ route('patients.create') }}">
+                             @lang('crud.add_new') Patient
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div> --}}
+        </section> --}}
     </section>
 
     <div class="content px-3">

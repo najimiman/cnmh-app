@@ -14,6 +14,7 @@ use App\Http\Controllers\AppBaseController;
 use App\Repositories\DossierPatientRepository;
 use App\Http\Requests\CreateDossierPatientRequest;
 use App\Http\Requests\UpdateDossierPatientRequest;
+use App\Models\DossierPatient_typeHandycape;
 
 class DossierPatientController extends AppBaseController
 {
@@ -56,26 +57,17 @@ class DossierPatientController extends AppBaseController
      */
     public function store(CreateDossierPatientRequest $request)
     {
-                // Check if the patient ID is valid
-            // $patient = Patient::find($request->input('patient_id'));
-            // if (!$patient) {
-            //     return redirect()->back()->withInput()->withErrors(['patient_id' => 'Invalid patient ID']);
-            // }
-
-            // Create a new dossier patient record
-            $input = $request->except('type_id');
-            $input['user_id'] = '1';
-            // $input['patient_id'] = $patient->id;
-
-            $dossierPatient = new DossierPatient;
-            $dossierPatient->fill($input);
+            $input = $request->all();
+            $dossierPatient =$this->dossierPatientRepository->create($input);
             $dossierPatient->save();
 
-            // Create a new dossier patient type record
-            // $TypeHandicaps = new DossierPatient_ty;
-            // $TypeHandicaps->type_handicap_id = $request->input('type_handicap_id');
-            // $TypeHandicaps->dossier_patient_id = $dossierPatient->id;
-            // $TypeHandicaps->save();
+            $dossierPatient::where('numero_dossier',$request->numero_dossier)->get();
+            $DossierPatient_typeHandycape = new DossierPatient_typeHandycape;
+            $DossierPatient_typeHandycape->type_handicap_id =$request->type_handicap_id;
+            $DossierPatient_typeHandycape->dossier_patient_id  =$dossierPatient->id ;
+            $DossierPatient_typeHandycape->save();
+
+           
 
             Flash::success(__('messages.saved', ['model' => __('models/dossierPatients.singular')]));
 
