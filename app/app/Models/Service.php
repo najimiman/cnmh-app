@@ -29,4 +29,9 @@ class Service extends Model
     {
         return $this->belongsToMany(\App\Models\DossierPatient::class, 'dossier_patient_service');
     }
+    public function consultationServices(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->BelongsToMany(\App\Models\Consultation::class, 'consultation_service');
+    }
+
 }

@@ -20,10 +20,11 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
+            {{-- <tr>
                 <td>
-                    {{-- {{ $R->date_rendez_vous }} --}}
+                    {{ $R->date_rendez_vous }}
                     {{explode(' ', $R->date_rendez_vous)}}
+                    12-1-2022
                 </td>
                 <td>
                     2:00 PM
@@ -41,7 +42,29 @@
                         Détail
                     </a>
                 </td>
-            </tr>
+            </tr> --}}
+            @foreach ($listrendezvous as $item)
+                <tr>
+                    {{-- <td>{{$item->date_rendez_vous}} --}}
+                        <td>
+                        {{explode(' ', $item->date_rendez_vous)[0]}}
+                        </td>
+                    <td>
+                        {{explode(' ', $item->date_rendez_vous)[1]}}
+                    </td>
+                    <td>
+                        {{$item->nom}}
+                    </td>
+                    <td>{{$item->etat}}</td>
+                    <td>
+                        <a class="btn btn-primary btn-sm" href="#">
+                            <i class="fas fa-folder">
+                            </i>
+                            Détail
+                        </a>
+                    </td>
+                </tr>
+            @endforeach
         </tbody>
     </table>
 </div>
