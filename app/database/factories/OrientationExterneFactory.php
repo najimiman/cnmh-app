@@ -25,14 +25,14 @@ class OrientationExterneFactory extends Factory
     public function definition()
     {
         
-        $service = Service::first();
-        if (!$service) {
-            $service = Service::factory()->create();
-        }
+        // $service = Service::first();
+        // if (!$service) {
+        //     $service = Service::factory()->create();
+        // }
 
         return [
-            'dossier_patient_id' => $this->faker->word,
-            'service_id' => $this->faker->word,
+            'dossier_patient_id' => $this->faker->randomElement(DossierPatient::pluck("id")),
+            'service_id' =>$this->faker->randomElement(Service::pluck("id")),
             'objet' => $this->faker->text($this->faker->numberBetween(5, 255)),
             'description' => $this->faker->text($this->faker->numberBetween(5, 65535)),
             'date_orientation' => $this->faker->date('Y-m-d'),

@@ -13,6 +13,6 @@ class OrientationExternesTableSeeder extends Seeder
      */
     public function run()
     {
-
+        \App\Models\OrientationExterne::factory(8)->create();
     }
 }

@@ -6,6 +6,7 @@ namespace Database\Seeders;
 
 use App\Models\Consultation;
 use App\Models\EtatCivil;
+use App\Models\MenuGroup;
 use App\Models\NiveauScolaire;
 use App\Models\Patient;
 use App\Models\RendezVous;
@@ -23,13 +24,22 @@ class DatabaseSeeder extends Seeder
         \App\Models\User::factory(5)->create();
         $this->call([
             AppMenuSeeder::class,
-            ProjectsTableSeeder::class,
-            ProjectsTableSeeder::class,
-            CouvertureMedicalTableSeeder::class,
+            // ProjectsTableSeeder::class,
+            CouvertureMedicalsTableSeeder::class,
             TypeHandicapsTableSeeder::class,
             EtatCivilsTableSeeder::class,
-            EmployesTableSeeder::class,
+            // EmployesTableSeeder::class,
             NiveauScolairesTableSeeder::class,
+            TuteursTableSeeder::class,
+            PatientsTableSeeder::class,
+            ConsultationsTableSeeder::class,
+            RendezVousesTableSeeder::class,
+            DossierPatientsTableSeeder::class,
+            // FonctionsTableSeeder::class,
+            // MembersTableSeeder::class,
+            OrientationExternesTableSeeder::class,
+            ServicesTableSeeder::class,
+            // ReclamationsTableSeeder::class,
         ]);
 
     }
