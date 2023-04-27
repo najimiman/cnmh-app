@@ -25,6 +25,11 @@
     @vite('resources/js/app.js')
     @stack('third_party_scripts')
     @stack('page_scripts')
+    <script>
+        $(document).ready(() => {
+            // $('.menu-open').click()
+        })
+    </script>
 </body>
 
 </html>

@@ -10,9 +10,11 @@
             </li>
         @endforeach
     @else
-        <li class="nav-item">
-            <a href="#" 
-            class="nav-link {{ $items->filter(fn($item, $key) => Route::is($item->url . '*'))->isEmpty() ? '' : 'active menu-open' }}">
+        @php
+            $isActive = $items->filter(fn($item, $key) => Route::is($item->url . '*'))->isNotEmpty();
+        @endphp
+        <li class="nav-item {{ $isActive ? 'menu-open' : '' }}">
+            <a href="#" class="nav-link {{ $isActive ? 'active' : '' }}">
                 {!! $items->first()->menu_group?->icon !!}
                 <p class="pl-2">
                     {{ $group }}
@@ -22,7 +24,8 @@
             <ul class="nav nav-treeview" style="">
                 @foreach ($items as $item)
                     <li class="nav-item">
-                        <a href="{{ Route::has($item->url) ? route($item->url) : $item->url }}" class="nav-link {{ Route::is($item->url . '*') ? 'active' : '' }}">
+                        <a href="{{ Route::has($item->url) ? route($item->url) : $item->url }}"
+                            class="nav-link {{ Route::is($item->url . '*') ? 'active' : '' }}">
                             <p> {{ $item->nom }} </p>
                         </a>
                     </li>
