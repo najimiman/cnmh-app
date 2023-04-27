@@ -30,7 +30,7 @@ class DossierPatientFactory extends Factory
             'couverture_medical_id' => $this->faker->randomElement(CouvertureMedical::pluck("id")),
             'numero_dossier' => $this->faker->numberBetween(5, 255),
             'etat' => $this->faker->word,
-            'date_enregsitrement' => $this->faker->date('Y-m-d'),
+            'date_enregsitrement' => $this->faker->dateTime('Y-m-d H:i:s'),
             'created_at' => $this->faker->date('Y-m-d H:i:s'),
             'updated_at' => $this->faker->date('Y-m-d H:i:s')
         ];

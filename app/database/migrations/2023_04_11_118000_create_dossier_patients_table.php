@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('couverture_medical_id')->constrained('couverture_medicals');
             $table->integer('numero_dossier');
             $table->string('etat');
-            $table->date('date_enregsitrement');
+            $table->dateTime('date_enregsitrement');
             $table->timestamps();
         });
     }

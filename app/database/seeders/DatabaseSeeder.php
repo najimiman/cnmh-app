@@ -36,7 +36,7 @@ class DatabaseSeeder extends Seeder
             DossierPatientsTableSeeder::class,
             // FonctionsTableSeeder::class,
             // MembersTableSeeder::class,
-            OrientationExternesTableSeeder::class,
+            // OrientationExternesTableSeeder::class,
             ServicesTableSeeder::class,
             // ReclamationsTableSeeder::class,
         ]);
