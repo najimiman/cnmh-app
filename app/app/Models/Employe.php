@@ -8,9 +8,9 @@ class Employe extends BaseModel
 {
     use HasFactory;
      public $table = 'employes';
-     function referance(){
-     $this->referance_culomn ="cin";
-     }
+    //  function referance(){
+    //  $this->referance_culomn ="cin";
+    //  }
 
     public $fillable = [
         'nom',
