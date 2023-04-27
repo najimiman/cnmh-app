@@ -41,14 +41,14 @@ class DossierPatient extends Model
         return $this->belongsTo(\App\Models\Patient::class, 'patient_id');
     }
 
-    public function dossierPatientConsultations(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function dossierPatientConsultations(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
-        return $this->hasMany(\App\Models\DossierPatientConsultation::class, 'dossier_patient_id');
+        return $this->belongsToMany(\App\Models\Consultation::class, 'dossier_patient_consultation');
     }
 
-    public function dossierPatientServices(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function dossierPatientServices(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
-        return $this->hasMany(\App\Models\DossierPatientService::class, 'dossier_patient_id');
+        return $this->belongsToMany(\App\Models\Service::class, 'dossier_patient_service');
     }
 
     public function dossierPatientTypeHandicaps(): \Illuminate\Database\Eloquent\Relations\HasMany

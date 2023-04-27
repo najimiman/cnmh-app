@@ -22,7 +22,8 @@
         <tbody>
             <tr>
                 <td>
-                    03/03/2022
+                    {{-- {{ $R->date_rendez_vous }} --}}
+                    {{explode(' ', $R->date_rendez_vous)}}
                 </td>
                 <td>
                     2:00 PM
@@ -32,48 +33,6 @@
                 </td>
                 <td>
                     <span class="badge bg-danger">Absence</span>
-                </td>
-                <td>
-                    <a class="btn btn-primary btn-sm" href="#">
-                        <i class="fas fa-folder">
-                        </i>
-                        Détail
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    03/02/2023
-                </td>
-                <td>
-                    10:00 AM
-                </td>
-                <td>
-                    Infirmière dentiste
-                </td>
-                <td>
-                    <span class="badge bg-success">Planifié</span>
-                </td>
-                <td>
-                    <a class="btn btn-primary btn-sm" href="#">
-                        <i class="fas fa-folder">
-                        </i>
-                        Détail
-                    </a>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    03/04/2024
-                </td>
-                <td>
-                    9:00 AM
-                </td>
-                <td>
-                    Infirmière neurologue
-                </td>
-                <td>
-                    <span class="badge bg-primary">En attente</span>
                 </td>
                 <td>
                     <a class="btn btn-primary btn-sm" href="#">

@@ -25,5 +25,8 @@ class Service extends Model
         'updated_at' => 'nullable'
     ];
 
-
+    public function dossierPatientServices(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
+    {
+        return $this->belongsToMany(\App\Models\DossierPatient::class, 'dossier_patient_service');
+    }
 }
