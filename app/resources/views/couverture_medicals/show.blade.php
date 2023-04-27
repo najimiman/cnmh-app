@@ -6,7 +6,12 @@
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1>
-@lang('models/couvertureMedicals.singular') @lang('crud.detail')
+                        @lang('crud.details')
+                        @if (app()->getLocale() == 'fr')
+                           de la {{ strtolower(__('models/couvertureMedicals.singular')) }}
+                        @else
+                            {{ strtolower(__('models/couvertureMedicals.singular')) }}
+                        @endif
                     </h1>
                 </div>
                 <div class="col-sm-6">

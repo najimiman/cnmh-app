@@ -14,7 +14,7 @@
                 <tr>
                     <td>{{ $menuGroup->nom }}</td>
                     <td>{{ $menuGroup->description }}</td>
-                    <td>{{ $menuGroup->icon }}</td>
+                    <td>{!! $menuGroup->icon !!}</td>
                     <td  style="width: 120px">
                         {!! Form::open(['route' => ['menu-groups.destroy', $menuGroup->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>

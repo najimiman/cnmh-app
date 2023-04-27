@@ -15,6 +15,10 @@ use App\Repositories\DossierPatientRepository;
 use App\Http\Requests\CreateDossierPatientRequest;
 use App\Http\Requests\UpdateDossierPatientRequest;
 use App\Models\DossierPatient_typeHandycape;
+use App\Models\Consultation;
+use App\Models\DossierPatient;
+use App\Models\RendezVous;
+use App\Models\Service;
 
 class DossierPatientController extends AppBaseController
 {
@@ -96,15 +100,31 @@ class DossierPatientController extends AppBaseController
         }
         // foreach($service as $value){
         //
+
+        $listrendezvous=DossierPatient::join('dossier_patient_consultation', 'dossier_patients.patient_id', '=', 'dossier_patient_consultation.dossier_patient_id')
+        ->join('consultations','consultations.id','=','dossier_patient_consultation.consultation_id')
+        ->join('rendez_vous','rendez_vous.consultation_id','=','dossier_patient_consultation.consultation_id')
+        ->join('consultation_service','consultation_service.consultation_id','=','dossier_patient_consultation.consultation_id')
+        ->join('services','services.id','=','consultation_service.service_id')
+        ->where('dossier_patients.patient_id',$dossierPatient->patient_id)
+        ->select(['rendez_vous.date_rendez_vous','rendez_vous.etat', 'services.nom','dossier_patients.patient_id'])
+        ->groupBy('rendez_vous.date_rendez_vous', 'rendez_vous.etat','services.nom','dossier_patients.patient_id')
+        ->get();
+        // dd($listrendezvous);
+        // $consultation=$dossierPatient->dossierPatientConsultations;
+        // $service=$dossierPatient->dossierPatientServices;
+        // $serviceconsultation=$service->;
+        // foreach($consultation as $value){
+        //     $R=RendezVous::where('consultation_id',$value->id)->get();
         // }
-        // dd($R);
+        
         if (empty($dossierPatient)) {
             Flash::error(__('models/dossierPatients.singular') . ' ' . __('messages.not_found'));
 
             return redirect(route('dossier-patients.index'));
         }
 
-        return view('dossier_patients.show', compact('dossierPatient', "patient", "parent", "R", "service"));
+        return view('dossier_patients.show',compact('dossierPatient',"patient","parent","listrendezvous"));
     }
 
     /**

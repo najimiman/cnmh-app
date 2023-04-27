@@ -6,11 +6,11 @@ use Illuminate\Database\Eloquent\Model;
  use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Employe extends BaseModel
 {
-    use HasFactory;    public $table = 'employes';
-    function __construct()
-    {
-        $this->referance_culomn ="cin";
-    }
+    use HasFactory;
+     public $table = 'employes';
+    //  function referance(){
+    //  $this->referance_culomn ="cin";
+    //  }
 
     public $fillable = [
         'nom',
@@ -57,6 +57,6 @@ class Employe extends BaseModel
     }
     function user()
     {
-        $this->belongsTo(\App\Models\User::class, 'user_id');
+        $this->belongsTo(\App\Models\User::class,'user_id');
     }
 }
