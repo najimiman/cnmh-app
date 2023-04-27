@@ -11,7 +11,7 @@
                 <div class="col-sm-6">
                     <a class="btn btn-primary float-right"
                        href="{{ route('reclamations.index') }}">
-                         @lang('crud.add_new') Reclamations
+                         @lang('crud.add_new') {{strtolower(__('models/reclamations.singular'))}}
                     </a>
                 </div>
             </div>
