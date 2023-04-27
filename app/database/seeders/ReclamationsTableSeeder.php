@@ -13,6 +13,6 @@ class ReclamationsTableSeeder extends Seeder
      */
     public function run()
     {
-
+        \App\Models\Reclamation::factory(8)->create();
     }
 }

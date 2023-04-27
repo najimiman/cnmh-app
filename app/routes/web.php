@@ -1,14 +1,15 @@
 <?php
 
 
-use App\Http\Controllers\CouvertureMedicalController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmployeController;
 use App\Http\Controllers\ServiceController;
-use App\Http\Controllers\TypeHandicapController;
-use App\Http\Controllers\NiveauScolaireController;
-use App\Http\Controllers\Root\RootController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EtatCivilController;
+use App\Http\Controllers\Root\RootController;
+use App\Http\Controllers\TypeHandicapController;
+use App\Http\Controllers\DossierPatientController;
+use App\Http\Controllers\NiveauScolaireController;
+use App\Http\Controllers\CouvertureMedicalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,3 +73,8 @@ Route::post('/import_niveauScolaires',[NiveauScolaireController::class,'import']
 Route::get('/export_etatCivils',[EtatCivilController::class,'export'])->name('etatCivils.export');
 Route::post('/import_etatCivils',[EtatCivilController::class,'import'])->name('etatCivils.import');
 Route::resource('tuteurs', App\Http\Controllers\TuteurController::class);
+
+Route::get('/parentForm',[DossierPatientController::class,'parent'])->name('dossier-patients.parent');
+Route::get('/patientForm',[DossierPatientController::class,'patient'])->name('dossier-patients.patient');
+Route::get('/entretien/{query}',[DossierPatientController::class,'entretien'])->name('dossier-patients.entretien');
+Route::post('/storeEntetien',[DossierPatientController::class,'storeEntetien'])->name('dossier-patients.storeEntetien');

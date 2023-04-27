@@ -18,9 +18,9 @@
                             <div class="card-header">
                                 <h3 class="card-title"> @lang('crud.create')
                                     @if (app()->getLocale() == 'fr')
-                                        {{ is_male_localisation('models/service.isMale') }} @lang(strtolower(__('models/service.singular')))
+                                        {{ is_male_localisation('models/services.isMale') }} @lang(strtolower(__('models/services.singular')))
                                     @else
-                                        @lang(strtolower(__('models/service.singular')))
+                                        @lang(strtolower(__('models/services.singular')))
                                     @endif
 
                                 </h3>

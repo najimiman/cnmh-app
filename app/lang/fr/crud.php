@@ -7,6 +7,7 @@ return [
     'edit' => 'Modifier',
     'save' => 'Enregistrer',
     'detail' => 'Détail',
+    'details' => 'Détails',
     'back' => 'Retour',
     'search' => 'Rechercher',
     'export' => 'Exporter',
@@ -20,4 +21,5 @@ return [
     'deleted_at' => 'Supprimé le',
     'are_you_sure' => 'Êtes-vous sûr(e) ?',
     'addtypehandicap'=>'Ajouter un nouveau type d handicap',
+    'import'       => 'Import',
 ];

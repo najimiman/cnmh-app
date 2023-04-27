@@ -4,9 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
  use Illuminate\Database\Eloquent\Factories\HasFactory;
-class Fonction extends Model
+class Fonction extends BaseModel
 {
     use HasFactory;    public $table = 'fonctions';
+
+    function __construct()
+    {
+        $this->referance_culomn = "nom";
+    }
 
     public $fillable = [
         'nom',
@@ -19,11 +24,10 @@ class Fonction extends Model
     ];
 
     public static array $rules = [
-        'nom' => 'required|string|max:255',
+        'nom' => 'required|string|max:255|unique:fonctions,nom',
         'description' => 'nullable|string|max:65535',
         'created_at' => 'nullable',
         'updated_at' => 'nullable'
     ];
 
-    
 }

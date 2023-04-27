@@ -59,7 +59,7 @@ class ServiceController extends AppBaseController
 
         $service = $this->serviceRepository->create($input);
 
-        Flash::success(__('messages.saved', ['model' => __('models/service.singular')]));
+        Flash::success(__('messages.saved', ['model' => __('models/services.singular')]));
 
         return redirect(route('services.index'));
     }
@@ -72,7 +72,7 @@ class ServiceController extends AppBaseController
         $service = $this->serviceRepository->find($id);
 
         if (empty($service)) {
-            Flash::error(__('models/service.singular').' '.__('messages.not_found'));
+            Flash::error(__('models/services.singular').' '.__('messages.not_found'));
 
             return redirect(route('services.index'));
         }
@@ -88,7 +88,7 @@ class ServiceController extends AppBaseController
         $service = $this->serviceRepository->find($id);
 
         if (empty($service)) {
-            Flash::error(__('models/service.singular').' '.__('messages.not_found'));
+            Flash::error(__('models/services.singular').' '.__('messages.not_found'));
 
             return redirect(route('services.index'));
         }
@@ -104,14 +104,14 @@ class ServiceController extends AppBaseController
         $service = $this->serviceRepository->find($id);
 
         if (empty($service)) {
-            Flash::error(__('models/service.singular').' '.__('messages.not_found'));
+            Flash::error(__('models/services.singular').' '.__('messages.not_found'));
 
             return redirect(route('services.index'));
         }
 
         $service = $this->serviceRepository->update($request->all(), $id);
 
-        Flash::success(__('messages.updated', ['model' => __('models/service.singular')]));
+        Flash::success(__('messages.updated', ['model' => __('models/services.singular')]));
 
         return redirect(route('services.index'));
     }
@@ -126,14 +126,14 @@ class ServiceController extends AppBaseController
         $service = $this->serviceRepository->find($id);
 
         if (empty($service)) {
-            Flash::error(__('models/service.singular').' '.__('messages.not_found'));
+            Flash::error(__('models/services.singular').' '.__('messages.not_found'));
 
             return redirect(route('services.index'));
         }
 
         $this->serviceRepository->delete($id);
 
-        Flash::success(__('messages.deleted', ['model' => __('models/service.singular')]));
+        Flash::success(__('messages.deleted', ['model' => __('models/services.singular')]));
 
         return redirect(route('services.index'));
     }

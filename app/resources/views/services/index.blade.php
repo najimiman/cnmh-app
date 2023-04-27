@@ -7,13 +7,13 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>@lang('models/service.management')
-                      {{strtolower(__('models/service.plural'))}}</h1>
+                    <h1>@lang('models/services.management')
+                      {{strtolower(__('models/services.plural'))}}</h1>
                 </div>
                 <div class="col-sm-6">
                     <a class="btn btn-primary float-right"
                        href="{{ route('services.create') }}">
-                         @lang('crud.add_new')  {{strtolower(__('models/service.singular'))}}
+                         @lang('crud.add_new')  {{strtolower(__('models/services.singular'))}}
                     </a>
                 </div>
             </div>
