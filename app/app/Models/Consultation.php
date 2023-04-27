@@ -39,9 +39,9 @@ class Consultation extends Model
         return $this->hasMany(\App\Models\ConsultationService::class, 'id_consultation');
     }
 
-    public function dossierPatientConsultations(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function dossierPatientConsultations(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
-        return $this->hasMany(\App\Models\DossierPatientConsultation::class, 'consultation_id');
+        return $this->belongsToMany(\App\Models\DossierPatient::class, 'dossier_patient_consultation');
     }
 
     public function rendezVous(): \Illuminate\Database\Eloquent\Relations\HasMany

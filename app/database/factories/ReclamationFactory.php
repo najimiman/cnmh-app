@@ -23,16 +23,16 @@ class ReclamationFactory extends Factory
      */
     public function definition()
     {
-        $patient = Patient::first();
-        if (!$patient) {
-            $patient = Patient::factory()->create();
-        }
+        // $patient = Patient::first();
+        // if (!$patient) {
+        //     $patient = Patient::factory()->create();
+        // }
 
         return [
-            'patients_id' => $this->faker->word,
-            'objet' => $this->faker->text($this->faker->numberBetween(5, 255)),
-            'description' => $this->faker->text($this->faker->numberBetween(5, 255)),
-            'remarques' => $this->faker->text($this->faker->numberBetween(5, 255)),
+            'patients_id' => $this->faker->randomElement(Patient::pluck("id")),
+            'objet' => $this->faker->text($this->faker->numberBetween(5, 6)),
+            'reclamation' => $this->faker->text($this->faker->numberBetween(5, 255)),
+            // 'remarques' => $this->faker->text($this->faker->numberBetween(5, 255)),
             'date_reclamation' => $this->faker->date('Y-m-d H:i:s'),
             'created_at' => $this->faker->date('Y-m-d H:i:s'),
             'updated_at' => $this->faker->date('Y-m-d H:i:s')
