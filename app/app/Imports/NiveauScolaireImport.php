@@ -16,8 +16,8 @@ class NiveauScolaireImport implements ToModel
     {
         return new NiveauScolaire([
             //
-            'nom' => $row[1],
-            'description' => $row[2],
+            'nom' => $row[0],
+            'description' => $row[1],
         ]);
     }
 }
