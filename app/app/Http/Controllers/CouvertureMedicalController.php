@@ -136,7 +136,7 @@ class CouvertureMedicalController extends AppBaseController
     }
 
     public function export(){
-        return Excel::download(new ExportCouvertureMedical, 'CouvertureMedical.xlsx');
+        return Excel::download(new ExportCouvertureMedical, 'Couvertures-médicales.xlsx');
     }
     public function import(Request $request){
         Excel::import(new ImportCouvertureMedical, $request->file('file')->store('files'));

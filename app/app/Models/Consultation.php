@@ -34,9 +34,9 @@ class Consultation extends Model
         'updated_at' => 'nullable'
     ];
 
-    public function consultationServices(): \Illuminate\Database\Eloquent\Relations\HasMany
+    public function consultationServices(): \Illuminate\Database\Eloquent\Relations\BelongsToMany
     {
-        return $this->hasMany(\App\Models\ConsultationService::class, 'id_consultation');
+        return $this->BelongsToMany(\App\Models\Service::class, 'consultation_service');
     }
 
     public function dossierPatientConsultations(): \Illuminate\Database\Eloquent\Relations\BelongsToMany

@@ -36,7 +36,7 @@ class MenuItem extends Model
         'updated_at' => 'nullable'
     ];
 
-    public function menuGroup(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+    public function menu_group(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
         return $this->belongsTo(\App\Models\MenuGroup::class, 'menu_group_id');
     }

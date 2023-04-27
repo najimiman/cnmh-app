@@ -4,6 +4,7 @@
 
 ````bash
 npm install
+npm run dev
 composer install
 php artisan migrate:fresh
 php artisan db:seed

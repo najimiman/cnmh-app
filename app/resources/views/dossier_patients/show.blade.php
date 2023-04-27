@@ -6,7 +6,8 @@
             <div class="row mb-2">
                 <div class="col-sm-6">
                     <h1>
-@lang('models/dossierPatients.singular') @lang('crud.detail')
+@lang('models/dossierPatients.singular') N°{{$dossierPatient->numero_dossier}}
+{{-- @lang('crud.detail') --}}
                     </h1>
                 </div>
                 <div class="col-sm-6">
