@@ -31,7 +31,7 @@ class RendezVousFactory extends Factory
         return [
             'consultation_id' => $this->faker->randomElement(Consultation::pluck("id")),
             'date_rendez_vous' => $this->faker->date('Y-m-d H:i:s'),
-            'etat' => $this->faker->text($this->faker->numberBetween(5, 255)),
+            'etat' => $this->faker->text($this->faker->numberBetween(5, 5)),
             'remarques' => $this->faker->text($this->faker->numberBetween(5, 255)),
             'created_at' => $this->faker->date('Y-m-d H:i:s'),
             'updated_at' => $this->faker->date('Y-m-d H:i:s'),
