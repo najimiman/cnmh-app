@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('dossier_patient_id')->constrained("dossier_patients");
             $table->foreignId('type_handicap_id')->constrained("type_handicaps");
             $table->timestamps();
-        })
+        });
     }
 
     /**

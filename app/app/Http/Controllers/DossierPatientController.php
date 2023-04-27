@@ -3,16 +3,17 @@
 namespace App\Http\Controllers;
 
 use Flash;
+use App\Models\Patient;
+use App\Models\TypeHandicap;
 use Illuminate\Http\Request;
+use App\Models\DossierPatient;
+use App\Models\CouvertureMedical;
 use App\Repositories\TuteurRepository;
 use App\Repositories\PatientRepository;
 use App\Http\Controllers\AppBaseController;
-use App\Models\Patient;
 use App\Repositories\DossierPatientRepository;
 use App\Http\Requests\CreateDossierPatientRequest;
 use App\Http\Requests\UpdateDossierPatientRequest;
-use App\Models\DossierPatient;
-use App\Models\TypeHandicap;
 
 class DossierPatientController extends AppBaseController
 {
@@ -55,18 +56,30 @@ class DossierPatientController extends AppBaseController
      */
     public function store(CreateDossierPatientRequest $request)
     {
-        $TypeHandicaps= DossierPatient_ty::create([
-           'type_id' =  $request->type
-           'pation_id' =  $request->idpatient
-        ])
-        $input = $request->all();
-        // dd($input);
+                // Check if the patient ID is valid
+            // $patient = Patient::find($request->input('patient_id'));
+            // if (!$patient) {
+            //     return redirect()->back()->withInput()->withErrors(['patient_id' => 'Invalid patient ID']);
+            // }
 
-        $dossierPatient = $this->dossierPatientRepository->create($input);
+            // Create a new dossier patient record
+            $input = $request->except('type_id');
+            $input['user_id'] = '1';
+            // $input['patient_id'] = $patient->id;
 
-        Flash::success(__('messages.saved', ['model' => __('models/dossierPatients.singular')]));
+            $dossierPatient = new DossierPatient;
+            $dossierPatient->fill($input);
+            $dossierPatient->save();
 
-        return redirect(route('dossier-patients.index'));
+            // Create a new dossier patient type record
+            // $TypeHandicaps = new DossierPatient_ty;
+            // $TypeHandicaps->type_handicap_id = $request->input('type_handicap_id');
+            // $TypeHandicaps->dossier_patient_id = $dossierPatient->id;
+            // $TypeHandicaps->save();
+
+            Flash::success(__('messages.saved', ['model' => __('models/dossierPatients.singular')]));
+
+            return redirect(route('dossier-patients.index'));
     }
 
     /**
@@ -160,9 +173,9 @@ class DossierPatientController extends AppBaseController
         return view('dossier_patients.patient',compact("patients"));
     }
     public function entretien(Request $request){
-
+        $couverture_medical=CouvertureMedical::all();
         $type_handicap= TypeHandicap::all();
-        return view('dossier_patients.entretien',compact('type_handicap'));
+        return view('dossier_patients.entretien',compact('type_handicap','couverture_medical'));
     }
     // public function storeEntetien(Request $request){
     //   $entertien= $request->input();

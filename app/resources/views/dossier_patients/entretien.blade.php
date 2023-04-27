@@ -1,25 +1,39 @@
-<H1>ssss</H1>
-<h2>fggfgf</h2>
-@php
-                    $url = parse_url($_SERVER['REQUEST_URI']);
-                    $explodePath = explode("=",$url['path']);
-                    $parentId = $explodePath[1];
-                    $explodeQuery = explode("=",$url['query']);
-                    $patientId = $explodeQuery[1];
-                @endphp
-<form action="{{route("dossier-patients.store")}}" method="POST">
-    @csrf
-    <div class="row">
-        @include('dossier_patients.fields')
+@extends('layouts.app')
+
+@section('content')
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-12">
+                    {{-- <h1>
+                    @lang('crud.create') @lang('models/')
+                    </h1> --}}
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+
+    <div class="content px-3">
+        @include('adminlte-templates::common.errors')
+
+        <div class="card">
+            {!! Form::open(['route' => 'dossier-patients.store', 'method' => 'POST']) !!}
+            <!-- Specify the route and method for the form -->
+
+            <div class="card-body">
+                <div class="row">
+                    @include('dossier_patients.fields')
+                </div>
+            </div>
+
+            <div class="card-footer">
+                {!! Form::submit('Enregistrer', ['class' => 'btn btn-primary']) !!}
+                <a href="{{ route('dossier-patients.index') }}" class="btn btn-default"> @lang('crud.cancel') </a>
+            </div>
+
+            {!! Form::close() !!}
+        </div>
     </div>
-    {{-- <input type="text" value="{{1}}" name="numero_dossier">
-
-    <input type="hidden" value="{{'dossier social'}}" name="etat">
-    <input type="date"  name="date_enregsitrement">
-
-    <input type="hidden" value="{{$parentId}}" name="couverture_medical_id">
-    <input type="hidden" value="{{$parentId}}" name="couverture_medical_id">
-    <input type="hidden" value="{{$patientId}}" name="patient_id">nada
-    <input type="text " name="name">gg --}}
-    <button  class="btn btn-primary">Next</button>
-</form>
+@endsection
