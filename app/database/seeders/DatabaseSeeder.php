@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
     {
         \App\Models\User::factory(5)->create();
         $this->call([
+            AppMenuSeeder::class,
             ProjectsTableSeeder::class,
             ProjectsTableSeeder::class,
             CouvertureMedicalTableSeeder::class,
@@ -29,17 +30,6 @@ class DatabaseSeeder extends Seeder
             EtatCivilsTableSeeder::class,
             EmployesTableSeeder::class,
             NiveauScolairesTableSeeder::class,
-<<<<<<< HEAD
-            TuteursTableSeeder::class,
-            PatientsTableSeeder::class,
-            EtatCivilsTableSeeder::class,
-            ConsultationsTableSeeder::class,
-            RendezVousesTableSeeder::class,
-
-            
-=======
-
->>>>>>> 18f5b5fd41ce0295c8160d8d03cdffb578572436
         ]);
 
     }
