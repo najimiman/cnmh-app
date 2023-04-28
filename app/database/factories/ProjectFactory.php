@@ -22,7 +22,7 @@ class ProjectFactory extends Factory
      */
     public function definition()
     {
-        
+
         return [
             'name' => $this->faker->text($this->faker->numberBetween(5, 6)),
             'description' =>$this->faker->text($this->faker->numberBetween(5, 255)),
