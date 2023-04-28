@@ -3,14 +3,18 @@
 namespace App\Http\Controllers;
 
 use Flash;
+use App\Models\Patient;
+use App\Models\TypeHandicap;
 use Illuminate\Http\Request;
+use App\Models\DossierPatient;
+use App\Models\CouvertureMedical;
 use App\Repositories\TuteurRepository;
 use App\Repositories\PatientRepository;
 use App\Http\Controllers\AppBaseController;
-use App\Models\Patient;
 use App\Repositories\DossierPatientRepository;
 use App\Http\Requests\CreateDossierPatientRequest;
 use App\Http\Requests\UpdateDossierPatientRequest;
+use App\Models\DossierPatient_typeHandycape;
 use App\Models\Consultation;
 use App\Models\DossierPatient;
 use App\Models\RendezVous;
@@ -58,9 +62,16 @@ class DossierPatientController extends AppBaseController
     public function store(CreateDossierPatientRequest $request)
     {
         $input = $request->all();
-        // dd($input);
-
         $dossierPatient = $this->dossierPatientRepository->create($input);
+        $dossierPatient->save();
+
+        $dossierPatient::where('numero_dossier', $request->numero_dossier)->get();
+        $DossierPatient_typeHandycape = new DossierPatient_typeHandycape;
+        $DossierPatient_typeHandycape->type_handicap_id = $request->type_handicap_id;
+        $DossierPatient_typeHandycape->dossier_patient_id  = $dossierPatient->id;
+        $DossierPatient_typeHandycape->save();
+
+
 
         Flash::success(__('messages.saved', ['model' => __('models/dossierPatients.singular')]));
 
@@ -72,9 +83,24 @@ class DossierPatientController extends AppBaseController
      */
     public function show($id)
     {
+
+
         $dossierPatient = $this->dossierPatientRepository->find($id);
-        $patient= Patient::find($dossierPatient->patient_id);
+        $patient = Patient::find($dossierPatient->patient_id);
         $parent  = $patient->parent;
+        // $consultation=Consultation::find($dossierPatient->patient_id);
+        // $pp=$consultation->id;
+        // $rendevous=RendezVous::find($pp);
+        // dd($consultation);
+        // $consultation=Consultation::find($id);
+        $consultation = $dossierPatient->dossierPatientConsultations;
+        $service = $dossierPatient->dossierPatientServices;
+        foreach ($consultation as $value) {
+            $R = RendezVous::where('consultation_id', $value->id)->get();
+        }
+        // foreach($service as $value){
+        //
+
         $listrendezvous=DossierPatient::join('dossier_patient_consultation', 'dossier_patients.patient_id', '=', 'dossier_patient_consultation.dossier_patient_id')
         ->join('consultations','consultations.id','=','dossier_patient_consultation.consultation_id')
         ->join('rendez_vous','rendez_vous.consultation_id','=','dossier_patient_consultation.consultation_id')
@@ -93,7 +119,7 @@ class DossierPatientController extends AppBaseController
         // }
         
         if (empty($dossierPatient)) {
-            Flash::error(__('models/dossierPatients.singular').' '.__('messages.not_found'));
+            Flash::error(__('models/dossierPatients.singular') . ' ' . __('messages.not_found'));
 
             return redirect(route('dossier-patients.index'));
         }
@@ -109,7 +135,7 @@ class DossierPatientController extends AppBaseController
         $dossierPatient = $this->dossierPatientRepository->find($id);
 
         if (empty($dossierPatient)) {
-            Flash::error(__('models/dossierPatients.singular').' '.__('messages.not_found'));
+            Flash::error(__('models/dossierPatients.singular') . ' ' . __('messages.not_found'));
 
             return redirect(route('dossier-patients.index'));
         }
@@ -125,7 +151,7 @@ class DossierPatientController extends AppBaseController
         $dossierPatient = $this->dossierPatientRepository->find($id);
 
         if (empty($dossierPatient)) {
-            Flash::error(__('models/dossierPatients.singular').' '.__('messages.not_found'));
+            Flash::error(__('models/dossierPatients.singular') . ' ' . __('messages.not_found'));
 
             return redirect(route('dossier-patients.index'));
         }
@@ -147,7 +173,7 @@ class DossierPatientController extends AppBaseController
         $dossierPatient = $this->dossierPatientRepository->find($id);
 
         if (empty($dossierPatient)) {
-            Flash::error(__('models/dossierPatients.singular').' '.__('messages.not_found'));
+            Flash::error(__('models/dossierPatients.singular') . ' ' . __('messages.not_found'));
 
             return redirect(route('dossier-patients.index'));
         }
@@ -158,23 +184,27 @@ class DossierPatientController extends AppBaseController
 
         return redirect(route('dossier-patients.index'));
     }
-    public function parent(Request $request){
+    public function parent(Request $request)
+    {
         $query = $request->input('query');
-         $tuteurRepository = new TuteurRepository;
-         $tuteurs  =  $tuteurRepository->paginate($query);
-        return view('dossier_patients.parent',compact("tuteurs"));
+        $tuteurRepository = new TuteurRepository;
+        $tuteurs  =  $tuteurRepository->paginate($query);
+        return view('dossier_patients.parent', compact("tuteurs"));
     }
-    public function patient(Request $request){
+    public function patient(Request $request)
+    {
 
         $query = $request->input('query');
 
-         $patientRepository = new PatientRepository;
-         $patients  =  Patient::where("tuteur_id",$request->parentRadio)->get();
-        return view('dossier_patients.patient',compact("patients"));
+        $patientRepository = new PatientRepository;
+        $patients  =  Patient::where("tuteur_id", $request->parentRadio)->get();
+        return view('dossier_patients.patient', compact("patients"));
     }
-    public function entretien(Request $request){
-
-        return view('dossier_patients.entretien');
+    public function entretien(Request $request)
+    {
+        $couverture_medical = CouvertureMedical::all();
+        $type_handicap = TypeHandicap::all();
+        return view('dossier_patients.entretien', compact('type_handicap', 'couverture_medical'));
     }
     // public function storeEntetien(Request $request){
     //   $entertien= $request->input();

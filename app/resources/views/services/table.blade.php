@@ -72,7 +72,7 @@
                     <br>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">@lang('crud.cancel')</button>
-                        <button class="btn btn-success">@lang('crud.print')</button>
+                        <button class="btn btn-success">@lang('crud.import')</button>
                     </div>
                 </form>
             </div>
