@@ -1,7 +1,7 @@
 <!-- Patients Id Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('patients_id', __('models/reclamations.fields.patients_id').':') !!}
-    {!! Form::number('patients_id', null, ['class' => 'form-control', 'required']) !!}
+    {!! Form::label('patient_id', __('models/reclamations.fields.patient_id').':') !!}
+    {!! Form::number('patient_id', null, ['class' => 'form-control', 'required']) !!}
 </div>
 
 <!-- Objet Field -->
@@ -12,15 +12,12 @@
 
 <!-- Description Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('description', __('models/reclamations.fields.description').':') !!}
-    {!! Form::text('description', null, ['class' => 'form-control', 'required', 'maxlength' => 255, 'maxlength' => 255]) !!}
+    {!! Form::label('reclamation', __('models/reclamations.fields.reclamation').':') !!}
+    {!! Form::text('reclamation', null, ['class' => 'form-control', 'required', 'maxlength' => 255, 'maxlength' => 255]) !!}
 </div>
 
 <!-- Remarques Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('remarques', __('models/reclamations.fields.remarques').':') !!}
-    {!! Form::text('remarques', null, ['class' => 'form-control', 'required', 'maxlength' => 255, 'maxlength' => 255]) !!}
-</div>
+
 
 <!-- Date Reclamation Field -->
 <div class="form-group col-sm-6">
