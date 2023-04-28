@@ -3,6 +3,7 @@
 return [
     'singular' => 'Reclamation',
     'plural' => 'Reclamations',
+    "isMale" => "true",
     'fields' => [
         'id' => 'Id',
         'patient_id' => 'Patient Id',

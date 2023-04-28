@@ -9,11 +9,13 @@ class NiveauScolaire extends Model
     use HasFactory;    public $table = 'niveau_scolaires';
 
     public $fillable = [
+        'user_id',
         'nom',
         'description'
     ];
-
+    
     protected $casts = [
+        'user_id'=>"int",
         'nom' => 'string',
         'description' => 'string'
     ];
