@@ -59,7 +59,7 @@
         <!-- Main Footer -->
         <footer class="main-footer">
             <strong>
-                Copyright &copy; 2023 CNMH.</strong> All rights
+                Copyright &copy; 2023-2024 CNMH.</strong> All rights
             reserved.
         </footer>
     </div>

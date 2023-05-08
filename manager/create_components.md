@@ -16,6 +16,8 @@ php artisan infyom:scaffold OrientationExterne --fromTable --table=orientation_e
 php artisan infyom:scaffold Consultation --fromTable --table=consultations
 php artisan infyom:scaffold RendezVous --fromTable --table=rendez_vous
 
-php artisan infyom:scaffold Parent --fromTable --table=parents // Parent is a reserved word.
+php artisan infyom:scaffold Tuteur --fromTable --table=tuteurs // Not used.
 
+php artisan infyom:scaffold MenuGroup --fromTable --table=menu_groups
+php artisan infyom:scaffold MenuItem --fromTable --table=menu_items
 ````

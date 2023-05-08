@@ -9,6 +9,7 @@ class DossierPatient extends Model
     use HasFactory;    public $table = 'dossier_patients';
 
     public $fillable = [
+        'user_id',
         'patient_id',
         'couverture_medical_id',
         'numero_dossier',
@@ -22,6 +23,7 @@ class DossierPatient extends Model
     ];
 
     public static array $rules = [
+        'user_id',
         'patient_id' => 'required',
         'couverture_medical_id' => 'required',
         'numero_dossier' => 'required',

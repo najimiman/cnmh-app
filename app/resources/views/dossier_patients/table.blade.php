@@ -3,27 +3,27 @@
         <table class="table table-striped" id="dossier-patients-table">
             <thead>
                 <tr>
-                    <th>Patient Id</th>
-                    <th>Couverture Medical Id</th>
                     <th>Numero Dossier</th>
-                    <th>Etat</th>
-                    <th>Date Enregsitrement</th>
+                    <th>Patient</th>
+                    {{-- <th>Couverture Medical</th> --}}
+                    <th>État de processus</th>
+                    {{-- <th>Date Enregsitrement</th> --}}
                     <th colspan="3">Action</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach($dossierPatients as $dossierPatient)
                 <tr>
-                    <td>{{ $dossierPatient->patient_id }}</td>
-                    <td>{{ $dossierPatient->couverture_medical_id }}</td>
                     <td>{{ $dossierPatient->numero_dossier }}</td>
+                    <td>{{ $dossierPatient->patient->nom }}</td>
+                    {{-- <td>{{ $dossierPatient->couvertureMedical->nom }}</td> --}}
                     <td>{{ $dossierPatient->etat }}</td>
-                    <td>{{ $dossierPatient->date_enregsitrement }}</td>
+                    {{-- <td>{{ $dossierPatient->date_enregsitrement }}</td> --}}
 
                     <td style="width: 120px">
                         {{-- {!! Form::open(['route' => ['dossierPatients.destroy', $dossierPatient->id], 'method' =>
                         'delete']) !!} --}}
-                       
+
                         <div class='btn-group'>
                             <a href="{{ route('dossier-patients.show', [$dossierPatient->id]) }}"
                                 class='btn btn-default btn-sm'>

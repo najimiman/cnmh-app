@@ -146,7 +146,7 @@ class EmployeController extends AppBaseController
         return Excel::download(new ExportEmployes , 'Employe.xlsx');
     }
     public function import(Request $request){
-        Excel::import(new ImportEmployes , $request->file('file')->store('files'));
+        Excel::import(new ImportEmployes, $request->file('file')->store('files'));
         return redirect()->back();
     }
 }

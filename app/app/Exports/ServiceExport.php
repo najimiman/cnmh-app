@@ -5,18 +5,33 @@ namespace App\Exports;
 use App\Models\Service;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
+use Maatwebsite\Excel\Concerns\WithTitle;
 
-class ServiceExport implements FromCollection , WithHeadings
+class ServiceExport implements FromCollection , WithHeadings,WithTitle
 {
-    /**
-    * @return \Illuminate\Support\Collection
-    */
+        /**
+     * @return Collection
+     */
     public function collection()
     {
-        return Service::select("id","nom","description")->get();
+        $services = Service::select("nom", "description")->get();
+
+        // Remove HTML tags from the description field
+        $services->transform(function ($service) {
+            $service->description = strip_tags($service->description);
+            return $service;
+        });
+
+        return $services;
     }
+
     public function headings(): array
     {
-        return ["Nombre", "Nom", "Description"];
+        return ["Nom", "Description"];
     }
+    public function title(): string
+    {
+        return 'Prestation';
+    }
+
 }

@@ -3,10 +3,9 @@
         <table class="table table-striped" id="reclamations-table">
             <thead>
             <tr>
-                <th>Patients Id</th>
+              
                 <th>Objet</th>
-                <th>Description</th>
-                <th>Remarques</th>
+                <th>Reclamation</th>
                 <th>Date Reclamation</th>
                 <th colspan="3">Action</th>
             </tr>
@@ -14,11 +13,10 @@
             <tbody>
             @foreach($reclamations as $reclamation)
                 <tr>
-                    <td>{{ $reclamation->patients_id }}</td>
-                    <td>{{ $reclamation->objet }}</td>
-                    <td>{{ $reclamation->description }}</td>
-                    <td>{{ $reclamation->remarques }}</td>
-                    <td>{{ $reclamation->date_reclamation }}</td>
+                    {{-- <td>{{ $reclamation->patients_id }}</td> --}}
+                    <td style="max-width: 180px;">{{ $reclamation->objet }}</td>
+                    <td style="max-width: 180px;">{{ $reclamation->reclamation }}</td>
+                    <td style="max-width: 30px;">{{ $reclamation->date_reclamation }}</td>
                     <td  style="width: 120px">
                         {!! Form::open(['route' => ['reclamations.destroy', $reclamation->id], 'method' => 'delete']) !!}
                         <div class='btn-group'>

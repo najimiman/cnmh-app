@@ -9,24 +9,22 @@ class Reclamation extends Model
     use HasFactory;    public $table = 'reclamations';
 
     public $fillable = [
-        'patients_id',
+        'patient_id',
         'objet',
-        'description',
+        'reclamation',
         'date_reclamation'
     ];
 
     protected $casts = [
         'objet' => 'string',
-        'description' => 'string',
-        'remarques' => 'string',
+        'reclamation' => 'string',
         'date_reclamation' => 'datetime'
     ];
 
     public static array $rules = [
-        'patients_id' => 'required',
+        'patient_id' => 'required',
         'objet' => 'required|string|max:255',
-        'description' => 'required|string|max:255',
-        'remarques' => 'required|string|max:255',
+        'reclamation' => 'required|string|max:255',
         'date_reclamation' => 'required',
         'created_at' => 'nullable',
         'updated_at' => 'nullable'
@@ -34,6 +32,6 @@ class Reclamation extends Model
 
     public function patients(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
-        return $this->belongsTo(\App\Models\Patient::class, 'patients_id');
+        return $this->belongsTo(\App\Models\Patient::class, 'patient_id');
     }
 }

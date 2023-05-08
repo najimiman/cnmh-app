@@ -2,21 +2,19 @@
 
 @section('content')
     <section class="content-header">
-        {{-- <section class="content-header">
-            <div class="container-fluid">
-                <div class="row mb-2">
-                    <div class="col-sm-6">
-                        <h1>@lang('models/tuteurs.plural')</h1>
-                    </div>
-                    <div class="col-sm-6">
-                        <a class="btn btn-primary float-right"
-                           href="{{ route('patients.create') }}">
-                             @lang('crud.add_new') Patient
-                        </a>
-                    </div>
+        {{-- <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>@lang('models/tuteurs.plural')</h1>
+                </div>
+                <div class="col-sm-6">
+                    <a class="btn btn-primary float-right"
+                       href="{{ route('tuteurs.create') }}">
+                         @lang('crud.add_new') Tuteur
+                    </a>
                 </div>
             </div>
-        </section> --}}
+        </div> --}}
     </section>
 
     <div class="content px-3">
@@ -50,18 +48,19 @@
                     $url = parse_url($_SERVER['REQUEST_URI']);
                     // var_dump($url['query']);
                 @endphp
-                    <form action="{{route('dossier-patients.entretien',$url["query"])}}" method="get">
+                    <form action="{{route('reclamations',$url["query"])}}" method="get">
 
                         <table class="table table-striped" id="tuteurs-table">
                         <thead>
                             <tr>
-                                <th></th>
+                                <th>Etat Civil Id</th>
                                 <th>Nom</th>
                                 <th>Prenom</th>
+                                <th>Sexe</th>
                                 <th>Telephone</th>
                                 <th>Email</th>
                                 <th>Adresse</th>
-
+                                <th>Cin</th>
                                 <th>Remarques</th>
                                 <th colspan="3">Action</th>
                             </tr>
@@ -75,11 +74,6 @@
                                     </td>
 
                                     <td>{{ $patient->nom }}</td>
-                                    <td>{{ $patient->prenom }}</td>
-                                    <td>{{ $patient->telephone }}</td>
-                                    <td>{{ $patient->email }}</td>
-                                    <td>{{ $patient->adresse }}</td>
-                                    <td>{{ $patient->remarques }}</td>
 
                                     <td style="width: 120px">
 
@@ -97,13 +91,9 @@
                         </tbody>
 
                     </table>
-
-                </div>
-                <div class="ml-4 mb-3">
                     <button  class="btn btn-primary">Next</button>
-
+                </form>
                 </div>
-            </form>
 
                 <div class="card-footer clearfix">
                     <div class="float-right">
@@ -111,10 +101,10 @@
                     </div>
                     <div class="float-left">
                         <button type="button" class="btn btn-default swalDefaultQuestion">
-                            <i class="fas fa-download"></i> @lang('crud.export  ')
+                            <i class="fas fa-download"></i> Exporter
                         </button>
                         <button type="button" class="btn btn-default swalDefaultQuestion">
-                            <i class="fas fa-file-import"></i> @lang('crud.import')
+                            <i class="fas fa-file-import"></i> Importer
                         </button>
                     </div>
                 </div>

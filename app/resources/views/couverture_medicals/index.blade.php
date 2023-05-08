@@ -5,11 +5,16 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>@lang('models/couvertureMedicals.plural')</h1>
+                    <h1>{{__('models/couvertureMedicals.plural')}}</h1>
                 </div>
                 <div class="col-sm-6">
                     <a class="btn btn-primary float-right" href="{{ route('couvertureMedicals.create') }}">
-                        @lang('crud.create') une @lang('models/couvertureMedicals.singular')
+                        @lang('crud.create')
+                        @if (app()->getLocale() == 'fr')
+                        {{ is_male_localisation('couvertureMedicals.isMale') }} @lang(strtolower(__('models/couvertureMedicals.singular')))
+                    @else
+                        @lang(strtolower(__('models/models/service.singular')))
+                    @endif
                     </a>
                 </div>
             </div>

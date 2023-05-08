@@ -1,8 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <a href="{{ route('home') }}" class="brand-link">
-        <img src="{{ asset('assets/images/logo-cnmh.png') }}"
-        alt="CNMH"
-             class="brand-image elevation-3">
+        <img src="{{ asset('assets/images/logo-cnmh.png') }}" alt="CNMH Logo" class="" style="max-width: 100%;">
+        <span class="brand-text font-weight-light"></span>
     </a>
     <br>
     <div class="sidebar">

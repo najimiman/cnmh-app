@@ -11,4 +11,8 @@ if (!function_exists('is_male_localisation')) {
     }
 }
 
-?>
+if (!function_exists('app_menu')) {
+    function app_menu() {
+        return App\Models\MenuItem::all()->groupBy('menu_group.nom');
+    }
+}
