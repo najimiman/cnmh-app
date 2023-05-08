@@ -75,17 +75,17 @@ class DossierPatientController extends AppBaseController
         $dossierPatient = $this->dossierPatientRepository->find($id);
         $patient= Patient::find($dossierPatient->patient_id);
         $parent  = $patient->parent;
-        $listrendezvous=DossierPatient::join('dossier_patient_consultation', 'dossier_patients.patient_id', '=', 'dossier_patient_consultation.dossier_patient_id')
+        $listrendezvous=DossierPatient::join('dossier_patient_consultation', 'dossier_patients.id', '=', 'dossier_patient_consultation.dossier_patient_id')
         ->join('consultations','consultations.id','=','dossier_patient_consultation.consultation_id')
         ->join('rendez_vous','rendez_vous.consultation_id','=','dossier_patient_consultation.consultation_id')
         ->join('consultation_service','consultation_service.consultation_id','=','dossier_patient_consultation.consultation_id')
         ->join('services','services.id','=','consultation_service.service_id')
-        ->where('dossier_patients.patient_id',$dossierPatient->patient_id)
+        ->where('dossier_patients.patient_id',$dossierPatient->id)
         ->select(['rendez_vous.date_rendez_vous','rendez_vous.etat', 'services.nom','dossier_patients.patient_id'])
         ->groupBy('rendez_vous.date_rendez_vous', 'rendez_vous.etat','services.nom','dossier_patients.patient_id')
         ->get();
         // dd($listrendezvous);
-        $entretien_social=DossierPatient::join('patients', 'dossier_patients.patient_id','=','patients.id')
+        $entretien_sociale=DossierPatient::join('patients', 'dossier_patients.patient_id','=','patients.id')
         ->join('niveau_scolaires','niveau_scolaires.id','=','patients.niveau_scolaire_id')
         ->join('couverture_medicals','couverture_medicals.id','=','dossier_patients.couverture_medical_id')
         ->join('dossier_patient_type_handicap','dossier_patient_type_handicap.dossier_patient_id','=','dossier_patients.id')
@@ -93,7 +93,7 @@ class DossierPatientController extends AppBaseController
         ->select(['dossier_patients.patient_id','couverture_medicals.nom','type_handicaps.nom','niveau_scolaires.nom','dossier_patients.date_enregsitrement'])
         ->where('dossier_patients.patient_id',$dossierPatient->patient_id)
         ->get();
-        // dd($entretien_social);
+        // dd($entretien_sociale);
         
         if (empty($dossierPatient)) {
             Flash::error(__('models/dossierPatients.singular').' '.__('messages.not_found'));
@@ -101,7 +101,7 @@ class DossierPatientController extends AppBaseController
             return redirect(route('dossier-patients.index'));
         }
 
-        return view('dossier_patients.show',compact('dossierPatient',"patient","parent","listrendezvous","entretien_social"));
+        return view('dossier_patients.show',compact('dossierPatient',"patient","parent","listrendezvous","entretien_sociale"));
     }
 
     /**
